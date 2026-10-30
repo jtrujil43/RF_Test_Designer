@@ -1,0 +1,89 @@
+C64 MULTICOLOR BITMAP UPDATE VERIFICATION - 2026-10-29
+
+Executed with VICE 3.10 x64sc and the actual Commodore 64 BASIC V2 ROM.
+
+All eight graphical programs now use native 160x200 multicolor bitmap
+mode for drawings and standard 40x25 text for strings. Runtime checks
+asserted bitmap/multicolor flags, cleared extended-color mode, the VIC
+bank, screen/bitmap addresses, nonempty packed pixels and text restoration.
+The decoded actual bitmap RAM is available as twelve PNGs in previews/.
+
+NATIVE RENDERER: 807 embedded native bytes, tested for both diagonal
+directions, filled/outlined rectangles, ellipse cardinal points, all four
+two-bit pixel positions, erase color zero, palette/matrix contents, CPU
+ROM mapping, safe restore before initialization and preserved variables.
+
+RF COUPONS: all seven shipped PRGs passed complete example flows through
+paged reports, text legends, bitmap drawings and text completion. Five
+additional diagram cases passed: short stub, three alternative via-match
+root/topology cases and TRL six-line/oversize omissions. Fourteen numerical
+reference checks passed for feed synthesis, both stub types, leakage
+targets down to IB=1E-10, via matching and restricted TRL line selection.
+See RF-vice-validation.txt and RF-notes.txt.
+
+RESONATOR: all five viewer pages, five text reports, three help pages,
+edit-input defaults and M from text/legend/bitmap passed. Dimensions after
+drawing remained W=425.9387um and R=17.2727mm. Paper, six-lobe, zero-mode
+and thin-substrate numerical cases passed. Separate decoded captures
+verified the circle, six lobes, GSG geometry and both populated/empty mode
+axes. Pixel connectivity confirmed one continuous ring and two separate
+feeds across their intentional coupling gaps.
+
+PACKAGING: all ten listings have matching PRGs and disk entries. PRG load
+addresses, BASIC line numbers, linked-line pointers and memory reserves
+passed. Disk entries matched their PRGs byte-for-byte. Shared embedded
+renderers match bitmap-runtime.inc; all BASIC lines fit 80 columns.
+
+MATMUL and VARPREC source/PRG hashes are unchanged by this graphics update.
+Their prior VICE results remain applicable: 101 matrix assertions and
+real menu/solve/exit flow; 13 integer arithmetic/input checks and Q-to-READY,
+including exact 88-by-88-digit multiplication checked against BigInt.
+
+Temporary test drivers exercise production subroutines under the C64 ROM;
+separate interactive checks exercise the shipped PRGs. Test emulators
+were isolated and closed. The user's existing VICE process was untouched.
+All ten original parent-folder BASIC sources have unchanged SHA256 hashes.
+
+CARDINAL PROBER REVISION - 2026-10-30
+
+Physical RF layouts retain their modeled port counts. RDXTALK is now
+P1 west/P2 north/P3 south/P4 east, with rotated north/south GSG triplets
+and noncrossing W-N/S-E signal nets. Ordinary two-port layouts use W/E,
+while VIAMATCH keeps one west input and its internal load. DOE/TRL rows
+are explicitly separate measurements. The installed-equipment profile
+identifies MPI TITAN GSG, 150um adjacent-tip pitch, rated to 67GHz.
+
+The complete RF suite again passed 26 checks: seven production report/
+legend/bitmap/completion flows, five graphical variants and fourteen
+unchanged numerical references. The full resonator viewer/report/help/
+menu suite and four numerical edge cases also passed. Added contact
+coordinates remained visible: default ring X=+/-21.157mm and
+Y=-150/0/+150um; W=425.9387um and radius=17.2727mm were unchanged.
+
+Focused actual-C64 profile tests passed 21 cases for 150um/67GHz labels,
+pitch/frequency mismatch notices, RDXTALK's default fanout coordinates
+and geometry input guards. Generic analytical ranges were retained;
+custom cases outside the installed probe rating are clearly identified.
+
+Host geometry verification passed 20000 deterministic cases over all
+three crosstalk gap variations, including landing-pad rectangle overlap,
+ground-pad/core clearance and requested adjacent-centre separation.
+The actual decoded RDXTALK bitmap passed twelve rotated contact-pixel
+checks and connectivity checks: exactly two gold signal components,
+W connected to N and S to E, with neither net shorted to the other.
+
+The 1000um initial centre-spacing rule is adjustable and is not a probe
+body/overtravel fit certification. Fanout and transition parasitics remain
+outside the analytical core models. See probe-configuration.txt.
+
+All PRGs and RFTEST.d64 were rebuilt and byte-checked after the revision.
+MATMUL/VARPREC source and PRG hashes, and the separately supplied
+RING67.TXT/PRG/README hashes, are unchanged. Test emulators were isolated.
+
+HAND BASIC PROPAGATION - 2026-10-30
+
+The eight parent-folder Hand BASIC RF sources now share the cardinal
+port maps, equipment profile and RDXTALK clearance/contact equations.
+They retain native mobile graphics and touch input. Verification is
+recorded in ../HAND_BASIC_VALIDATION.txt; this propagation did not change
+the C64 program sources, PRGs, renderer or disk image.

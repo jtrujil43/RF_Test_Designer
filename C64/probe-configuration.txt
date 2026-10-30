@@ -1,0 +1,108 @@
+CARDINAL GSG PROBE CONFIGURATION - 2026-10-30
+
+Installed equipment supplied by the user: MPI TITAN GSG probes rated to
+67GHz, with 150um between adjacent contacts. G-to-G span is therefore
+300um. Each probe's three pads are collinear and have equal pitch.
+Every landing pad is accessible from the substrate's top surface.
+
+PROGRAM PORT MAPS
+
+RDXTALK (four modeled ports)
+  P1 WEST   aggressor near/input
+  P2 NORTH  aggressor far/through
+  P3 SOUTH  victim near
+  P4 EAST   victim far
+
+The central two lines stay parallel. Their fanouts turn the aggressor's
+far end north and the victim's near end south. No signal crossover or
+bridge layer is required. S21 is aggressor through, S31 is near-end
+crosstalk, S41 is far-end crosstalk, all referenced to input P1.
+Unused connected DUT/VNA ports must have their normal reference loads.
+
+RDLLOSS, RFLEAK, STUBTEST, TRLSET, ZCOUPON and RESONATOR2 (two ports)
+  P1 WEST, P2 EAST; north/south probe heads parked/retracted.
+  Multiple DOE/TRL rows are separate DUTs, measured one at a time.
+
+VIAMATCH (one external modeled input)
+  P1 WEST; east/north/south heads parked. RL/RX is the internal load.
+  The program calculates input reflection, not a second external S21 port.
+
+These numbers are logical DUT ports, not an assumption about fixed VNA
+cable numbers. The east probe is logical P2 for a two-port coupon and P4
+for RDXTALK. Use the corresponding channel/calibration mapping.
+RDXTALK measurements need calibration/reference planes for all four probe
+tips. TRLSET remains a two-port west/east standard generator; it does not
+by itself generate a full four-head or adjacent-direction calibration set.
+
+RDXTALK CONTACT COORDINATES
+
+Lengths in this section are micrometres except coupled length L in mm.
+The origin is the centre of the uniform coupled section. +X is east,
++Y is north. Let c=500*L, h=(DW+gap)/2 and a=actualFeed+PL/2.
+
+  Probe   Signal pad centre X,Y       Ground offsets from that centre
+  P1 W    -c-a, +h                    Y=-PP and +PP; same X
+  P2 N    +c,   +h+a                  X=-PP and +PP; same Y
+  P3 S    -c,   -h-a                  X=-PP and +PP; same Y
+  P4 E    +c+a, -h                    Y=-PP and +PP; same X
+
+W/E pad length PL lies along X, width PW along Y. N/S pad length lies
+along Y, width along X. Both ground contacts bond to the common reference
+plane. The program prints all twelve contact centres for the base gap.
+For each .5x/1x/2x gap coupon it also prints h; the same a is retained.
+Use that coupon's h in the formula above.
+
+Default DW45, SG20, L5mm, PP150, PW80, PL100, minimum FL500 and PG1000:
+  Actual feed length: 629.071829um; arm a: 679.071829um.
+  P1 W signal: (-3179.071829, +32.5)um
+  P2 N signal: (+2500, +711.571829)um
+  P3 S signal: (-2500, -711.571829)um
+  P4 E signal: (+3179.071829, -32.5)um
+  Ground centres are 150um either side along the axes specified above.
+  Adjacent N/E or W/S group-centre distances for .5x/1x/2x gap are
+  1000, 1007.363607 and 1022.225176um respectively.
+
+CLEARANCE RULES AND MODEL BOUNDARY
+
+RDXTALK's minimum adjacent group-centre input PG starts at 1000um and is
+adjustable in custom mode. That is a geometric starting value inherited
+from the previous layout, not an MPI mechanical-clearance specification.
+The exact TITAN body/connector style, positioner, skate and overtravel
+envelopes are not supplied, so body fit is not certified by these scripts.
+
+The actual feed is at least the requested FL, at least
+2*PP-PW/2, and at least DW/2+(PP-PW). It is extended further if needed
+to meet PG for the closest .5x-gap coupon. This prevents overlapping
+orthogonal landing-pad rectangles and ground-pad/core intersections.
+The implied pad-edge margin is PP-PW. Simple-turn layouts reject a feed
+width that overlaps the GSG grounds or the closest victim trace; those
+cases need a separately designed narrow neck/taper or different geometry.
+
+Fanouts, the two turns, pads, transitions, probe-to-probe coupling and
+their parasitics are excluded from the uniform coupled-line predictions.
+Use matched controls and deembed the actual access structures. In RFLEAK,
+the lower-layer pickup is brought to the top-side east launch by an access
+transition/via outside the parallel-plate capacitance model.
+
+The 150um pitch and 67GHz installed-probe rating are shown in the reports.
+Other custom pitches/frequencies remain calculation options and receive
+an explicit installed-equipment mismatch notice. Existing analytical
+model validity checks still apply within the nominal probe band.
+
+SOURCE SCOPE
+
+The eight physical RF layout programs in C64/ were updated. The matrix
+and integer calculators have no probes. The parent-folder Hand BASIC RF
+sources now share the cardinal layout/profile and retain mobile graphics.
+RING67.TXT/PRG/README, supplied separately,
+are preserved: their idealized two-port response omits physical feeds
+and probes and does not calculate a probe layout.
+
+Manufacturer references checked 2026-10-30:
+MPI TITAN family and T67 electrical/pitch specifications:
+https://www.mpi-corporation.com/wp-content/uploads/ASTPDF/MPI-Probe-Selection-Guide.pdf
+MPI setup/planarization and overtravel guidance:
+https://www.mpi-corporation.com/wp-content/uploads/ASTPDF/MPI-Probe-Quick-Setup-Guide.pdf
+General collinear GSG pad/orthogonal-clearance principles (Infinity-specific
+numerical rules are not used as TITAN body-clearance specifications):
+https://www.formfactor.com/blog/2017/infinity-probes-layout-events-and-rules/

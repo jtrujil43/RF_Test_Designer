@@ -1,0 +1,44 @@
+﻿HAND BASIC CARDINAL PROPAGATION VERIFICATION - 2026-10-30
+Run status: all requested checks passed
+
+PASS rdlloss: native Hand BASIC graphics, 72-column source, branch targets and cardinal profile
+PASS rdlloss: 98 existing numerical source lines unchanged from backup
+PASS rdxtalk: native Hand BASIC graphics, 72-column source, branch targets and cardinal profile
+PASS rdxtalk: 85 existing numerical source lines unchanged from backup
+PASS rfleak: native Hand BASIC graphics, 72-column source, branch targets and cardinal profile
+PASS rfleak: 104 existing numerical source lines unchanged from backup
+PASS stubtest: native Hand BASIC graphics, 72-column source, branch targets and cardinal profile
+PASS stubtest: 98 existing numerical source lines unchanged from backup
+PASS trlset: native Hand BASIC graphics, 72-column source, branch targets and cardinal profile
+PASS trlset: 108 existing numerical source lines unchanged from backup
+PASS viamatch: native Hand BASIC graphics, 72-column source, branch targets and cardinal profile
+PASS viamatch: 132 existing numerical source lines unchanged from backup
+PASS zcoupon: native Hand BASIC graphics, 72-column source, branch targets and cardinal profile
+PASS zcoupon: 89 existing numerical source lines unchanged from backup
+PASS resonator2: native Hand BASIC graphics, 72-column source, branch targets and cardinal profile
+PASS resonator2: 148 existing numerical source lines unchanged from backup
+PASS RDXTALK cardinal input guards, contact equations and reports agree with C64
+PASS rdlloss: numerical/text-only C64 driver accepts 150um/67GHz profile
+PASS rdlloss: numerical/text-only C64 driver flags 100um/68GHz mismatch
+PASS rdxtalk: numerical/text-only C64 driver accepts 150um/67GHz profile
+PASS rdxtalk: numerical/text-only C64 driver flags 100um/68GHz mismatch
+PASS rfleak: numerical/text-only C64 driver accepts 150um/67GHz profile
+PASS rfleak: numerical/text-only C64 driver flags 100um/68GHz mismatch
+PASS stubtest: numerical/text-only C64 driver accepts 150um/67GHz profile
+PASS stubtest: numerical/text-only C64 driver flags 100um/68GHz mismatch
+PASS trlset: numerical/text-only C64 driver accepts 150um/67GHz profile
+PASS trlset: numerical/text-only C64 driver flags 100um/68GHz mismatch
+PASS viamatch: numerical/text-only C64 driver accepts 150um/67GHz profile
+PASS viamatch: numerical/text-only C64 driver flags 100um/68GHz mismatch
+PASS zcoupon: numerical/text-only C64 driver accepts 150um/67GHz profile
+PASS zcoupon: numerical/text-only C64 driver flags 100um/68GHz mismatch
+PASS RDXTALK numerical-only driver agrees with host geometry: {"DW":45,"SG":20,"L":5,"PP":150,"PW":80,"PL":100,"FL":500,"PG":1000}
+PASS RDXTALK numerical-only driver agrees with host geometry: {"DW":45,"SG":20,"L":5,"PP":150,"PW":80,"PL":100,"FL":500,"PG":2000}
+PASS RDXTALK numerical-only driver agrees with host geometry: {"DW":45,"SG":20,"L":5,"PP":150,"PW":80,"PL":100,"FL":2000,"PG":1000}
+PASS RDXTALK numerical-only driver agrees with host geometry: {"DW":45,"SG":20,"L":0.001,"PP":5000,"PW":4900,"PL":100,"FL":1,"PG":1000}
+PASS RDXTALK numerical-only driver agrees with host geometry: {"DW":20000,"SG":10000,"L":0.001,"PP":150,"PW":80,"PL":100,"FL":1,"PG":1000}
+
+Numerical/text-only emulator cases passed: 19.
+Native Hand BASIC graphics were checked statically; this script does not run the Hand BASIC app.
+Only temporary numerical/text-only drivers executed in VICE against the C64 BASIC V2 ROM.
+No Hand BASIC drawing commands were replaced with C64 graphics code.

@@ -1,0 +1,22 @@
+Actual VICE 3.10 / C64 BASIC V2 ROM
+PASS rdlloss: 150um / 67GHz profile accepted
+PASS rdlloss: mismatched pitch/out-of-rating notices
+PASS rdxtalk: 150um / 67GHz profile accepted
+PASS rdxtalk: mismatched pitch/out-of-rating notices
+PASS rfleak: 150um / 67GHz profile accepted
+PASS rfleak: mismatched pitch/out-of-rating notices
+PASS stubtest: 150um / 67GHz profile accepted
+PASS stubtest: mismatched pitch/out-of-rating notices
+PASS trlset: 150um / 67GHz profile accepted
+PASS trlset: mismatched pitch/out-of-rating notices
+PASS viamatch: 150um / 67GHz profile accepted
+PASS viamatch: mismatched pitch/out-of-rating notices
+PASS zcoupon: 150um / 67GHz profile accepted
+PASS zcoupon: mismatched pitch/out-of-rating notices
+PASS RDXTALK actual C64 fanout coordinates agree with independent geometry
+PASS RDXTALK rejects adjacent gsg centre spacing
+PASS RDXTALK rejects cardinal pad/feed length limit
+PASS RDXTALK rejects fanout needs narrow turn/taper
+PASS RDXTALK rejects feed overlaps gsg ground pads
+PASS RESONATOR2: 150um / 67GHz profile accepted
+PASS RESONATOR2: mismatch notices

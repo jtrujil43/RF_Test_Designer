@@ -1,0 +1,70 @@
+MATMUL.BAS - Commodore 64 BASIC V2 conversion
+
+All 25 original menu choices remain available. Matrix capacity is 10 by 10.
+The two-column menu fits the C64's 40-column screen. Matrix results are
+shown as (row,column)=value, with a Return prompt after every 16 entries.
+Press Return at the final prompt to return to the menu. A and B dimensions
+remain intact after every operation; C holds the latest matrix result.
+
+Compatibility changes
+- Uses only one- or two-character variable names, without BASIC keywords.
+  This avoids aliases such as A11/A12/A13 and PIV/PIVOTCOUNT in BASIC V2.
+- Replaces block IF, ELSE, END IF, ACOS and SQRT with BASIC V2 statements.
+- Uses string input for Return prompts so an empty response continues.
+- Checks integer dimensions, row/column numbers and nonnegative powers.
+- Guards loops that should execute zero times. In BASIC V2 a FOR loop
+  executes its body once even when the initial value exceeds the limit.
+
+Corrections to the original algorithms
+- Inverse, Gauss-Jordan and solve share guarded partial-pivot elimination.
+- RREF and rank use a row/column pivot search, skip zero columns, stop
+  outside the matrix and preserve B's stored dimensions. The original
+  exit targets jumped into row-swapping code and reused P as a loop index.
+- RREF/rank treat pivots no larger than 1E-8 times the largest original
+  matrix entry as numerical zero. Extremely ill-scaled matrices may need
+  rescaling first; this is a finite-precision numerical rank estimate.
+- Power zero returns the identity. Negative or fractional powers are
+  rejected rather than silently producing an incorrect matrix.
+- Crout LU now sets U's diagonal to one. A zero leading pivot reports
+  that row pivoting is needed rather than dividing by zero. This remains
+  an LU factorization without row permutations, as in the source.
+- Eigenvalue routines read distinct matrix entries directly. The 3x3
+  routine normalizes the entries, fixes the depressed-cubic signs and
+  trace shift, computes signed real cube roots, handles repeated roots,
+  and reports the complex conjugate pair as well as the real eigenvalue.
+  The cubic discriminant uses a relative 1E-7 cancellation tolerance.
+
+Suggested emulator checks
+- 1x1 A=[4]: inverse .25; determinant 4; trace 4; rank 1; A^0=[1].
+- A=[[1,2],[3,4]]: determinant -2; inverse [[-2,1],[1.5,-.5]];
+  rank 2; trace 5; LU must reconstruct A.
+- With that A and B=[[5],[11]], solve gives X=[[1],[2]].
+- A=[[0,1],[1,0]] exercises a row swap in inverse/solve.
+- A=[[0,1,2],[0,2,4]]: RREF [[0,1,2],[0,0,0]], rank 1.
+- A all zero: rank 0; inverse reports singular.
+- 2x2 [[0,-1],[1,0]] has eigenvalues +i and -i.
+- 3x3 diagonal [1,2,3] has eigenvalues 1,2,3 in any order.
+- 3x3 identity and zero matrices exercise triple roots.
+- 3x3 diagonal [-2,-2,1] exercises signed repeated roots.
+- 3x3 [[0,-1,0],[1,0,0],[0,0,2]] has eigenvalues 2,+i,-i.
+- Run rank/eigenvalue choices after entering B, then show B and solve;
+  its row and column counts must remain unchanged.
+
+Runtime verification (2026-10-29)
+- Executed under VICE 3.10 x64sc using the actual C64 BASIC V2 ROM.
+- 101 numerical assertions passed, with zero failures. Coverage includes
+  every arithmetic menu operation; inverse and LU at sizes 1 and 10;
+  solve at sizes 1 and 2; row-swapping pivots; rectangular RREF; B dimension
+  preservation; and real, complex, repeated and triple eigenvalues.
+- The numerical test copy replaces screen/pause/input routines with test
+  inputs and adds a driver. All production arithmetic statements run in
+  the emulator unchanged.
+- Also loaded the unchanged MATMUL.prg, selected INPUT A and INPUT B from
+  the real menu, entered A=[4] and B=[8], selected SOLVE AX=B, verified
+  X=[2], returned to the menu using Return, and selected EXIT successfully.
+- Reproduce with Node.js and a VICE installation:
+  node verify_matrix.mjs C:\path\to\VICE
+  An optional second argument selects the isolated remote-monitor port
+  (default 6521). The script refuses an occupied port and quits only the
+  emulator it starts. Temporary instrumented files remain in the system
+  temporary folder for inspection.

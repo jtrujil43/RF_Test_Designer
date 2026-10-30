@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="300" viewBox="0 0 480 300"><rect x="0" y="0" width="479" height="299" fill="rgb(248,250,252)" stroke="rgb(248,250,252)"/>
+<text x="16" y="26" fill="rgb(20,30,45)" font-family="Courier New,monospace" font-size="12">RDL CROSSTALK</text>
+<text x="16" y="46" fill="rgb(20,30,45)" font-family="Courier New,monospace" font-size="12">SCHEMATIC - NOT TO SCALE / FOUR GSG PROBES</text>
+<rect x="50" y="132" width="280" height="6" fill="rgb(190,100,24)" stroke="rgb(190,100,24)"/>
+<rect x="327" y="78" width="6" height="57" fill="rgb(190,100,24)" stroke="rgb(190,100,24)"/>
+<rect x="150" y="172" width="280" height="6" fill="rgb(190,100,24)" stroke="rgb(190,100,24)"/>
+<rect x="147" y="175" width="6" height="45" fill="rgb(190,100,24)" stroke="rgb(190,100,24)"/>
+<rect x="34" y="105" width="32" height="12" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<rect x="414" y="145" width="32" height="12" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<rect x="300" y="62" width="12" height="32" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<rect x="120" y="207" width="12" height="32" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<rect x="34" y="129" width="32" height="12" fill="rgb(190,100,24)" stroke="rgb(190,100,24)"/>
+<rect x="414" y="169" width="32" height="12" fill="rgb(190,100,24)" stroke="rgb(190,100,24)"/>
+<rect x="324" y="62" width="12" height="32" fill="rgb(190,100,24)" stroke="rgb(190,100,24)"/>
+<rect x="144" y="207" width="12" height="32" fill="rgb(190,100,24)" stroke="rgb(190,100,24)"/>
+<rect x="34" y="153" width="32" height="12" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<rect x="414" y="193" width="32" height="12" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<rect x="348" y="62" width="12" height="32" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<rect x="168" y="207" width="12" height="32" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<line x1="240" y1="143" x2="240" y2="167" stroke="rgb(180,35,55)"/>
+<line x1="234" y1="143" x2="246" y2="143" stroke="rgb(180,35,55)"/>
+<line x1="234" y1="167" x2="246" y2="167" stroke="rgb(180,35,55)"/>
+<text x="4" y="97" fill="rgb(20,30,45)" font-family="Courier New,monospace" font-size="12">P1 WEST</text>
+<text x="342" y="58" fill="rgb(20,30,45)" font-family="Courier New,monospace" font-size="12">P2 NORTH</text>
+<text x="166" y="256" fill="rgb(20,30,45)" font-family="Courier New,monospace" font-size="12">P3 SOUTH</text>
+<text x="414" y="224" fill="rgb(20,30,45)" font-family="Courier New,monospace" font-size="12">P4 EAST</text>
+<text x="140" y="114" fill="rgb(20,30,45)" font-family="Courier New,monospace" font-size="12">AGGRESSOR W-N</text>
+<text x="230" y="202" fill="rgb(20,30,45)" font-family="Courier New,monospace" font-size="12">VICTIM S-E</text>
+<text x="250" y="160" fill="rgb(20,30,45)" font-family="Courier New,monospace" font-size="12">GAP</text>
+<line x1="4" y1="135" x2="28" y2="135" stroke="rgb(180,35,55)"/>
+<line x1="22" y1="131" x2="28" y2="135" stroke="rgb(180,35,55)"/>
+<line x1="22" y1="139" x2="28" y2="135" stroke="rgb(180,35,55)"/>
+<line x1="476" y1="175" x2="452" y2="175" stroke="rgb(180,35,55)"/>
+<line x1="458" y1="171" x2="452" y2="175" stroke="rgb(180,35,55)"/>
+<line x1="458" y1="179" x2="452" y2="175" stroke="rgb(180,35,55)"/>
+<line x1="330" y1="48" x2="330" y2="58" stroke="rgb(180,35,55)"/>
+<line x1="326" y1="54" x2="330" y2="58" stroke="rgb(180,35,55)"/>
+<line x1="334" y1="54" x2="330" y2="58" stroke="rgb(180,35,55)"/>
+<line x1="150" y1="264" x2="150" y2="243" stroke="rgb(180,35,55)"/>
+<line x1="146" y1="249" x2="150" y2="243" stroke="rgb(180,35,55)"/>
+<line x1="154" y1="249" x2="150" y2="243" stroke="rgb(180,35,55)"/>
+<text x="16" y="278" fill="rgb(20,30,45)" font-family="Courier New,monospace" font-size="12">W 45 GAP 20 L 5 MM / BROWN S, BLUE G</text>
+<text x="16" y="294" fill="rgb(20,30,45)" font-family="Courier New,monospace" font-size="12">TAP/KEY: TEXT. FANOUTS/BENDS EXCLUDED.</text></svg>

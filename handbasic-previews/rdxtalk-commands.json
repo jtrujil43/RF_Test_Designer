@@ -1,0 +1,464 @@
+[
+  {
+    "type": "RECT",
+    "values": [
+      0,
+      0,
+      479,
+      299,
+      20
+    ],
+    "font": 12
+  },
+  {
+    "type": "GPRINT",
+    "values": [
+      "RDL CROSSTALK",
+      16,
+      26,
+      24
+    ],
+    "font": 12
+  },
+  {
+    "type": "GPRINT",
+    "values": [
+      "SCHEMATIC - NOT TO SCALE / FOUR GSG PROBES",
+      16,
+      46,
+      24
+    ],
+    "font": 12
+  },
+  {
+    "type": "RECT",
+    "values": [
+      50,
+      132,
+      330,
+      138,
+      21
+    ],
+    "font": 12
+  },
+  {
+    "type": "RECT",
+    "values": [
+      327,
+      78,
+      333,
+      135,
+      21
+    ],
+    "font": 12
+  },
+  {
+    "type": "RECT",
+    "values": [
+      150,
+      172,
+      430,
+      178,
+      21
+    ],
+    "font": 12
+  },
+  {
+    "type": "RECT",
+    "values": [
+      147,
+      175,
+      153,
+      220,
+      21
+    ],
+    "font": 12
+  },
+  {
+    "type": "RECT",
+    "values": [
+      34,
+      105,
+      66,
+      117,
+      22
+    ],
+    "font": 12
+  },
+  {
+    "type": "RECT",
+    "values": [
+      414,
+      145,
+      446,
+      157,
+      22
+    ],
+    "font": 12
+  },
+  {
+    "type": "RECT",
+    "values": [
+      300,
+      62,
+      312,
+      94,
+      22
+    ],
+    "font": 12
+  },
+  {
+    "type": "RECT",
+    "values": [
+      120,
+      207,
+      132,
+      239,
+      22
+    ],
+    "font": 12
+  },
+  {
+    "type": "RECT",
+    "values": [
+      34,
+      129,
+      66,
+      141,
+      21
+    ],
+    "font": 12
+  },
+  {
+    "type": "RECT",
+    "values": [
+      414,
+      169,
+      446,
+      181,
+      21
+    ],
+    "font": 12
+  },
+  {
+    "type": "RECT",
+    "values": [
+      324,
+      62,
+      336,
+      94,
+      21
+    ],
+    "font": 12
+  },
+  {
+    "type": "RECT",
+    "values": [
+      144,
+      207,
+      156,
+      239,
+      21
+    ],
+    "font": 12
+  },
+  {
+    "type": "RECT",
+    "values": [
+      34,
+      153,
+      66,
+      165,
+      22
+    ],
+    "font": 12
+  },
+  {
+    "type": "RECT",
+    "values": [
+      414,
+      193,
+      446,
+      205,
+      22
+    ],
+    "font": 12
+  },
+  {
+    "type": "RECT",
+    "values": [
+      348,
+      62,
+      360,
+      94,
+      22
+    ],
+    "font": 12
+  },
+  {
+    "type": "RECT",
+    "values": [
+      168,
+      207,
+      180,
+      239,
+      22
+    ],
+    "font": 12
+  },
+  {
+    "type": "LINE",
+    "values": [
+      240,
+      143,
+      240,
+      167,
+      23
+    ],
+    "font": 12
+  },
+  {
+    "type": "LINE",
+    "values": [
+      234,
+      143,
+      246,
+      143,
+      23
+    ],
+    "font": 12
+  },
+  {
+    "type": "LINE",
+    "values": [
+      234,
+      167,
+      246,
+      167,
+      23
+    ],
+    "font": 12
+  },
+  {
+    "type": "GPRINT",
+    "values": [
+      "P1 WEST",
+      4,
+      97,
+      24
+    ],
+    "font": 12
+  },
+  {
+    "type": "GPRINT",
+    "values": [
+      "P2 NORTH",
+      342,
+      58,
+      24
+    ],
+    "font": 12
+  },
+  {
+    "type": "GPRINT",
+    "values": [
+      "P3 SOUTH",
+      166,
+      256,
+      24
+    ],
+    "font": 12
+  },
+  {
+    "type": "GPRINT",
+    "values": [
+      "P4 EAST",
+      414,
+      224,
+      24
+    ],
+    "font": 12
+  },
+  {
+    "type": "GPRINT",
+    "values": [
+      "AGGRESSOR W-N",
+      140,
+      114,
+      24
+    ],
+    "font": 12
+  },
+  {
+    "type": "GPRINT",
+    "values": [
+      "VICTIM S-E",
+      230,
+      202,
+      24
+    ],
+    "font": 12
+  },
+  {
+    "type": "GPRINT",
+    "values": [
+      "GAP",
+      250,
+      160,
+      24
+    ],
+    "font": 12
+  },
+  {
+    "type": "LINE",
+    "values": [
+      4,
+      135,
+      28,
+      135,
+      23
+    ],
+    "font": 12
+  },
+  {
+    "type": "LINE",
+    "values": [
+      22,
+      131,
+      28,
+      135,
+      23
+    ],
+    "font": 12
+  },
+  {
+    "type": "LINE",
+    "values": [
+      22,
+      139,
+      28,
+      135,
+      23
+    ],
+    "font": 12
+  },
+  {
+    "type": "LINE",
+    "values": [
+      476,
+      175,
+      452,
+      175,
+      23
+    ],
+    "font": 12
+  },
+  {
+    "type": "LINE",
+    "values": [
+      458,
+      171,
+      452,
+      175,
+      23
+    ],
+    "font": 12
+  },
+  {
+    "type": "LINE",
+    "values": [
+      458,
+      179,
+      452,
+      175,
+      23
+    ],
+    "font": 12
+  },
+  {
+    "type": "LINE",
+    "values": [
+      330,
+      48,
+      330,
+      58,
+      23
+    ],
+    "font": 12
+  },
+  {
+    "type": "LINE",
+    "values": [
+      326,
+      54,
+      330,
+      58,
+      23
+    ],
+    "font": 12
+  },
+  {
+    "type": "LINE",
+    "values": [
+      334,
+      54,
+      330,
+      58,
+      23
+    ],
+    "font": 12
+  },
+  {
+    "type": "LINE",
+    "values": [
+      150,
+      264,
+      150,
+      243,
+      23
+    ],
+    "font": 12
+  },
+  {
+    "type": "LINE",
+    "values": [
+      146,
+      249,
+      150,
+      243,
+      23
+    ],
+    "font": 12
+  },
+  {
+    "type": "LINE",
+    "values": [
+      154,
+      249,
+      150,
+      243,
+      23
+    ],
+    "font": 12
+  },
+  {
+    "type": "GPRINT",
+    "values": [
+      "W 45 GAP 20 L 5 MM / BROWN S, BLUE G",
+      16,
+      278,
+      24
+    ],
+    "font": 12
+  },
+  {
+    "type": "GPRINT",
+    "values": [
+      "TAP/KEY: TEXT. FANOUTS/BENDS EXCLUDED.",
+      16,
+      294,
+      24
+    ],
+    "font": 12
+  }
+]

@@ -1,0 +1,1048 @@
+VICE 3.10 / C64 BASIC V2 ROM / multicolor bitmap + standard text
+
+--- rdlloss ---
+
+ rdl loss coupons
+ see guide for model limits
+ 1 example 2 custom? 1
+
+--- rdlloss ---
+
+ rdl loss coupons
+ see guide for model limits
+ 1 example 2 custom? 1
+ two lengths with same launches
+ line w,t um  41.8841515  5
+ short mm  2
+ middle mm  2.86201706
+ long m
+
+--- rdlloss ---
+
+ rdl loss coupons
+ see guide for model limits
+ 1 example 2 custom? 1
+ two lengths with same launches
+ line w,t um  41.8841515  5
+ short mm  2
+ middle mm  2.86201706
+ long mm  3.72403412
+ delta length mm  1.72403412
+ p1 west / p2 east
+ north/south probes parked
+ measure one coupon at a time
+ w/e gsg tips stack along y
+ gsg pitch um  150
+ pad w,l um  80  100
+ pad edge gap um  70
+ feed w,l um  41.8841515  500
+ dut to pad centre um  550
+ g pad local y um +/-  150
+
+ press return to continue
+
+--- rdlloss ---
+
+ g pads must bond to reference plane
+ launch parasitics excluded
+ ghz ac db/mm ad db/mm delta db
+  1  .026  1e-03  .05
+ * t < 3 skin depth: ac limited
+  5.875  .0685  5.9e-03  .13
+  10.75  .0997  .0109  .19
+  15.625  .1282  .0158  .25
+  20.5  .1549  .0207  .3
+
+--- rdlloss ---
+
+ g pads must bond to reference plane
+ launch parasitics excluded
+ ghz ac db/mm ad db/mm delta db
+  1  .026  1e-03  .05
+ * t < 3 skin depth: ac limited
+  5.875  .0685  5.9e-03  .13
+  10.75  .0997  .0109  .19
+  15.625  .1282  .0158  .25
+  20.5  .1549  .0207  .3
+  25.375  .1804  .0256  .36
+  30.25  .2046  .0306  .41
+  35.125  .2277  .0355  .45
+  40  .2496  .0404  .5
+ ac conductor, ad dielectric
+ roughness model; no radiation
+ delta loss/delta l extracts db/mm
+ deembed launches; check mismatch
+ 1 sketch 0 finish?
+
+--- rdlloss ---
+
+ rdl loss coupons
+ separate coupons / not to scale
+ top short / middle / bottom long
+ p1 west / p2 east
+ yellow copper / cyan gsg grounds
+ north/south probes parked
+ width um  41.8841515
+ short mm  2
+ middle mm  2.86201706
+ long mm  3.72403412
+ measure one coupon at a time
+ w/e gsg tip rows run north-south
+ press return to view bitmap
+ return in bitmap: finish
+
+rdlloss: multicolor bitmap ready at line 850
+
+--- rdlloss ---
+ done. run to design again.
+
+ ready.
+
+--- rdxtalk ---
+
+ rdl crosstalk
+ see guide for model limits
+ 1 example 2 custom? 1
+
+--- rdxtalk ---
+
+ rdl crosstalk
+ see guide for model limits
+ 1 example 2 custom? 1
+ solid plane; air above rdl
+ dut width um  45
+ coupled length mm  5
+ 3 gap coupons: .5x,1x,2x
+ one gsg per side: w,n,s,e
+ p1 w near a / p2 n far a
+ p3 s near v / p4 e far v
+ all pad contacts on top surface
+ min adj centres um  1000
+ base-gap adj centres um  1007.36361
+ min feed um  500  actual  629.07183
+ pad edge clearance rule um  70
+ fanout sized for all three gaps
+ base gap: x east+, y north+
+ p 1  s x,y um -3179.07183  32.5
+  g- x,y um -3179.07183 -117.5
+
+ press return to continue
+
+--- rdxtalk ---
+
+  g+ x,y um -3179.07183  182.5
+ p 2  s x,y um  2500  711.57183
+  g- x,y um  2350  711.57183
+  g+ x,y um  2650  711.57183
+ p 3  s x,y um -2500 -711.57183
+  g- x,y um -2650 -711.57183
+  g+ x,y um -2350 -711.57183
+ p 4  s x,y um  3179.07183 -32.5
+  g- x,y um  3179.07183 -182.5
+  g+ x,y um  3179.07183  117.5
+ w/e pad l along x; w along y
+ n/s pad l along y; w along x
+ centre rule is not body clearance
+ check probe model/skate/overtravel
+ deembed all four cardinal fanouts
+ central coupled section model only
+ t=0 modes; metal t not modelled
+ s21: w-n / s31 near: w-s
+ s41 far: w-e
+
+ press return to continue
+
+--- rdxtalk ---
+
+ terminate unused ports in zr
+ gsg pitch um  150
+ pad w,l um  80  100
+ pad edge gap um  70
+ feed w,actual l um  44.0269681  629.0718
+ 3
+ core end to pad centre um  679.07183
+ g offset: w/e y; n/s x +/-  150
+ g pads must bond to reference plane
+ launch parasitics excluded
+ gap um  10
+ this gap pad offset um  27.5
+ ze,zo ohm  59.0760422  40.3304473
+ ee even,odd  2.8528665  2.41132465
+ ghz  s31 db  s41 db  s21 db
+
+--- rdxtalk ---
+
+ terminate unused ports in zr
+ gsg pitch um  150
+ pad w,l um  80  100
+ pad edge gap um  70
+ feed w,actual l um  44.0269681  629.0718
+ 3
+ core end to pad centre um  679.07183
+ g offset: w/e y; n/s x +/-  150
+ g pads must bond to reference plane
+ launch parasitics excluded
+ gap um  10
+ this gap pad offset um  27.5
+ ze,zo ohm  59.0760422  40.3304473
+ ee even,odd  2.8528665  2.41132465
+ ghz  s31 db  s41 db  s21 db
+  1 -29.82 -43.76  0
+  5.875 -16 -28.15 -.12
+  10.75 -14.8 -22.46 -.18
+  15.625 -20.84 -18.88 -.1
+
+ press return to continue
+
+--- rdxtalk ---
+
+  20.5 -24.53 -16.7 -.11
+  25.375 -15.55 -15.2 -.26
+  30.25 -15.58 -13.55 -.34
+
+--- rdxtalk ---
+
+  20.5 -24.53 -16.7 -.11
+  25.375 -15.55 -15.2 -.26
+  30.25 -15.58 -13.55 -.34
+  35.125 -24.06 -11.98 -.32
+  40 -21.84 -11.02 -.4
+
+--- rdxtalk ---
+
+  20.5 -24.53 -16.7 -.11
+  25.375 -15.55 -15.2 -.26
+  30.25 -15.58 -13.55 -.34
+  35.125 -24.06 -11.98 -.32
+  40 -21.84 -11.02 -.4
+ gap um  20
+ this gap pad offset um  32.5
+ ze,zo ohm  56.4840768  44.4163784
+ ee even,odd  2.84859141  2.46441121
+ ghz  s31 db  s41 db  s21 db
+  1 -33.78 -44.07  0
+  5.875 -19.92 -28.85 -.05
+  10.75 -18.79 -23.68 -.08
+
+--- rdxtalk ---
+
+  20.5 -24.53 -16.7 -.11
+  25.375 -15.55 -15.2 -.26
+  30.25 -15.58 -13.55 -.34
+  35.125 -24.06 -11.98 -.32
+  40 -21.84 -11.02 -.4
+ gap um  20
+ this gap pad offset um  32.5
+ ze,zo ohm  56.4840768  44.4163784
+ ee even,odd  2.84859141  2.46441121
+ ghz  s31 db  s41 db  s21 db
+  1 -33.78 -44.07  0
+  5.875 -19.92 -28.85 -.05
+  10.75 -18.79 -23.68 -.08
+  15.625 -25.3 -20.3 -.05
+  20.5 -27.6 -17.93 -.08
+  25.375 -19.29 -16.22 -.16
+  30.25 -19.66 -14.71 -.2
+
+--- rdxtalk ---
+
+  20.5 -24.53 -16.7 -.11
+  25.375 -15.55 -15.2 -.26
+  30.25 -15.58 -13.55 -.34
+  35.125 -24.06 -11.98 -.32
+  40 -21.84 -11.02 -.4
+ gap um  20
+ this gap pad offset um  32.5
+ ze,zo ohm  56.4840768  44.4163784
+ ee even,odd  2.84859141  2.46441121
+ ghz  s31 db  s41 db  s21 db
+  1 -33.78 -44.07  0
+  5.875 -19.92 -28.85 -.05
+  10.75 -18.79 -23.68 -.08
+  15.625 -25.3 -20.3 -.05
+  20.5 -27.6 -17.93 -.08
+  25.375 -19.29 -16.22 -.16
+  30.25 -19.66 -14.71 -.2
+  35.125 -29.73 -13.3 -.22
+  40 -24.56 -12.22 -.29
+
+ press return to continue
+
+--- rdxtalk ---
+
+ gap um  40
+ this gap pad offset um  42.5
+ ze,zo ohm  53.7267348  47.6767852
+ ee even,odd  2.81984008  2.5329035
+ ghz  s31 db  s41 db  s21 db
+
+--- rdxtalk ---
+
+ gap um  40
+ this gap pad offset um  42.5
+ ze,zo ohm  53.7267348  47.6767852
+ ee even,odd  2.81984008  2.5329035
+ ghz  s31 db  s41 db  s21 db
+  1 -39.79 -46.51  0
+  5.875 -25.92 -31.28 -.01
+  10.75 -24.85 -26.19 -.03
+  15.625 -31.76 -22.91 -.03
+
+--- rdxtalk ---
+
+ gap um  40
+ this gap pad offset um  42.5
+ ze,zo ohm  53.7267348  47.6767852
+ ee even,odd  2.81984008  2.5329035
+ ghz  s31 db  s41 db  s21 db
+  1 -39.79 -46.51  0
+  5.875 -25.92 -31.28 -.01
+  10.75 -24.85 -26.19 -.03
+  15.625 -31.76 -22.91 -.03
+  20.5 -32.92 -20.5 -.04
+  25.375 -25.11 -18.69 -.07
+  30.25 -25.78 -17.2 -.1
+  35.125 -37.49 -15.87 -.11
+
+--- rdxtalk ---
+
+ gap um  40
+ this gap pad offset um  42.5
+ ze,zo ohm  53.7267348  47.6767852
+ ee even,odd  2.81984008  2.5329035
+ ghz  s31 db  s41 db  s21 db
+  1 -39.79 -46.51  0
+  5.875 -25.92 -31.28 -.01
+  10.75 -24.85 -26.19 -.03
+  15.625 -31.76 -22.91 -.03
+  20.5 -32.92 -20.5 -.04
+  25.375 -25.11 -18.69 -.07
+  30.25 -25.78 -17.2 -.1
+  35.125 -37.49 -15.87 -.11
+  40 -29.58 -14.74 -.15
+ aggressor w-n / victim s-e
+ use matched fanout/thru controls
+ 1 sketch 0 finish?
+
+--- rdxtalk ---
+
+ rdl crosstalk
+ 160x200 multicolor / not to scale
+ p1 west / p2 north
+ p3 south / p4 east
+ aggressor w-n / victim s-e
+ yellow signal / cyan gsg ground pads
+ white: approach arrows and core gap
+ width um  45
+ base gap um  20
+ coupled length mm  5
+ one four-port coupon at a time
+ both gsg grounds to backside plane
+ w/e tip rows y; n/s tip rows x
+ core model excludes fanouts/bends
+
+ press return to view bitmap
+ return in bitmap: finish
+
+rdxtalk: multicolor bitmap ready at line 1070
+
+--- rdxtalk ---
+ done. run to design again.
+
+ ready.
+
+--- rfleak ---
+
+ rf leakage coupons
+ see guide for model limits
+ 1 example 2 custom? 1
+
+--- rfleak ---
+
+ rf leakage coupons
+ see guide for model limits
+ 1 example 2 custom? 1
+ broadside parallel plate model
+ drive pad on layer 1
+ pickup pad on layer 2
+ overlap w,l um  80  100
+ overlap lengths um  50  100  200
+ dielectric gap um  20
+ coupling c pf  .0120416954
+ max c pf at target  3.97907253e-04
+ max overlap l um  3.3044122
+ plate aspect ratio: fringing large
+ target length needs field solver
+ fence pitch um  100
+ vias per straight row  41
+ fence rule: lambda/20 only
+ no shielding db claim from pitch
+ p1 west / p2 east; both topside
+
+ press return to continue
+
+--- rfleak ---
+
+ north/south probes parked
+ measure one coupon at a time
+ w/e gsg tips stack along y
+ l2 pickup via to east: not modelled
+ gsg pitch um  150
+ pad w,l um  80  100
+ pad edge gap um  70
+ feed w,l um  44.0269681  500
+ dut to pad centre um  550
+ g pad local y um +/-  150
+ g pads must bond to reference plane
+ launch parasitics excluded
+ 3 area coupons .5x,1x,2x
+ ghz s21db .5x 1x 2x
+  1 -48.44 -42.42 -36.4
+  5.875 -33.07 -27.05 -21.06
+  10.75 -27.82 -21.82 -15.89
+  15.625 -24.58 -18.61 -12.76
+  20.5 -22.23 -16.29 -10.57
+
+ press return to continue
+
+--- rfleak ---
+
+  25.375 -20.39 -14.49 -8.91
+  30.25 -18.89 -13.03 -7.61
+  35.125 -17.61 -11.81 -6.57
+  40 -16.5 -10.76 -5.72
+ add shielded and zero overlap duts
+ same launches for noise floor
+ fringing, radiation not modelled
+ 1 sketch 0 finish?
+
+--- rfleak ---
+
+ rf leakage coupons
+ exploded layers / not to scale
+ topside gsg: p1 west / p2 east
+ l1 drive yellow / l2 pickup white
+ pickup via returns to topside east
+ north/south probes parked
+ overlap width um  80
+ overlap length um  100
+ dielectric gap um  20
+ coupling c pf  .0120416954
+ via / fanout parasitics excluded
+ cyan: gsg grounds and via fence
+ press return to view bitmap
+ return in bitmap: finish
+
+rfleak: multicolor bitmap ready at line 940
+
+--- rfleak ---
+ done. run to design again.
+
+ ready.
+
+--- stubtest ---
+
+ shunt stub coupons
+ see guide for model limits
+ 1 example 2 custom? 1
+
+--- stubtest ---
+
+ shunt stub coupons
+ see guide for model limits
+ 1 example 2 custom? 1
+ shunt branch on matched thru
+ stub w um  23.6358891
+ stub physical length mm  2.36672884
+ stub z ohm  70
+ open end extension um  7.51342363
+ open notch at quarter wavelength
+ p1 west / p2 east
+ north/south probes parked
+ measure one coupon at a time
+ w/e gsg tips stack along y
+ gsg pitch um  150
+ pad w,l um  80  100
+ pad edge gap um  70
+ feed w,l um  44.0269681  500
+ dut to pad centre um  550
+ g pad local y um +/-  150
+
+ press return to continue
+
+--- stubtest ---
+
+ g pads must bond to reference plane
+ launch parasitics excluded
+ 3 lengths .9x,1x,1.1x
+ l mm  2.13005596  notch ghz  22.2144113
+
+ ghz thru loss db
+  1  2.77810456e-03
+  5.875  .106463748
+  10.75  .473873467
+  15.625  1.77361846
+  20.5  9.82016594
+  25.375  5.40221926
+  30.25  1.18242437
+  35.125  .318763854
+  40  .0577018536
+ l mm  2.36672884  notch ghz  20
+ ghz thru loss db
+  1  3.42977065e-03
+
+--- stubtest ---
+
+ g pads must bond to reference plane
+ launch parasitics excluded
+ 3 lengths .9x,1x,1.1x
+ l mm  2.13005596  notch ghz  22.2144113
+
+ ghz thru loss db
+  1  2.77810456e-03
+  5.875  .106463748
+  10.75  .473873467
+  15.625  1.77361846
+  20.5  9.82016594
+  25.375  5.40221926
+  30.25  1.18242437
+  35.125  .318763854
+  40  .0577018536
+ l mm  2.36672884  notch ghz  20
+ ghz thru loss db
+  1  3.42977065e-03
+  5.875  .134836286
+
+ press return to continue
+
+--- stubtest ---
+
+  10.75  .650299444
+  15.625  3.0022543
+  20.5  19.2234209
+  25.375  2.12787233
+  30.25  .484084361
+  35.125  .0889409428
+  40  0
+ l mm  2.60340173  notch ghz  18.1870504
+
+ ghz thru loss db
+  1  4.15087174e-03
+  5.875  .167939109
+  10.75  .891512463
+  15.625  5.46579634
+
+--- stubtest ---
+
+  10.75  .650299444
+  15.625  3.0022543
+  20.5  19.2234209
+  25.375  2.12787233
+  30.25  .484084361
+  35.125  .0889409428
+  40  0
+ l mm  2.60340173  notch ghz  18.1870504
+
+ ghz thru loss db
+  1  4.15087174e-03
+  5.875  .167939109
+  10.75  .891512463
+  15.625  5.46579634
+  20.5  6.14002969
+  25.375  .967023191
+  30.25  .185232874
+  35.125  6.49281015e-03
+  40  .0577018495
+
+ press return to continue
+
+--- stubtest ---
+
+ tee,loss,launch parasitics omitted
+ 1 sketch 0 finish?
+
+--- stubtest ---
+
+ shunt stub coupons
+ one coupon at a time / not to scale
+ p1 west / p2 east
+ north/south probes parked
+ yellow signal / cyan gsg grounds
+ open end: no connection to ground
+ stub width um  23.6358891
+ stub length mm  2.36672884
+ white marks open end or ground via
+ w/e gsg tip rows run north-south
+ press return to view bitmap
+ return in bitmap: finish
+
+stubtest: multicolor bitmap ready at line 760
+
+--- stubtest ---
+ done. run to design again.
+
+ ready.
+
+--- trlset ---
+
+ multiline trl design
+ see guide for model limits
+ 1 example 2 custom? 1
+
+--- trlset ---
+
+ multiline trl design
+ see guide for model limits
+ 1 example 2 custom? 1
+ same cross section on every line
+ thru dut length mm  1
+ line id, delta mm, dut mm, fits
+  1  23.1130166  24.1130166  1
+  2  10.9294707  11.9294707  1
+  3  5.16822762  6.16822762  1
+  4  2.44390395  3.44390395  1
+  5  1.15565083  2.15565083  1
+ fits: 1 yes / 0 omit oversize
+ add common feeds to dut length
+ p1 west / p2 east
+ north/south probes parked
+ one standard at a time
+ w/e gsg tips stack along y
+ gsg pitch um  150
+ pad w,l um  80  100
+
+ press return to continue
+
+--- trlset ---
+
+ pad edge gap um  70
+ feed w,l um  44.0269681  500
+ dut to pad centre um  550
+ g pad local y um +/-  150
+ g pads must bond to reference plane
+ launch parasitics excluded
+ ghz best pair phase deg
+  2  0  1  90
+  6.75  1  4  91.632348
+
+--- trlset ---
+
+ pad edge gap um  70
+ feed w,l um  44.0269681  500
+ dut to pad centre um  550
+ g pad local y um +/-  150
+ g pads must bond to reference plane
+ launch parasitics excluded
+ ghz best pair phase deg
+  2  0  1  90
+  6.75  1  4  91.632348
+  11.5  3  5  89.8415178
+  16.25  2  4  88.4665022
+
+--- trlset ---
+
+ pad edge gap um  70
+ feed w,l um  44.0269681  500
+ dut to pad centre um  550
+ g pad local y um +/-  150
+ g pads must bond to reference plane
+ launch parasitics excluded
+ ghz best pair phase deg
+  2  0  1  90
+  6.75  1  4  91.632348
+  11.5  3  5  89.8415178
+  16.25  2  4  88.4665022
+  21  0  2  86.8629104
+  25.75  0  3  79.1043768
+  30.5  4  5  76.4992059
+
+--- trlset ---
+
+ pad edge gap um  70
+ feed w,l um  44.0269681  500
+ dut to pad centre um  550
+ g pad local y um +/-  150
+ g pads must bond to reference plane
+ launch parasitics excluded
+ ghz best pair phase deg
+  2  0  1  90
+  6.75  1  4  91.632348
+  11.5  3  5  89.8415178
+  16.25  2  4  88.4665022
+  21  0  2  86.8629104
+  25.75  0  3  79.1043768
+  30.5  4  5  76.4992059
+  35.25  4  5  88.4130167
+  40  0  5  90
+
+--- trlset ---
+
+ pad edge gap um  70
+ feed w,l um  44.0269681  500
+ dut to pad centre um  550
+ g pad local y um +/-  150
+ g pads must bond to reference plane
+ launch parasitics excluded
+ ghz best pair phase deg
+  2  0  1  90
+  6.75  1  4  91.632348
+  11.5  3  5  89.8415178
+  16.25  2  4  88.4665022
+  21  0  2  86.8629104
+  25.75  0  3  79.1043768
+  30.5  4  5  76.4992059
+  35.25  4  5  88.4130167
+  40  0  5  90
+ uncovered of 201 log points  0
+ sampled coverage is not a proof
+ reflect: same open/short at ports
+
+ press return to continue
+
+--- trlset ---
+
+ pair phase must be 20 to 160 deg
+ line z sets trl reference
+ 1 sketch 0 finish?
+
+--- trlset ---
+
+ multiline trl design
+ separate standards / not to scale
+ rows: thru 0, then line ids 1 to 5
+ one row at a time: p1 west / p2 east
+ north/south probes parked
+ yellow fits / white omit / cyan gnd
+ id, dut length mm, fits
+  0  1  1
+  1  24.1130166  1
+  2  11.9294707  1
+  3  6.16822762  1
+  4  3.44390395  1
+  5  2.15565083  1
+ w/e gsg tip rows run north-south
+
+ press return to view bitmap
+ return in bitmap: finish
+
+trlset: multicolor bitmap ready at line 850
+
+--- trlset ---
+ done. run to design again.
+
+ ready.
+
+--- viamatch ---
+
+ stud via match
+ see guide for model limits
+ 1 example 2 custom? 1
+
+--- viamatch ---
+
+ stud via match
+ see guide for model limits
+ 1 example 2 custom? 1
+ coax return surrogate, er filled
+ stud h,d um  60  40
+ via h,d um  40  25
+ return radius um  90
+ pad radius um  35
+ stud,via z ohms  48.9420297  64.2357451
+
+ excess pad c pf  5.05386518e-03
+ pad c is shunt at load node
+ load r,x @ fc  25  0
+ load x: +l or -c, scaled with f
+ bare zin at fc  25.1054817  2.96828774
+ match at ghz  20
+ match root  1
+ source: shunt b, series x, dut
+ series x ohm at fc  22.0314898
+
+ press return to continue
+
+--- viamatch ---
+
+ shunt b siemens at fc  .0199157919
+ series l nh  .175321025
+ shunt c pf  .158484836
+ p1 west: one-port input reflection
+ east/north/south probes parked
+ load rl,rx is internal, not a probe
+ west gsg tips stack along y
+ gsg pitch um  150
+ pad w,l um  80  100
+ pad edge gap um  70
+ feed w,l um  44.0269681  500
+ dut to pad centre um  550
+ g pad local y um +/-  150
+ g pads must bond to reference plane
+ launch parasitics excluded
+ ghz bare-rl match-rl rin xin
+  1  9.54  9.56  25.05  .63
+  5.875  9.54  10.25  26.68  3.59
+
+--- viamatch ---
+
+ shunt b siemens at fc  .0199157919
+ series l nh  .175321025
+ shunt c pf  .158484836
+ p1 west: one-port input reflection
+ east/north/south probes parked
+ load rl,rx is internal, not a probe
+ west gsg tips stack along y
+ gsg pitch um  150
+ pad w,l um  80  100
+ pad edge gap um  70
+ feed w,l um  44.0269681  500
+ dut to pad centre um  550
+ g pad local y um +/-  150
+ g pads must bond to reference plane
+ launch parasitics excluded
+ ghz bare-rl match-rl rin xin
+  1  9.54  9.56  25.05  .63
+  5.875  9.54  10.25  26.68  3.59
+  10.75  9.54  12.26  31.1  5.96
+
+ press return to continue
+
+--- viamatch ---
+
+  15.625  9.54  17.31  39.37  6
+  20.5  9.54  34.96  51.23 -1.33
+  25.375  9.53  13.55  56.7 -21.88
+
+--- viamatch ---
+
+  15.625  9.54  17.31  39.37  6
+  20.5  9.54  34.96  51.23 -1.33
+  25.375  9.53  13.55  56.7 -21.88
+  30.25  9.53  7.69  42.25 -40.93
+  35.125  9.53  4.57  23.62 -42.88
+  40  9.52  2.79  12.65 -37.5
+ make bare and matched coupons
+ also make 2 transitions back to back
+ return cage is not discrete via em
+ 1 sketch 0 finish?
+
+--- viamatch ---
+
+ stud via match
+ equivalent network / not to scale
+ one external gsg input: p1 west
+ east/north/south probes parked
+ right-hand load is internal
+ source: shunt b, series x, dut
+ reactance +l/-c; susceptance +c/-l
+ series x ohm  22.0314898
+ shunt b siemens  .0199157919
+ stud h,d um  60  40
+ via h,d um  40  25
+ pad c pf  5.05386518e-03
+ yellow signal / cyan gsg and return
+ white: match, load and pad c
+ press return to view bitmap
+ return in bitmap: finish
+
+viamatch: multicolor bitmap ready at line 1020
+
+--- viamatch ---
+ done. run to design again.
+
+ ready.
+
+--- zcoupon ---
+
+ impedance coupons
+ see guide for model limits
+ 1 example 2 custom? 1
+
+--- zcoupon ---
+
+ impedance coupons
+ see guide for model limits
+ 1 example 2 custom? 1
+ microstrip over continuous plane
+ nominal w um  44.0269681
+ dut length mm  5
+ p1 west / p2 east
+ north/south probes parked
+ measure one coupon at a time
+ w/e gsg tips stack along y
+ gsg pitch um  150
+ pad w,l um  80  100
+ pad edge gap um  70
+ feed w,l um  44.0269681  500
+ dut to pad centre um  550
+ g pad local y um +/-  150
+ g pads must bond to reference plane
+ launch parasitics excluded
+ 3 widths: low,nominal,high
+
+ press return to continue
+
+--- zcoupon ---
+
+ width um  39.6242713  z ohms  53.2130202
+
+ step tdr gamma  .0311299895
+ one way delay ps  26.9132941
+ ghz returnloss db thruloss db
+  1  39.59  0
+  5.875  25.66  .01
+  10.75  24.39  .02
+  15.625  30.51  0
+
+--- zcoupon ---
+
+ width um  39.6242713  z ohms  53.2130202
+
+ step tdr gamma  .0311299895
+ one way delay ps  26.9132941
+ ghz returnloss db thruloss db
+  1  39.59  0
+  5.875  25.66  .01
+  10.75  24.39  .02
+  15.625  30.51  0
+  20.5  34.03  0
+  25.375  24.92  .01
+  30.25  24.85  .01
+  35.125  33.56  0
+  40  30.81  0
+ width um  44.0269681  z ohms  50.0000002
+
+ step tdr gamma  1.78813934e-09
+ one way delay ps  27.0410398
+ ghz returnloss db thruloss db
+
+ press return to continue
+
+--- zcoupon ---
+
+  1  120  0
+  5.875  120  0
+  10.75  120  0
+  15.625  120  0
+  20.5  120  0
+  25.375  120  0
+  30.25  120  0
+
+--- zcoupon ---
+
+  1  120  0
+  5.875  120  0
+  10.75  120  0
+  15.625  120  0
+  20.5  120  0
+  25.375  120  0
+  30.25  120  0
+  35.125  120  0
+  40  120  0
+ width um  48.429665  z ohms  47.1741391
+
+ step tdr gamma -.02908038
+ one way delay ps  27.1583427
+ ghz returnloss db thruloss db
+  1  40.1  0
+  5.875  26.2  .01
+  10.75  25.02  .01
+  15.625  31.49  0
+
+--- zcoupon ---
+
+  1  120  0
+  5.875  120  0
+  10.75  120  0
+  15.625  120  0
+  20.5  120  0
+  25.375  120  0
+  30.25  120  0
+  35.125  120  0
+  40  120  0
+ width um  48.429665  z ohms  47.1741391
+
+ step tdr gamma -.02908038
+ one way delay ps  27.1583427
+ ghz returnloss db thruloss db
+  1  40.1  0
+  5.875  26.2  .01
+  10.75  25.02  .01
+  15.625  31.49  0
+  20.5  33.84  0
+
+ press return to continue
+
+--- zcoupon ---
+
+  25.375  25.36  .01
+  30.25  25.62  .01
+  35.125  35.59  0
+  40  30.45  0
+ lossless mismatch results
+ add thru,open,short controls
+ 1 sketch 0 finish?
+
+--- zcoupon ---
+
+ impedance coupons
+ separate coupons / not to scale
+ top low / middle nominal / bottom high
+ yellow copper / cyan gsg grounds
+ p1 west / p2 east; north/south parked
+ nominal width um  44.0269681
+ length mm  5
+ width doe +/- percent  10
+ measure one coupon at a time
+ press return to view bitmap
+ return in bitmap: finish
+
+zcoupon: multicolor bitmap ready at line 870
+
+--- zcoupon ---
+ done. run to design again.
+
+ ready.
+
+PASS short-stub: bitmap colors 28627/2031/1304/38; restored text
+Preview C:\Users\jtrujil1\AppData\Local\Temp\c64-bitmap-aYHpd2\short-stub.png
+
+PASS via-mt1-negative: bitmap colors 29458/1227/883/432; restored text
+Preview C:\Users\jtrujil1\AppData\Local\Temp\c64-bitmap-aYHpd2\via-mt1-negative.png
+
+PASS via-mt2-positive: bitmap colors 29444/1227/883/446; restored text
+Preview C:\Users\jtrujil1\AppData\Local\Temp\c64-bitmap-aYHpd2\via-mt2-positive.png
+
+PASS via-mt2-negative: bitmap colors 29458/1227/883/432; restored text
+Preview C:\Users\jtrujil1\AppData\Local\Temp\c64-bitmap-aYHpd2\via-mt2-negative.png
+
+PASS trl-six-with-omissions: bitmap colors 28880/392/840/1888; restored text
+Preview C:\Users\jtrujil1\AppData\Local\Temp\c64-bitmap-aYHpd2\trl-six-with-omissions.png
+
+zcoupon FW = 44.0269681; reference 44.02696808
+
+stubtest SL = 2.36672884; reference 2.366728843
+
+stubtest SL = 4.74848453; reference 4.748484533
+
+rfleak CV = 0.0120416954; reference 0.01204169543
+
+rfleak CM = 0.000397907253; reference 0.0003979072535
+
+rfleak CM = 82.9186616; reference 82.9186592
+
+rfleak CM = 8291.8664; reference 8291.866397
+
+viamatch XS = 22.0314898; reference 22.03148973
+
+viamatch XS = -27.9680652; reference -27.96806521
+
+viamatch XS = 49.5553972; reference 49.55539719
+
+viamatch BS = -0.0116398014; reference -0.01163980135
+
+trlset DL(1) = 23.1130166; reference 23.11301658
+
+trlset BP = -1; reference -1
+
+trlset BQ = 5; reference 5

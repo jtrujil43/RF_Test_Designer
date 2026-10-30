@@ -1,0 +1,92 @@
+NATIVE MULTICOLOR BITMAP RUNTIME
+
+The numbered BASIC in bitmap-runtime.inc is embedded in each of the eight
+programs with graphical output. At runtime every program remains a single
+self-contained BASIC V2 PRG: no cartridge, graphics extension, or separate
+machine-code file needs to be loaded.
+
+Public BASIC interface
+  GOSUB 30000  Install native routines on first use, enter/clear bitmap.
+  GOSUB 30100  Draw an inclusive line from (G1,G2) to (G3,G4).
+  GOSUB 30200  Fill the inclusive rectangle bounded by those corners.
+  GOSUB 30300  Draw the rectangle outline.
+  GOSUB 30400  Draw an ellipse centered at (G1,G2), radii (G3,G4).
+  GOSUB 30500  Restore and clear standard text; safe before first use.
+
+Coordinates are 160 logical multicolor pixels horizontally by 200 rows.
+G5 selects a pixel's two-bit color: 0 black/background, 1 yellow/signal,
+2 cyan/ground, 3 white/detail. Line/rectangle endpoints are rounded to
+nearest integer and clamped to the visible bounds. Ellipses use 48 short
+native line segments. Rectangle corners can be supplied in either order.
+
+Only BASIC variables G0..G9, GX, GY and GZ belong to the runtime. Other
+program variables and arrays are preserved. G9=1 records installation of
+the native DATA; G8 is unused. A private native active flag distinguishes
+bitmap mode from text mode. Repeated 30000 calls clear an existing bitmap
+without replacing the saved text configuration. 30500 is a no-op when no
+bitmap is active, including calls made before the DATA is installed.
+
+Memory layout
+  $0801..$9FFF  Normal BASIC program, variables, arrays and strings.
+  $C000..$C326  807 native code/table/private-state bytes (49152..49958).
+  $C7F0..$C7F4  Native argument bytes: x1,y1,x2,y2,color (51184..51188).
+  $CC00..$CFE7  1000-byte bitmap color matrix, byte $73 in every cell.
+  $D800..$DBE7  Color RAM, white in every bitmap cell.
+  $E000..$FF3F  8000-byte multicolor bitmap in RAM underneath KERNAL ROM.
+  $FFFA..$FFFB  RAM NMI vector used only during the short ROM-hidden access.
+
+Fixed SYS jump-table entries
+  49152 ($C000) Enter/clear bitmap.
+  49155 ($C003) Restore text.
+  49158 ($C006) Draw line.
+  49161 ($C009) Fill rectangle.
+
+VIC-II bank 3 is selected through $DD00 with its port direction configured
+through $DD02. $D018=$38 selects the color matrix and bitmap. Its unused
+low bit reads as one, so PEEK($D018) normally returns $39. $D011 bit 5 and
+$D016 bit 4 enable multicolor bitmap mode; extended-color mode is cleared.
+
+The native code saves/restores the prior VIC bank, port direction, display
+registers, border/background colors, sprite enable, text foreground and
+cursor state. Return to text invokes the KERNAL clear-screen routine,
+which also restores the text screen's color RAM. Bitmap mode contains no
+printed strings; callers display headings, legends, inputs and numerical
+results in text mode before or after their bitmap diagrams.
+
+Native line drawing uses integer Bresenham stepping in all directions.
+The bitmap byte address is $E000+(y DIV 8)*320+(x DIV 4)*8+(y AND 7).
+The pixel pair is selected from bits 7..6 through bits 1..0. No zero-page
+workspace is modified: the code uses private storage and self-modifying
+absolute addresses. It restores the processor status, including decimal
+and interrupt flags, at each public SYS return.
+
+Bitmap clearing writes through the visible KERNAL ROM into underlying
+RAM. Pixel read/modify/write temporarily hides ROM by clearing HIRAM in
+$01, guards that short interval with SEI, then restores the original $01
+and processor status. A small RAM NMI handler provides a valid return
+path if an NMI occurs during that interval. BASIC and KERNAL remain mapped
+normally when drawing returns and while keyboard input is being read.
+
+Regeneration and verification
+  node build_bitmap_runtime.mjs
+  node build_bitmap_runtime.mjs --test C:\path\to\VICE\bin
+
+The dependency-free generator assembles the documented instruction subset
+from bitmap-runtime.asm into the numbered BASIC DATA. It checks branch
+ranges, the reserved code boundary and the 80-column BASIC line limit.
+The test creates only temporary BASIC/PRG files and starts its own hidden
+VICE instance on port 6531, refusing an already occupied port.
+
+Actual VICE 3.10 / C64 BASIC V2 ROM verification passed on 2026-10-29:
+  - Safe text-restore call before runtime installation.
+  - Both full-screen diagonal lines and endpoint pixels.
+  - Filled rectangles, erasing in color zero, rectangle outlines.
+  - Ellipse cardinal points and all four packed two-bit pixel positions.
+  - Yellow/cyan/white color matrix and multicolor mode/bank register bits.
+  - Normal CPU ROM mapping after drawing.
+  - Standard text mode, bank and readable output after restoring text.
+  - Unrelated BASIC numeric/string variables preserved across all calls.
+
+Reference: Commodore 64 Programmer's Reference Guide, graphics chapter.
+https://www.devili.iki.fi/Computers/Commodore/C64/Programmers_Reference/Chapter_3/page_127.html
+https://www.devili.iki.fi/Computers/Commodore/C64/Programmers_Reference/Chapter_3/page_102.html

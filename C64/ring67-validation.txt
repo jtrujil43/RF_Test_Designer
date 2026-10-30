@@ -1,0 +1,6 @@
+Actual VICE 3.10 / C64 BASIC V2 ROM
+PASS RING67.PRG exactly matches the complete ASCII source
+PASS 160 formatter cases in actual C64 ROM: full sweep, DP 0..4, carries, signs and padding
+PASS Default model reaches its S-parameter bitmap screen
+PASS All 134 frequency rows across 9 text pages: 0.50..67.00 GHz, both dB and phase columns agree with independent model
+PASS Quit restores the standard text display

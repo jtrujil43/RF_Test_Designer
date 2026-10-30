@@ -1,0 +1,128 @@
+resonator2.bas - C64 BASIC V2 / MULTICOLOR BITMAP
+================================================
+
+Menus, input prompts, dimension tables, model notes and all strings use
+standard 40x25 text mode. The three graphical viewer pages switch to
+native 160x200 VIC-II multicolor bitmap mode. The five viewer pages remain:
+
+1. Ring dimensions: text.
+2. Top metal: text legend, then bitmap ring/feeds/ground banks/vias.
+3. GSG launch: text dimensions and legend, then enlarged bitmap geometry.
+4. Nominal modes: text frequencies, then bitmap frequency axis and ticks.
+5. Assumptions/checks: text, including a second checks screen.
+
+On pages 2-4, any key opens the bitmap after the text legend; M returns to
+the menu. In the bitmap, any key advances and M returns to the menu. Both
+paths restore standard text before any subsequent PRINT or INPUT. Text
+pages use any key to advance. Input prompts retain Enter-for-default.
+
+The bitmap palette is black background, yellow signal copper, cyan ground
+banks and white via/contact/axis marks. The full layout plots the actual
+circular or cosine-lobed polar ring shape, both coupling ports, filled
+signal tapers, landing pads and ground banks. The launch detail enlarges
+the GSG pads, taper, neck and probe contact centres. The mode plot shows
+positions, not a transmission response. A zero-mode band shows an empty
+axis and has no empty FOR-loop execution.
+
+Bitmap pixels are twice as wide as they are high, so the layout uses
+separate horizontal and vertical scales to keep a circle circular. Trace
+widths and coupling gaps below display resolution receive minimum visible
+pixels. These are schematic views, not manufacturing artwork; exact
+physical dimensions remain in the text reports. Top-layout features use
+one common physical scale except for minimum-size visibility adjustments.
+
+The shared renderer is embedded as BASIC DATA plus a small machine-code
+plotting helper. No cartridge, BASIC extension or external graphics file
+is needed when loading the PRG. The renderer uses the high-memory VIC bank
+so bitmap storage does not overlap the BASIC program or its variables.
+Standard text mode is restored before each page header and menu.
+
+Cardinal prober configuration - 2026-10-30
+-----------------------------------------
+The two-port ring retains two active GSG probes: P1 approaches from WEST
+at negative X, and P2 approaches from EAST at positive X. NORTH and SOUTH
+station probes are parked clear of this DUT. Each launch has its G-S-G
+contacts along the local/global Y axis at -PP,0,+PP. Contact-centre X is
+reported as +/-(X4+X5)/2 in millimetres. No two probes share one side.
+
+The top-layout bitmap adds white inward approach arrows at the west/east
+launches. Its text legend names the active probes and parked pair. The
+launch-detail viewer identifies the west launch and mirrored east launch;
+dimension reports and help repeat the same station convention. All
+numerical geometry and the existing two coupling ports are retained.
+The update does not add north/south feeds or a four-port ring solver.
+
+Probe-body clearance, tip overtravel and substrate mounting remain
+fixture-specific checks. The arrows indicate approach direction; they do
+not prescribe a physical probe-body outline or guarantee mechanical fit.
+
+The input flow, material presets, numerical models, fabrication checks,
+50-ohm width synthesis, GCPW neck synthesis, 720-interval perimeter and
+curvature integration, and unloaded resonance calculations are unchanged.
+The guarded EXP calculations and thin-substrate GCPW asymptote remain.
+The original parent-folder BASIC program was not modified.
+
+Numerical reference cases previously verified with the actual C64 BASIC
+V2 ROM in VICE 3.10 (the numerical routines are unchanged by this update):
+
+Case                  W um        R mm       Effective Er   Modes
+Default SI circle     425.9387    17.2727       7.6306          10
+Paper circle         1810.0564    25.8036       2.541            5
+SI, 6 lobes, A=.1      425.9387    15.9215       7.6306          10
+No mode, 1.1-1.2 GHz  1835.2069    29.8352       2.5576           0
+Thin H=1 um             2.4084    29.8352       2.5576          10
+
+The six-lobe minimum bend radius is 4.1007 mm. All five reference cases
+synthesize a 50-ohm GCPW neck. The paper example uses ER=3.2, H=762 um,
+T=18 um, pitch=150 um, minimum feature=2 um, pads=100x100 um, band=.5-6 GHz,
+fundamental=1.16 GHz and coupling gap=100 um. The no-mode case uses ER=3.2,
+H=762 um, T=0 and fundamental=1 GHz. The thin case uses ER=3.2, H=1 um,
+T=0 and exercises the stable large-argument GCPW asymptotic branch.
+
+Source checks for the bitmap update: sorted unique line numbers, all local
+branch targets present, maximum source line length 63 characters before
+appending the shared runtime, and no character-screen POKEs for graphics.
+The shared runtime uses only its reserved G0-G9/GX/GY/GZ BASIC scratch
+variables; the layout helpers preserve the numerical design results.
+
+Bitmap update runtime verification - 2026-10-29
+------------------------------------------------
+The complete updated suite passed in VICE 3.10 with the actual C64 BASIC
+V2 ROM, using an isolated hidden emulator on port 6533. The shipped PRG
+passed default input flow, all five viewer pages, all five text reports,
+all three help pages and edit-input defaults. The test asserted standard
+text mode before string screens, and native bitmap + multicolor flags,
+VIC bank 3 and $CC00/$E000 screen/bitmap selection during graphic waits.
+
+M returns correctly from a text viewer page, a bitmap legend and an active
+bitmap. Each path restores standard text before the menu. The dimensions
+shown after the diagrams remained W=425.9387 um and R=17.2727 mm.
+
+Paper, six-lobe, zero-mode and thin-substrate numerical reference cases
+all passed. The six-lobe diagram and zero-mode frequency axis were also
+opened through their text legends, held in native multicolor bitmap and
+returned to standard-text READY without BASIC errors. No source fixes
+were required after the graphical implementation.
+
+Reproduce the full suite with:
+  node verify_resonator.mjs C:\path\to\VICE\bin
+RESONATOR_VICE_PORT selects a different unused monitor port.
+RESONATOR_NUMERICAL_ONLY and RESONATOR_CASE select focused numeric checks.
+The verifier refuses occupied ports and closes only the emulator it starts.
+The screen transcript is saved in its temporary c64-bitmap-* directory.
+
+Cardinal layout runtime verification - 2026-10-30
+------------------------------------------------
+The rebuilt west/east two-port layout passed the full VICE 3.10 suite:
+default input flow, all viewer bitmap/text transitions, five dimension
+reports, three help screens, M from text/legend/bitmap and editing defaults.
+The new west/east active and north/south parked text was visible. Added
+report rows retained their headings and prompts without screen overflow.
+The default contact centres were X=+/-21.157 mm and Y=-150,0,+150 um.
+W=425.9387 um and R=17.2727 mm remained unchanged after bitmap drawing.
+
+Paper, six-lobe, zero-mode and thin-substrate numerical cases also passed.
+Six-lobe and zero-mode graphical pages entered native multicolor bitmap
+and returned to standard-text READY successfully. No geometry or native
+renderer correction was required. The repeatable verifier now checks the
+cardinal labels, contact coordinates and report-heading visibility.

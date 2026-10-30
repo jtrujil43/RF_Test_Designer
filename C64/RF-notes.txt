@@ -1,0 +1,252 @@
+COMMODORE 64 BASIC V2 PORT NOTES - SEVEN RF COUPON PROGRAMS
+
+Files: rdlloss.bas, rdxtalk.bas, rfleak.bas, stubtest.bas,
+       trlset.bas, viamatch.bas, zcoupon.bas.
+
+The RF equations, units, input validation, example parameters, three-coupon
+sweeps, matching roots, and TRL pair search are retained from the originals.
+All variable names have at most two significant characters, including the
+new EX and EY temporaries used only to guard exponential evaluation.
+
+The graphical sketches now use the VIC-II's native 160x200 multicolor
+bitmap mode. All titles, legends, dimensions, menus and numerical reports
+use standard 40-column text mode. The sketch first presents a text legend;
+press RETURN to view its bitmap, then RETURN again to restore text mode
+and finish. No text PRINT statements execute while the bitmap is visible.
+The embedded graphics runtime requires no BASIC extension or separately
+loaded bitmap package. Keyboard input replaces touch input.
+
+Yellow denotes signal metal, cyan denotes ground and white denotes
+components or annotations, with the leakage and TRL legends identifying
+their specific white elements. Schematics remain not to scale. The loss
+and TRL diagrams scale line lengths relative to the current design; TRL
+rows are thru ID0 followed by line IDs1..NL, and omitted oversize lines
+are white. The impedance diagram shows the three width variations.
+The stub sketch distinguishes an open end from a via to the ground plane.
+The via-match sketch moves the shunt branch for the selected topology and
+draws inductive or capacitive symbols according to the solved reactance
+and susceptance signs. The leakage diagram separates the drive and pickup
+layers and shows the overlap and an optional grounded via fence.
+
+Report PRINT statements call the pagination subroutine at 9000. It checks
+the C64 cursor row at address 214 and pauses before the screen scrolls
+report content out of view. Press RETURN to continue. Press RETURN on
+the sketch legend to enter bitmap mode and again to finish. GET replaces
+touchscreen polling; the original
+HandBasic write to address 1024 is removed because 1024 is C64 screen RAM.
+
+Drawing code begins at line10000 and calls the common embedded runtime
+at30000..30500. New D4..D9 variables are used only for diagram geometry;
+the runtime reserves G0..G9,GX,GY,GZ. RF model variables and array data
+are preserved by the graphics interface. Existing sketch and close entry
+addresses are unchanged, so numerical program control flow is retained.
+
+The vacuum-microstrip and coupled-line Q8 exponential terms now avoid
+calling EXP with arguments below -80. The corresponding exponential is
+set to zero there. This safely neglects terms below 1.81E-35, below the
+useful precision of the surrounding formulas, and avoids the C64 ROM
+exponential routine's range limitation at the original bisection bounds.
+Other mathematical expressions and rounding functions are preserved.
+
+All line numbers remain in their original general ranges. Sketch internals
+were renumbered, and new helper lines were added. Original branch and
+subroutine entry points are preserved. No original source was edited.
+
+Suggested emulator checks: example mode in all seven programs, then both
+sketch choices; custom mode with a two-point frequency sweep; invalid
+stackup and out-of-range dimensions; both open and short stub; both via
+match roots and both match topologies; a TRL maximum length that rejects
+some candidate lines; maximum 41-point sweeps to exercise pagination.
+The default TRL 201-point coverage calculation can be slow at normal C64
+speed. VICE warp mode can shorten numerical calculation waits.
+
+Physical limits are unchanged: these are first-pass analytical models,
+not full-wave simulations. Original report notes on launch deembedding,
+fringing, dispersion, omitted loss/parasitics, simplified via cage return,
+and sampled TRL coverage remain present in the ports.
+
+NUMERICAL REFERENCE CASES
+
+Values below use the original equations with double-precision arithmetic.
+The C64 uses five-byte floating point, so compare with a small tolerance.
+Default stackup: ER=3.4, H=20um, T=2um, ZR=50ohm.
+Feed width FW = 44.02696808um; effective ER FE = 2.628743248.
+The loss program overrides the default thickness to T=5um:
+FW = 41.88415326um; FE = 2.569783419.
+
+Stub defaults FC=20GHz, ZS=70ohm:
+SW=23.63588913um; SE=2.491215904; end correction DE=7.513423634um.
+Open physical length SL=2.366728843mm.
+Short physical length SL=4.748484533mm.
+
+Leakage defaults:
+CV=0.01204169543pF; CM=0.0003979072535pF.
+Maximum overlap LA=3.304412205um; fence pitch=100um; NV=41.
+
+Via matching: use all default geometry, FC=20GHz.
+For custom tests, use F1=F2=20GHz, NP=2, all default probe settings.
+RL=25, RX=0 selects topology MT=1, bare Z=25.10548170+j2.968287741.
+ BR=+1: XS=22.03148973ohm, BS=0.01991579191S.
+ BR=-1: XS=-27.96806521ohm, BS=-0.01991579191S.
+RL=100, RX=0 selects topology MT=2, bare Z=96.56275216-j15.69801656.
+ BR=+1: XS=49.55539719ohm, BS=0.008359400900S.
+ BR=-1: XS=-49.55539719ohm, BS=-0.01163980135S.
+All four cases match to R=50ohm, X=0 at FC. The displayed return loss
+should reach the 120dB floor, subject to C64 rounding.
+
+TRL defaults (F1=2GHz, F2=40GHz, NL=5, LT=1mm, LM=40mm):
+Delta lengths for IDs 1..5:
+23.11301658, 10.92947074, 5.168227623, 2.443903954, 1.155650829mm.
+All fit. Uncovered log samples: 0 of 201.
+Best pair/phase: at 2GHz IDs 0,1 / 90deg;
+ at 21GHz IDs 0,2 / 86.86291025deg; at 40GHz IDs 0,5 / 90deg.
+Keep defaults but set LM=3mm: only ID5 fits (plus thru ID0).
+Uncovered log samples: 100 of 201. At 2GHz no pair;
+ at 21GHz IDs 0,5 / 47.25deg; at 40GHz IDs 0,5 / 90deg.
+Set LM=1.1mm: all candidate lines omitted; uncovered 201 of 201.
+
+Independent runtime audit: all active FOR loop limits have at least one
+iteration after the existing input checks, including the TRL nested
+pair search. No skipped-empty-loop assumption is required. Pagination
+modifies K$ only; new exponential guards use EX/EY only. Shared RF math
+routines do not overwrite the outer frequency or coupon loop variables.
+
+The leakage target capacitance was also stabilized for small positive
+isolation IB. The original AM/SQR(1-AM*AM) loses significance when AM
+rounds to one. The port uses the equivalent 1/SQR(EXP(x)-1), where
+x=IB*LOG(10)/10. For x<0.001, EXP(x)-1 is evaluated using the cubic
+series x+x*x/2+x*x*x/6. Its factored form is used in the calculation:
+EY=1+x/2+x*x/6 and CM=1/SQR(IB)/SQR(LOG(10)/10*EY)/(4*PI*F2*ZR)*1000.
+Factoring also avoids an underflow if a positive IB is near the C64's
+smallest representable number. For larger x, EY=(EXP(x)-1)/x. Only the
+existing EX/EY temporaries are used, after feed-width synthesis returns.
+The normal 40dB default result is unchanged within floating-point error.
+
+The retained RD/RF display functions use INT on floating-point results;
+the C64 INT function does not impose the signed 16-bit range associated
+with percent-suffixed integer variables. No integer-variable conversion
+was introduced in these ports.
+
+Actual runtime verification (2026-10-29): all seven PRGs completed example
+reports, pagination, sketches and return to READY in VICE 3.10 x64sc using
+the actual C64 BASIC V2 ROM. Fourteen numerical reference checks passed,
+including both stub types, all four via-match cases, restricted TRL line
+selection and leakage targets down to IB=1E-10. Reproduce with:
+  node verify_rf.mjs C:\path\to\VICE
+The script starts and closes its own hidden emulator on port 6520 and
+refuses an occupied port. RF-vice-validation.txt contains screen output
+and the numerical comparisons from the latest run. Temporary numerical
+drivers call the production calculation subroutines without modifying
+the shipped source or PRG files.
+
+Multicolor revision verification: all seven unchanged production PRGs
+passed their complete example/report/legend/bitmap/finish flow. The test
+checks standard text for every report and legend, native bitmap and
+multicolor control bits plus VIC bank/screen pointers during sketches,
+and standard-text restoration before DONE. Five additional graphical
+cases passed: short stub; topology1 negative match root; topology2 both
+match roots; and six TRL lines with maximum length3mm, including omitted
+lines. Actual bitmap RAM was decoded for these variants and contained all
+four expected pixel indices. The same fourteen RF numerical references
+passed after the bitmap tests. No numerical statements were changed by
+the multicolor revision.
+
+The verifier's optional --math-only or --variants-only argument selects
+the corresponding subset. It waits at the actual legend GET line before
+injecting RETURN, then at the bitmap's final GET line before closing it;
+this avoids losing a key during keyboard-buffer clearing or skipping
+the diagram while the embedded drawing routine is loading.
+
+CARDINAL PROBER STATION - SIX NON-CROSSTALK COUPONS
+
+The station has one probe position on each compass side. These programs
+retain their existing electrical port counts. RDLLOSS, RFLEAK, STUBTEST,
+TRLSET and ZCOUPON use P1 from the west and P2 from the east. North and
+south probes are parked and do not represent connected DUT ports. The
+west/east G-S-G contact triplets run along local Y (north-south); their
+ground contacts remain at local Y=+/-PP and their signal contact at Y=0.
+The existing pad/feed dimensions and numerical RF equations are retained.
+
+RDLLOSS and ZCOUPON bitmap rows are separate DOE coupons, and TRLSET rows
+are separate calibration standards. They are measured one row at a time
+using the same opposing west/east pair after positioning the wafer. The
+row arrays do not imply several side-by-side probe heads or simultaneous
+connections to every row. Legends and probe reports now say this directly.
+
+STUBTEST shows explicit west and east G-S-G landing-pad triplets. RFLEAK
+shows both G-S-G landings on the top side: the layer-1 drive enters from
+the west, while a transition outside the plate overlap brings the layer-2
+pickup back to the top-side east landing. The layer drawing is exploded
+for visibility. The added pickup via/fanout is required layout context;
+its parasitics are excluded from the original parallel-plate model and
+this exclusion is printed in the legend and report.
+
+VIAMATCH is a one-external-port input matching model. Its RL/RX load is
+internal to the modeled network, not a second probe port. Its west G-S-G
+input is now explicit, and east/north/south probe positions are parked.
+The internal load, shunt pad capacitance and both matching topologies are
+still shown. A back-to-back transition coupon mentioned in the report is
+a separate measurement structure, not an additional port in this model.
+
+Report helper 9500 contains only PRINT/pagination calls. Diagram edits
+add no new RF-model variables and leave the embedded bitmap runtime
+unchanged. Existing sketch/legend GET and bitmap-close entry numbers
+are retained. The diagrams specify pad orientation and active probe sides;
+they do not specify probe-head body dimensions or certify mechanical
+clearance for a particular prober. Those physical envelope dimensions
+must be checked when laying out the actual coupon and probe approach.
+
+Cardinal revision verification (2026-10-30): all six updated production
+drawing subroutines passed standard-text legend -> native multicolor
+bitmap -> standard-text completion checks in an isolated VICE 3.10/C64
+BASIC V2 session. Sixteen exact bitmap pixel checks verified the new
+stub G-S-G pad groups, topside leakage pad groups and pickup transition,
+and west-only VIAMATCH pad group. The leakage, stub and matching captures
+were visually inspected. Static checks confirmed valid direct targets,
+sorted unique line numbers, unchanged embedded runtime, and maximum
+source line lengths of 59 to 62 columns. No new BASIC variables or
+numerical RF equations were introduced by these six layout updates.
+
+Full cardinal integration verification (2026-10-30): verify_rf.mjs passed
+all 26 checks against the rebuilt cardinal-layout programs: seven complete
+production example/report/legend/bitmap/finish flows, five alternative
+stub/matching/TRL graphical cases, and fourteen numerical references.
+This includes RDXTALK's new four-side coordinate report and diagram, the
+explicit two-port west/east coupon labels and the one-port VIAMATCH input.
+No harness adjustments or program fixes were needed during this run.
+RF-vice-validation.txt contains the report captures and comparisons.
+The isolated test emulator on port 6520 closed after the suite completed.
+
+RDXTALK cardinal geometry and installed-probe profile (2026-10-30)
+----------------------------------------------------------------
+The four logical DUT ports now map P1W/P2N/P3S/P4E. The aggressor runs
+west-to-north and victim south-to-east, keeping the two coupled lines
+parallel while avoiding a signal crossover in their access fanouts.
+S21 remains through, S31 near-end and S41 far-end crosstalk from P1.
+All twelve signal/ground contact centres are printed for the base gap;
+north/south pad width/length and ground-offset axes are rotated90degrees.
+Each DOE gap prints its corresponding centreline offset for the coordinate
+formula. The same actual fanout length is reused across the three gaps.
+
+PG is now an adjustable minimum adjacent-group signal-centre distance,
+default1000um, rather than the old side-by-side group-separation label.
+FL is the minimum requested access length. Actual PB is extended as
+needed for orthogonal pad spacing, core clearance and the tightest gap.
+Default PB=629.071829um, PA=679.071829um; base-gap adjacent-centre
+distance=1007.363607um. Simple-turn layouts reject a feed wider than the
+GSG ground opening or the closest victim clearance; such cases require
+a separately designed neck/taper. These checks do not change the uniform
+coupled-line equations. Access turns/fanouts still require deembedding.
+
+Reports now identify the user's installed MPI TITAN GSG150/67GHz probes.
+Default pitches remain150um. Other custom pitches or frequencies remain
+analytical options, with explicit installed-probe mismatch notices.
+The displayed1000um starting separation is not an MPI body-clearance
+specification; the exact body/connector/positioner and overtravel envelope
+must be considered for fabrication. See probe-configuration.txt.
+
+verify_cardinal_profile.mjs passed21 actual-C64 profile/coordinate/guard
+cases. verify_cardinal_geometry.mjs passed20000 deterministic contact
+geometries and verified the actual new RDXTALK bitmap's twelve contacts
+and two independent W-N/S-E signal nets. Native bitmap/text restoration
+and all fourteen existing RF numerical reference checks remain passing.

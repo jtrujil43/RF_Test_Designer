@@ -1,0 +1,39 @@
+VICE 3.10 / actual C64 BASIC V2 ROM
+PASS rdlloss: VIC-II multicolor bitmap, pixel counts 29283/2045/672/0
+PASS rdlloss: standard-text legend -> bitmap -> standard-text completion
+PASS rdxtalk: VIC-II multicolor bitmap, pixel counts 28473/2744/720/63
+PASS rdxtalk: standard-text legend -> bitmap -> standard-text completion
+PASS rfleak: VIC-II multicolor bitmap, pixel counts 28486/1692/240/1582
+PASS rfleak: standard-text legend -> bitmap -> standard-text completion
+PASS stubtest: VIC-II multicolor bitmap, pixel counts 29391/2027/544/38
+PASS stubtest: standard-text legend -> bitmap -> standard-text completion
+PASS trlset: VIC-II multicolor bitmap, pixel counts 29324/1956/720/0
+PASS trlset: standard-text legend -> bitmap -> standard-text completion
+PASS viamatch: VIC-II multicolor bitmap, pixel counts 29852/1131/571/446
+PASS viamatch: standard-text legend -> bitmap -> standard-text completion
+PASS zcoupon: VIC-II multicolor bitmap, pixel counts 25796/5148/1056/0
+PASS zcoupon: standard-text legend -> bitmap -> standard-text completion
+PASS ring-circle: VIC-II multicolor bitmap, pixel counts 30308/792/268/632
+PASS ring-circle: text legend -> bitmap -> M restores text
+PASS ring-six-lobes: VIC-II multicolor bitmap, pixel counts 30314/786/268/632
+PASS ring-six-lobes: text legend -> bitmap -> M restores text
+PASS ring-gsg-launch: VIC-II multicolor bitmap, pixel counts 18643/4242/9076/39
+PASS ring-gsg-launch: text legend -> bitmap -> M restores text
+PASS ring-modes: VIC-II multicolor bitmap, pixel counts 30996/850/0/154
+PASS ring-modes: text legend -> bitmap -> M restores text
+PASS ring-zero-modes: VIC-II multicolor bitmap, pixel counts 31838/0/0/162
+PASS ring-zero-modes: text legend -> bitmap -> M restores text
+PASS all 8 graphical programs and ring viewer variants
+PASS rdxtalk: VIC-II multicolor bitmap, pixel counts 28659/1881/1376/84
+PASS rdxtalk: standard-text legend -> bitmap -> standard-text completion
+PASS rfleak: VIC-II multicolor bitmap, pixel counts 28197/1528/968/1307
+PASS rfleak: standard-text legend -> bitmap -> standard-text completion
+PASS stubtest: VIC-II multicolor bitmap, pixel counts 28715/2027/1220/38
+PASS stubtest: standard-text legend -> bitmap -> standard-text completion
+PASS viamatch: VIC-II multicolor bitmap, pixel counts 29444/1227/883/446
+PASS viamatch: standard-text legend -> bitmap -> standard-text completion
+PASS ring-circle: VIC-II multicolor bitmap, pixel counts 30249/792/268/691
+PASS ring-circle: text legend -> bitmap -> M restores text
+PASS ring-six-lobes: VIC-II multicolor bitmap, pixel counts 30255/786/268/691
+PASS ring-six-lobes: text legend -> bitmap -> M restores text
+PASS all 8 graphical programs and ring viewer variants

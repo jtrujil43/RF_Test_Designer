@@ -1,0 +1,50 @@
+VICE 3.10 / actual C64 BASIC V2 ROM runtime validation
+Separate hidden emulator process, remote-monitor port 6523.
+Long results compared digit-for-digit against JavaScript BigInt.
+
+PASS 88-digit carry addition
+RESULT 19999999999999999999999999999999999999999999999999999999999999999999999999999999999999998
+
+PASS 88-by-88-digit multiplication
+RESULT 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999980000000000000000000000000000000000000000000000000000000000000000000000000000000000000001
+
+PASS addition after longest multiplication
+RESULT 19999999999999999999999999999999999999999999999999999999999999999999999999999999999999998
+
+PASS zero plus zero
+RESULT 0
+
+PASS zero times zero
+RESULT 0
+
+PASS leading-zero multiplication
+RESULT 408
+
+PASS leading-zero addition after multiplication
+RESULT 46
+
+PASS 12 times 34
+RESULT 408
+
+PASS 12 plus 34 after multiplication
+RESULT 46
+
+PASS zero times 88-digit operand
+RESULT 0
+
+PASS addition after multiplication by zero
+RESULT 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
+
+PASS blank RETURN, delete, and invalid characters
+RESULT 129
+
+PASS 89th digit is rejected
+RESULT 1111111111111111111111111111111111111111111111111111111111111111111111111111111111111112
+
+PASS Q exits to READY.
+
+All 13 arithmetic/input checks and Q-to-READY passed.
+No changes to the shipped varprec.bas were needed.
+The 88-digit limit keeps maximum products within 176 characters.
+The multiplication accumulators stay below 8000, within signed 16-bit range.
+GET permits input beyond the C64 editor's 80-column INPUT limit.
