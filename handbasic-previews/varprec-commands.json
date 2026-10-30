@@ -1,0 +1,17 @@
+[
+  {
+    "line": 20,
+    "type": "PRINT",
+    "text": "VARIABLE-PRECISION INTEGER CALCULATOR"
+  },
+  {
+    "line": 30,
+    "type": "PRINT",
+    "text": "ENTER NONNEGATIVE DECIMAL INTEGERS (UP TO 88 DIGITS)"
+  },
+  {
+    "line": 40,
+    "type": "INPUT",
+    "text": "FIRST INTEGER?"
+  }
+]

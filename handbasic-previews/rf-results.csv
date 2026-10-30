@@ -1,0 +1,246 @@
+program,variant,calculation_context,physical_stack_applicable,f_GHz,quantity,value,unit
+rdlloss,nominal,hypothetical_grounded_reference,false,0.5,skinDepthUm,2.9518844474276973,um
+rdlloss,nominal,hypothetical_grounded_reference,false,0.5,conductorDbPerMm,0.06137194531615901,dB/mm
+rdlloss,nominal,hypothetical_grounded_reference,false,0.5,dielectricDbPerMm,0.0006126516075163855,dB/mm
+rdlloss,nominal,hypothetical_grounded_reference,false,0.5,totalDbPerMm,0.061984596923675396,dB/mm
+rdlloss,nominal,hypothetical_grounded_reference,false,0.5,thickConductorApproximationValid,false,
+rdlloss,nominal,hypothetical_grounded_reference,false,0.5,differentialLossDb,0.024279409029986026,dB
+rdlloss,nominal,hypothetical_grounded_reference,false,1,skinDepthUm,2.08729751005523,um
+rdlloss,nominal,hypothetical_grounded_reference,false,1,conductorDbPerMm,0.08758434559300965,dB/mm
+rdlloss,nominal,hypothetical_grounded_reference,false,1,dielectricDbPerMm,0.001225303215032771,dB/mm
+rdlloss,nominal,hypothetical_grounded_reference,false,1,totalDbPerMm,0.08880964880804242,dB/mm
+rdlloss,nominal,hypothetical_grounded_reference,false,1,thickConductorApproximationValid,false,
+rdlloss,nominal,hypothetical_grounded_reference,false,1,differentialLossDb,0.034786800209009365,dB
+rdlloss,nominal,hypothetical_grounded_reference,false,5,skinDepthUm,0.9334678243499089,um
+rdlloss,nominal,hypothetical_grounded_reference,false,5,conductorDbPerMm,0.20988593336698017,dB/mm
+rdlloss,nominal,hypothetical_grounded_reference,false,5,dielectricDbPerMm,0.0061265160751638546,dB/mm
+rdlloss,nominal,hypothetical_grounded_reference,false,5,totalDbPerMm,0.216012449442144,dB/mm
+rdlloss,nominal,hypothetical_grounded_reference,false,5,thickConductorApproximationValid,false,
+rdlloss,nominal,hypothetical_grounded_reference,false,5,differentialLossDb,0.08461222426005263,dB
+rdlloss,nominal,hypothetical_grounded_reference,false,10,skinDepthUm,0.6600614286172737,um
+rdlloss,nominal,hypothetical_grounded_reference,false,10,conductorDbPerMm,0.3207016122216992,dB/mm
+rdlloss,nominal,hypothetical_grounded_reference,false,10,dielectricDbPerMm,0.012253032150327709,dB/mm
+rdlloss,nominal,hypothetical_grounded_reference,false,10,totalDbPerMm,0.3329546443720269,dB/mm
+rdlloss,nominal,hypothetical_grounded_reference,false,10,thickConductorApproximationValid,true,
+rdlloss,nominal,hypothetical_grounded_reference,false,10,differentialLossDb,0.13041856203559926,dB
+rdlloss,nominal,hypothetical_grounded_reference,false,20,skinDepthUm,0.46673391217495447,um
+rdlloss,nominal,hypothetical_grounded_reference,false,20,conductorDbPerMm,0.5130068101881358,dB/mm
+rdlloss,nominal,hypothetical_grounded_reference,false,20,dielectricDbPerMm,0.024506064300655418,dB/mm
+rdlloss,nominal,hypothetical_grounded_reference,false,20,totalDbPerMm,0.5375128744887911,dB/mm
+rdlloss,nominal,hypothetical_grounded_reference,false,20,thickConductorApproximationValid,true,
+rdlloss,nominal,hypothetical_grounded_reference,false,20,differentialLossDb,0.21054416074797744,dB
+rdlloss,nominal,hypothetical_grounded_reference,false,40,skinDepthUm,0.33003071430863684,um
+rdlloss,nominal,hypothetical_grounded_reference,false,40,conductorDbPerMm,0.8410120665317713,dB/mm
+rdlloss,nominal,hypothetical_grounded_reference,false,40,dielectricDbPerMm,0.049012128601310836,dB/mm
+rdlloss,nominal,hypothetical_grounded_reference,false,40,totalDbPerMm,0.8900241951330822,dB/mm
+rdlloss,nominal,hypothetical_grounded_reference,false,40,thickConductorApproximationValid,true,
+rdlloss,nominal,hypothetical_grounded_reference,false,40,differentialLossDb,0.34862308626171623,dB
+rdlloss,nominal,hypothetical_grounded_reference,false,67,skinDepthUm,0.2550039770097468,um
+rdlloss,nominal,hypothetical_grounded_reference,false,67,conductorDbPerMm,1.194389562110251,dB/mm
+rdlloss,nominal,hypothetical_grounded_reference,false,67,dielectricDbPerMm,0.08209531540719565,dB/mm
+rdlloss,nominal,hypothetical_grounded_reference,false,67,totalDbPerMm,1.2764848775174467,dB/mm
+rdlloss,nominal,hypothetical_grounded_reference,false,67,thickConductorApproximationValid,true,
+rdlloss,nominal,hypothetical_grounded_reference,false,67,differentialLossDb,0.5,dB
+rdxtalk,10 um gap,hypothetical_grounded_reference,false,0.5,nearEndS31Db,-47.816975558359246,dB
+rdxtalk,10 um gap,hypothetical_grounded_reference,false,0.5,farEndS41Db,-56.92082316094025,dB
+rdxtalk,10 um gap,hypothetical_grounded_reference,false,0.5,throughS21Db,-0.03128066627233385,dB
+rdxtalk,10 um gap,hypothetical_grounded_reference,false,1,nearEndS31Db,-42.06403819028226,dB
+rdxtalk,10 um gap,hypothetical_grounded_reference,false,1,farEndS41Db,-50.80654647568287,dB
+rdxtalk,10 um gap,hypothetical_grounded_reference,false,1,throughS21Db,-0.12281533424398645,dB
+rdxtalk,10 um gap,hypothetical_grounded_reference,false,5,nearEndS31Db,-33.55399812003937,dB
+rdxtalk,10 um gap,hypothetical_grounded_reference,false,5,farEndS41Db,-36.07978978459583,dB
+rdxtalk,10 um gap,hypothetical_grounded_reference,false,5,throughS21Db,-1.9085999514409362,dB
+rdxtalk,10 um gap,hypothetical_grounded_reference,false,10,nearEndS31Db,-28.67812202862408,dB
+rdxtalk,10 um gap,hypothetical_grounded_reference,false,10,farEndS41Db,-28.761130492535614,dB
+rdxtalk,10 um gap,hypothetical_grounded_reference,false,10,throughS21Db,-2.7427749167601987,dB
+rdxtalk,10 um gap,hypothetical_grounded_reference,false,20,nearEndS31Db,-27.026948457913946,dB
+rdxtalk,10 um gap,hypothetical_grounded_reference,false,20,farEndS41Db,-22.365649076907953,dB
+rdxtalk,10 um gap,hypothetical_grounded_reference,false,20,throughS21Db,-0.6100483889392774,dB
+rdxtalk,10 um gap,hypothetical_grounded_reference,false,40,nearEndS31Db,-21.96947748801604,dB
+rdxtalk,10 um gap,hypothetical_grounded_reference,false,40,farEndS41Db,-19.183806724856776,dB
+rdxtalk,10 um gap,hypothetical_grounded_reference,false,40,throughS21Db,-1.7533602148701486,dB
+rdxtalk,10 um gap,hypothetical_grounded_reference,false,67,nearEndS31Db,-13.971501914205923,dB
+rdxtalk,10 um gap,hypothetical_grounded_reference,false,67,farEndS41Db,-11.83072454911537,dB
+rdxtalk,10 um gap,hypothetical_grounded_reference,false,67,throughS21Db,-1.6811862672343643,dB
+rdxtalk,20 um gap,hypothetical_grounded_reference,false,0.5,nearEndS31Db,-54.26264628631361,dB
+rdxtalk,20 um gap,hypothetical_grounded_reference,false,0.5,farEndS41Db,-67.07701982459297,dB
+rdxtalk,20 um gap,hypothetical_grounded_reference,false,0.5,throughS21Db,-0.030931450000233743,dB
+rdxtalk,20 um gap,hypothetical_grounded_reference,false,1,nearEndS31Db,-48.502260412043064,dB
+rdxtalk,20 um gap,hypothetical_grounded_reference,false,1,farEndS41Db,-60.29032023607698,dB
+rdxtalk,20 um gap,hypothetical_grounded_reference,false,1,throughS21Db,-0.12146999142455092,dB
+rdxtalk,20 um gap,hypothetical_grounded_reference,false,5,nearEndS31Db,-39.469818872384714,dB
+rdxtalk,20 um gap,hypothetical_grounded_reference,false,5,farEndS41Db,-41.70490858820798,dB
+rdxtalk,20 um gap,hypothetical_grounded_reference,false,5,throughS21Db,-1.8930897210677617,dB
+rdxtalk,20 um gap,hypothetical_grounded_reference,false,10,nearEndS31Db,-33.40219118429886,dB
+rdxtalk,20 um gap,hypothetical_grounded_reference,false,10,farEndS41Db,-33.398581880603885,dB
+rdxtalk,20 um gap,hypothetical_grounded_reference,false,10,throughS21Db,-2.714305543924039,dB
+rdxtalk,20 um gap,hypothetical_grounded_reference,false,20,nearEndS31Db,-30.200268195492352,dB
+rdxtalk,20 um gap,hypothetical_grounded_reference,false,20,farEndS41Db,-25.908413097483045,dB
+rdxtalk,20 um gap,hypothetical_grounded_reference,false,20,throughS21Db,-0.6063376544517536,dB
+rdxtalk,20 um gap,hypothetical_grounded_reference,false,40,nearEndS31Db,-25.419070788194798,dB
+rdxtalk,20 um gap,hypothetical_grounded_reference,false,40,farEndS41Db,-22.845420741684794,dB
+rdxtalk,20 um gap,hypothetical_grounded_reference,false,40,throughS21Db,-1.7523193907307233,dB
+rdxtalk,20 um gap,hypothetical_grounded_reference,false,67,nearEndS31Db,-17.608338615933214,dB
+rdxtalk,20 um gap,hypothetical_grounded_reference,false,67,farEndS41Db,-15.472084985604592,dB
+rdxtalk,20 um gap,hypothetical_grounded_reference,false,67,throughS21Db,-1.4024540408905453,dB
+rdxtalk,40 um gap,hypothetical_grounded_reference,false,0.5,nearEndS31Db,-60.82020042725284,dB
+rdxtalk,40 um gap,hypothetical_grounded_reference,false,0.5,farEndS41Db,-73.23099846525831,dB
+rdxtalk,40 um gap,hypothetical_grounded_reference,false,0.5,throughS21Db,-0.030693689561375973,dB
+rdxtalk,40 um gap,hypothetical_grounded_reference,false,1,nearEndS31Db,-55.05878044683481,dB
+rdxtalk,40 um gap,hypothetical_grounded_reference,false,1,farEndS41Db,-66.55357230303404,dB
+rdxtalk,40 um gap,hypothetical_grounded_reference,false,1,throughS21Db,-0.12054918880213109,dB
+rdxtalk,40 um gap,hypothetical_grounded_reference,false,5,nearEndS31Db,-46.05838951994011,dB
+rdxtalk,40 um gap,hypothetical_grounded_reference,false,5,farEndS41Db,-48.362920957732044,dB
+rdxtalk,40 um gap,hypothetical_grounded_reference,false,5,throughS21Db,-1.8820426121291378,dB
+rdxtalk,40 um gap,hypothetical_grounded_reference,false,10,nearEndS31Db,-40.117203507658786,dB
+rdxtalk,40 um gap,hypothetical_grounded_reference,false,10,farEndS41Db,-40.12271647236422,dB
+rdxtalk,40 um gap,hypothetical_grounded_reference,false,10,throughS21Db,-2.699852290210999,dB
+rdxtalk,40 um gap,hypothetical_grounded_reference,false,20,nearEndS31Db,-37.07556451545864,dB
+rdxtalk,40 um gap,hypothetical_grounded_reference,false,20,farEndS41Db,-32.74171869758492,dB
+rdxtalk,40 um gap,hypothetical_grounded_reference,false,20,throughS21Db,-0.5923873071324308,dB
+rdxtalk,40 um gap,hypothetical_grounded_reference,false,40,nearEndS31Db,-32.240705552030406,dB
+rdxtalk,40 um gap,hypothetical_grounded_reference,false,40,farEndS41Db,-29.668759108127496,dB
+rdxtalk,40 um gap,hypothetical_grounded_reference,false,40,throughS21Db,-1.7288787187543926,dB
+rdxtalk,40 um gap,hypothetical_grounded_reference,false,67,nearEndS31Db,-24.280730028629424,dB
+rdxtalk,40 um gap,hypothetical_grounded_reference,false,67,farEndS41Db,-22.22948600184073,dB
+rdxtalk,40 um gap,hypothetical_grounded_reference,false,67,throughS21Db,-1.2832918261593107,dB
+rfleak,0.5x overlap area,hypothetical_grounded_reference,false,0.5,s21Db,-44.26573696347901,dB
+rfleak,0.5x overlap area,hypothetical_grounded_reference,false,1,s21Db,-38.24562492397655,dB
+rfleak,0.5x overlap area,hypothetical_grounded_reference,false,5,s21Db,-24.281807930630123,dB
+rfleak,0.5x overlap area,hypothetical_grounded_reference,false,10,s21Db,-18.309547893929334,dB
+rfleak,0.5x overlap area,hypothetical_grounded_reference,false,20,s21Db,-12.477100139135048,dB
+rfleak,0.5x overlap area,hypothetical_grounded_reference,false,40,s21Db,-7.136852640982634,dB
+rfleak,0.5x overlap area,hypothetical_grounded_reference,false,67,s21Db,-3.9569782901252926,dB
+rfleak,1x overlap area,hypothetical_grounded_reference,false,0.5,s21Db,-38.24562492397655,dB
+rfleak,1x overlap area,hypothetical_grounded_reference,false,1,s21Db,-32.22697595792705,dB
+rfleak,1x overlap area,hypothetical_grounded_reference,false,5,s21Db,-18.309547893929334,dB
+rfleak,1x overlap area,hypothetical_grounded_reference,false,10,s21Db,-12.477100139135048,dB
+rfleak,1x overlap area,hypothetical_grounded_reference,false,20,s21Db,-7.136852640982634,dB
+rfleak,1x overlap area,hypothetical_grounded_reference,false,40,s21Db,-3.1028529537088563,dB
+rfleak,1x overlap area,hypothetical_grounded_reference,false,67,s21Db,-1.3728496040238685,dB
+rfleak,2x overlap area,hypothetical_grounded_reference,false,0.5,s21Db,-32.22697595792705,dB
+rfleak,2x overlap area,hypothetical_grounded_reference,false,1,s21Db,-26.21417108127309,dB
+rfleak,2x overlap area,hypothetical_grounded_reference,false,5,s21Db,-12.477100139135048,dB
+rfleak,2x overlap area,hypothetical_grounded_reference,false,10,s21Db,-7.136852640982634,dB
+rfleak,2x overlap area,hypothetical_grounded_reference,false,20,s21Db,-3.1028529537088563,dB
+rfleak,2x overlap area,hypothetical_grounded_reference,false,40,s21Db,-1.0063583501352718,dB
+rfleak,2x overlap area,hypothetical_grounded_reference,false,67,s21Db,-0.38598462511066367,dB
+stubtest,0.9x length,hypothetical_grounded_reference,false,0.5,throughLossDb,0.0006926078603441817,dB
+stubtest,0.9x length,hypothetical_grounded_reference,false,1,throughLossDb,0.002776706460889346,dB
+stubtest,0.9x length,hypothetical_grounded_reference,false,5,throughLossDb,0.07476232817672311,dB
+stubtest,0.9x length,hypothetical_grounded_reference,false,10,throughLossDb,0.38647702714279897,dB
+stubtest,0.9x length,hypothetical_grounded_reference,false,20,throughLossDb,7.849007452873842,dB
+stubtest,0.9x length,hypothetical_grounded_reference,false,40,throughLossDb,0.057980115241708,dB
+stubtest,0.9x length,hypothetical_grounded_reference,false,67,throughLossDb,23.45709905308927,dB
+stubtest,1x length,hypothetical_grounded_reference,false,0.5,throughLossDb,0.0008550508021337279,dB
+stubtest,1x length,hypothetical_grounded_reference,false,1,throughLossDb,0.0034297704255382556,dB
+stubtest,1x length,hypothetical_grounded_reference,false,5,throughLossDb,0.0940172481136111,dB
+stubtest,1x length,hypothetical_grounded_reference,false,10,throughLossDb,0.5213620234878745,dB
+stubtest,1x length,hypothetical_grounded_reference,false,20,throughLossDb,119.99999999999999,dB
+stubtest,1x length,hypothetical_grounded_reference,false,40,throughLossDb,0,dB
+stubtest,1x length,hypothetical_grounded_reference,false,67,throughLossDb,1.269948185348934,dB
+stubtest,1.1x length,hypothetical_grounded_reference,false,0.5,throughLossDb,0.0010346434888624596,dB
+stubtest,1.1x length,hypothetical_grounded_reference,false,1,throughLossDb,0.004152587947983668,dB
+stubtest,1.1x length,hypothetical_grounded_reference,false,5,throughLossDb,0.11613978737682966,dB
+stubtest,1.1x length,hypothetical_grounded_reference,false,10,throughLossDb,0.6996690338204725,dB
+stubtest,1.1x length,hypothetical_grounded_reference,false,20,throughLossDb,7.849007433580779,dB
+stubtest,1.1x length,hypothetical_grounded_reference,false,40,throughLossDb,0.05798011556351582,dB
+stubtest,1.1x length,hypothetical_grounded_reference,false,67,throughLossDb,0.15870593507616995,dB
+trlset,nominal,hypothetical_grounded_reference,false,0.5,firstLineId,0,
+trlset,nominal,hypothetical_grounded_reference,false,0.5,secondLineId,2,
+trlset,nominal,hypothetical_grounded_reference,false,0.5,phaseDeg,26.452474831684498,deg
+trlset,nominal,hypothetical_grounded_reference,false,0.5,covered,true,
+trlset,nominal,hypothetical_grounded_reference,false,1,firstLineId,0,
+trlset,nominal,hypothetical_grounded_reference,false,1,secondLineId,2,
+trlset,nominal,hypothetical_grounded_reference,false,1,phaseDeg,52.904949663368996,deg
+trlset,nominal,hypothetical_grounded_reference,false,1,covered,true,
+trlset,nominal,hypothetical_grounded_reference,false,5,firstLineId,0,
+trlset,nominal,hypothetical_grounded_reference,false,5,secondLineId,2,
+trlset,nominal,hypothetical_grounded_reference,false,5,phaseDeg,84.52474831684492,deg
+trlset,nominal,hypothetical_grounded_reference,false,5,covered,true,
+trlset,nominal,hypothetical_grounded_reference,false,10,firstLineId,3,
+trlset,nominal,hypothetical_grounded_reference,false,10,secondLineId,4,
+trlset,nominal,hypothetical_grounded_reference,false,10,phaseDeg,109.79340103348915,deg
+trlset,nominal,hypothetical_grounded_reference,false,10,covered,true,
+trlset,nominal,hypothetical_grounded_reference,false,20,firstLineId,0,
+trlset,nominal,hypothetical_grounded_reference,false,20,secondLineId,4,
+trlset,nominal,hypothetical_grounded_reference,false,20,phaseDeg,91.40583114231134,deg
+trlset,nominal,hypothetical_grounded_reference,false,20,covered,true,
+trlset,nominal,hypothetical_grounded_reference,false,40,firstLineId,2,
+trlset,nominal,hypothetical_grounded_reference,false,40,secondLineId,5,
+trlset,nominal,hypothetical_grounded_reference,false,40,phaseDeg,82.46664325117717,deg
+trlset,nominal,hypothetical_grounded_reference,false,40,covered,true,
+trlset,nominal,hypothetical_grounded_reference,false,67,firstLineId,0,
+trlset,nominal,hypothetical_grounded_reference,false,67,secondLineId,5,
+trlset,nominal,hypothetical_grounded_reference,false,67,phaseDeg,89.99999999999999,deg
+trlset,nominal,hypothetical_grounded_reference,false,67,covered,true,
+viamatch,nominal,hypothetical_grounded_reference,false,0.5,bareReturnLossDb,9.54240267724318,dB
+viamatch,nominal,hypothetical_grounded_reference,false,0.5,matchedReturnLossDb,9.54724872897476,dB
+viamatch,nominal,hypothetical_grounded_reference,false,0.5,inputROhm,25.01170998286033,ohm
+viamatch,nominal,hypothetical_grounded_reference,false,0.5,inputXOhm,0.3119919063555043,ohm
+viamatch,nominal,hypothetical_grounded_reference,false,1,bareReturnLossDb,9.54233542652801,dB
+viamatch,nominal,hypothetical_grounded_reference,false,1,matchedReturnLossDb,9.561741787656242,dB
+viamatch,nominal,hypothetical_grounded_reference,false,1,inputROhm,25.04687657180853,ohm
+viamatch,nominal,hypothetical_grounded_reference,false,1,inputXOhm,0.6236905869320799,ohm
+viamatch,nominal,hypothetical_grounded_reference,false,5,bareReturnLossDb,9.540183985580068,dB
+viamatch,nominal,hypothetical_grounded_reference,false,5,matchedReturnLossDb,10.043794183080369,dB
+viamatch,nominal,hypothetical_grounded_reference,false,5,inputROhm,26.201483677893428,ohm
+viamatch,nominal,hypothetical_grounded_reference,false,5,inputXOhm,3.066266398534598,ohm
+viamatch,nominal,hypothetical_grounded_reference,false,10,bareReturnLossDb,9.53346799682741,dB
+viamatch,nominal,hypothetical_grounded_reference,false,10,matchedReturnLossDb,11.823229587031838,dB
+viamatch,nominal,hypothetical_grounded_reference,false,10,inputROhm,30.184181536233023,ohm
+viamatch,nominal,hypothetical_grounded_reference,false,10,inputXOhm,5.6533770203628,ohm
+viamatch,nominal,hypothetical_grounded_reference,false,20,bareReturnLossDb,9.506713502760451,dB
+viamatch,nominal,hypothetical_grounded_reference,false,20,matchedReturnLossDb,119.99999999999999,dB
+viamatch,nominal,hypothetical_grounded_reference,false,20,inputROhm,50.00000000000001,ohm
+viamatch,nominal,hypothetical_grounded_reference,false,20,inputXOhm,-1.7347234759768077e-14,ohm
+viamatch,nominal,hypothetical_grounded_reference,false,40,bareReturnLossDb,9.401409760700744,dB
+viamatch,nominal,hypothetical_grounded_reference,false,40,matchedReturnLossDb,2.7502823281798814,dB
+viamatch,nominal,hypothetical_grounded_reference,false,40,inputROhm,12.44514597635738,ohm
+viamatch,nominal,hypothetical_grounded_reference,false,40,inputXOhm,-37.496728714852885,ohm
+viamatch,nominal,hypothetical_grounded_reference,false,67,bareReturnLossDb,9.158506315612918,dB
+viamatch,nominal,hypothetical_grounded_reference,false,67,matchedReturnLossDb,0.31594183307084844,dB
+viamatch,nominal,hypothetical_grounded_reference,false,67,inputROhm,1.0240586975487047,ohm
+viamatch,nominal,hypothetical_grounded_reference,false,67,inputXOhm,-17.763458028263518,ohm
+zcoupon,0.9x width,hypothetical_grounded_reference,false,0.5,returnLossDb,46.526005692595916,dB
+zcoupon,0.9x width,hypothetical_grounded_reference,false,0.5,throughLossDb,0.00009664704376473957,dB
+zcoupon,0.9x width,hypothetical_grounded_reference,false,1,returnLossDb,40.534933837679525,dB
+zcoupon,0.9x width,hypothetical_grounded_reference,false,1,throughLossDb,0.00038398134583666576,dB
+zcoupon,0.9x width,hypothetical_grounded_reference,false,5,returnLossDb,27.52026997566404,dB
+zcoupon,0.9x width,hypothetical_grounded_reference,false,5,throughLossDb,0.007693818694006243,dB
+zcoupon,0.9x width,hypothetical_grounded_reference,false,10,returnLossDb,24.828561718966217,dB
+zcoupon,0.9x width,hypothetical_grounded_reference,false,10,throughLossDb,0.014310125720007357,dB
+zcoupon,0.9x width,hypothetical_grounded_reference,false,20,returnLossDb,41.9773144747745,dB
+zcoupon,0.9x width,hypothetical_grounded_reference,false,20,throughLossDb,0.0002754651337381812,dB
+zcoupon,0.9x width,hypothetical_grounded_reference,false,40,returnLossDb,36.04138861590298,dB
+zcoupon,0.9x width,hypothetical_grounded_reference,false,40,throughLossDb,0.0010806858943677188,dB
+zcoupon,0.9x width,hypothetical_grounded_reference,false,67,returnLossDb,24.80789429306513,dB
+zcoupon,0.9x width,hypothetical_grounded_reference,false,67,throughLossDb,0.014378500891684656,dB
+zcoupon,1x width,hypothetical_grounded_reference,false,0.5,returnLossDb,119.99999999999999,dB
+zcoupon,1x width,hypothetical_grounded_reference,false,0.5,throughLossDb,-1.928654933106574e-15,dB
+zcoupon,1x width,hypothetical_grounded_reference,false,1,returnLossDb,119.99999999999999,dB
+zcoupon,1x width,hypothetical_grounded_reference,false,1,throughLossDb,0,dB
+zcoupon,1x width,hypothetical_grounded_reference,false,5,returnLossDb,119.99999999999999,dB
+zcoupon,1x width,hypothetical_grounded_reference,false,5,throughLossDb,0,dB
+zcoupon,1x width,hypothetical_grounded_reference,false,10,returnLossDb,119.99999999999999,dB
+zcoupon,1x width,hypothetical_grounded_reference,false,10,throughLossDb,0,dB
+zcoupon,1x width,hypothetical_grounded_reference,false,20,returnLossDb,119.99999999999999,dB
+zcoupon,1x width,hypothetical_grounded_reference,false,20,throughLossDb,0,dB
+zcoupon,1x width,hypothetical_grounded_reference,false,40,returnLossDb,119.99999999999999,dB
+zcoupon,1x width,hypothetical_grounded_reference,false,40,throughLossDb,0,dB
+zcoupon,1x width,hypothetical_grounded_reference,false,67,returnLossDb,119.99999999999999,dB
+zcoupon,1x width,hypothetical_grounded_reference,false,67,throughLossDb,9.64327466553287e-16,dB
+zcoupon,1.1x width,hypothetical_grounded_reference,false,0.5,returnLossDb,46.98505946671182,dB
+zcoupon,1.1x width,hypothetical_grounded_reference,false,0.5,throughLossDb,0.00008695262797428778,dB
+zcoupon,1.1x width,hypothetical_grounded_reference,false,1,returnLossDb,40.994573140914575,dB
+zcoupon,1.1x width,hypothetical_grounded_reference,false,1,throughLossDb,0.00034541744541882253,dB
+zcoupon,1.1x width,hypothetical_grounded_reference,false,5,returnLossDb,27.999747762910243,dB
+zcoupon,1.1x width,hypothetical_grounded_reference,false,5,throughLossDb,0.006888964356142575,dB
+zcoupon,1.1x width,hypothetical_grounded_reference,false,10,returnLossDb,25.38750911851493,dB
+zcoupon,1.1x width,hypothetical_grounded_reference,false,10,throughLossDb,0.012579466443431341,dB
+zcoupon,1.1x width,hypothetical_grounded_reference,false,20,returnLossDb,40.62587505765312,dB
+zcoupon,1.1x width,hypothetical_grounded_reference,false,20,throughLossDb,0.00037602403604813353,dB
+zcoupon,1.1x width,hypothetical_grounded_reference,false,40,returnLossDb,34.73697213949017,dB
+zcoupon,1.1x width,hypothetical_grounded_reference,false,40,throughLossDb,0.001459352017716499,dB
+zcoupon,1.1x width,hypothetical_grounded_reference,false,67,returnLossDb,25.405931923125088,dB
+zcoupon,1.1x width,hypothetical_grounded_reference,false,67,throughLossDb,0.01252614040762759,dB

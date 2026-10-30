@@ -1,0 +1,359 @@
+[
+  {
+    "line": 7010,
+    "type": "SCREEN",
+    "values": [
+      2
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 7010,
+    "type": "TITLE",
+    "values": [
+      "RING DESIGNER V1.1"
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 7120,
+    "type": "CSET",
+    "values": [
+      20,
+      10,
+      20,
+      35,
+      255
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 7120,
+    "type": "CSET",
+    "values": [
+      21,
+      246,
+      190,
+      74,
+      255
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 7130,
+    "type": "CSET",
+    "values": [
+      22,
+      55,
+      195,
+      202,
+      255
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 7130,
+    "type": "CSET",
+    "values": [
+      23,
+      235,
+      242,
+      250,
+      255
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 7140,
+    "type": "CSET",
+    "values": [
+      24,
+      145,
+      166,
+      188,
+      255
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 7140,
+    "type": "CSET",
+    "values": [
+      25,
+      255,
+      125,
+      125,
+      255
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 7150,
+    "type": "BEGINFRAME",
+    "values": []
+  },
+  {
+    "line": 7150,
+    "type": "RECT",
+    "values": [
+      0,
+      0,
+      1500,
+      800,
+      20
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 7150,
+    "type": "LSET",
+    "values": [
+      1,
+      0
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 7160,
+    "type": "FSET",
+    "values": [
+      "Courier",
+      22
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 7171,
+    "type": "GPRINT",
+    "values": [
+      "RING DESIGNER V1.1  /  FIRST-PASS RF DESIGN",
+      52.5,
+      157.33333333333331,
+      24
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 7180,
+    "type": "GPRINT",
+    "values": [
+      "05 / ASSUMPTIONS AND CHECKS",
+      52.5,
+      196,
+      23
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 7190,
+    "type": "LINE",
+    "values": [
+      52.5,
+      217.33333333333331,
+      1447.5,
+      217.33333333333331,
+      24
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 4710,
+    "type": "GPRINT",
+    "values": [
+      "CONSTRUCTION / MODEL",
+      52.5,
+      242.66666666666666,
+      22
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 4720,
+    "type": "GPRINT",
+    "values": [
+      "Continuous backside ground.",
+      52.5,
+      290.66666666666663,
+      23
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 4730,
+    "type": "GPRINT",
+    "values": [
+      "Tie both GSG grounds to it.",
+      52.5,
+      328,
+      23
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 4740,
+    "type": "GPRINT",
+    "values": [
+      "Add low-inductance vias/bonds.",
+      52.5,
+      365.3333333333333,
+      23
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 4750,
+    "type": "GPRINT",
+    "values": [
+      "W/E active; N/S heads parked.",
+      52.5,
+      402.66666666666663,
+      23
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 4760,
+    "type": "GPRINT",
+    "values": [
+      "Bulk isotropic Er; air above.",
+      52.5,
+      440,
+      23
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 4770,
+    "type": "GPRINT",
+    "values": [
+      "No dielectric stack or coating.",
+      52.5,
+      477.3333333333333,
+      23
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 4780,
+    "type": "GPRINT",
+    "values": [
+      "No loss, Q, or S21 prediction.",
+      52.5,
+      514.6666666666666,
+      23
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 4790,
+    "type": "GPRINT",
+    "values": [
+      "EM-tune tapers and ring gaps.",
+      52.5,
+      552,
+      23
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 4800,
+    "type": "GPRINT",
+    "values": [
+      "CHECKS FOR THIS DESIGN",
+      757.5,
+      242.66666666666666,
+      22
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 4840,
+    "type": "GPRINT",
+    "values": [
+      "GCPW METAL NOT THIN VERSUS W/S",
+      757.5,
+      294.66666666666663,
+      25
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 4840,
+    "type": "GPRINT",
+    "values": [
+      "MICROSTRIP METAL NOT THIN VS W",
+      757.5,
+      326.66666666666663,
+      25
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 4861,
+    "type": "GPRINT",
+    "values": [
+      "Cosine lobes differ from the paper's circular arcs.",
+      52.5,
+      686.6666666666666,
+      24
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 7200,
+    "type": "LINE",
+    "values": [
+      52.5,
+      736,
+      1447.5,
+      736,
+      24
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 7210,
+    "type": "GPRINT",
+    "values": [
+      "TAP: NEXT PAGE    M: MENU",
+      52.5,
+      774.6666666666666,
+      22
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 7230,
+    "type": "ENDFRAME",
+    "values": []
+  }
+]

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="800" viewBox="0 0 1500 800"><title>LTC-25000 illustrative profile / 0.5-67 GHz / Cu 2.2 um / MPI GSG 150 um</title><desc>Actual resonator2.bas drawing statements rendered on the host. Source-derived preview, not an app screenshot. Legacy grounded model is inapplicable to actual ungrounded PI/EME-G730 stack. All numerical labels are hypothetical backplane-reference results only. Geometry view uses source scaling and one-pixel minimum trace width.</desc><rect x="0" y="0" width="1500" height="800" fill="rgb(10,20,35)" stroke="rgb(10,20,35)" stroke-width="1"/>
+<text x="52.5" y="157.33333333333331" fill="rgb(145,166,188)" font-family="Courier New,monospace" font-size="22">RING DESIGNER V1.1  /  FIRST-PASS RF DESIGN</text>
+<text x="52.5" y="196" fill="rgb(235,242,250)" font-family="Courier New,monospace" font-size="22">04 / NOMINAL RESONANCE MODES</text>
+<line x1="52.5" y1="217.33333333333331" x2="1447.5" y2="217.33333333333331" stroke="rgb(145,166,188)" stroke-width="1"/>
+<text x="52.5" y="242.66666666666666" fill="rgb(235,242,250)" font-family="Courier New,monospace" font-size="22">Mode frequency = order x F1; constant effective Er.</text>
+<text x="52.5" y="293.3333333333333" fill="rgb(246,190,74)" font-family="Courier New,monospace" font-size="22">n= 1    5 GHz</text>
+<text x="52.5" y="328" fill="rgb(246,190,74)" font-family="Courier New,monospace" font-size="22">n= 2    10 GHz</text>
+<text x="52.5" y="362.66666666666663" fill="rgb(246,190,74)" font-family="Courier New,monospace" font-size="22">n= 3    15 GHz</text>
+<text x="52.5" y="397.3333333333333" fill="rgb(246,190,74)" font-family="Courier New,monospace" font-size="22">n= 4    20 GHz</text>
+<text x="795" y="293.3333333333333" fill="rgb(246,190,74)" font-family="Courier New,monospace" font-size="22">n= 5    25 GHz</text>
+<text x="795" y="328" fill="rgb(246,190,74)" font-family="Courier New,monospace" font-size="22">n= 6    30 GHz</text>
+<text x="795" y="362.66666666666663" fill="rgb(246,190,74)" font-family="Courier New,monospace" font-size="22">n= 7    35 GHz</text>
+<text x="795" y="397.3333333333333" fill="rgb(246,190,74)" font-family="Courier New,monospace" font-size="22">n= 8    40 GHz</text>
+<text x="52.5" y="460" fill="rgb(145,166,188)" font-family="Courier New,monospace" font-size="22"> 13 estimated modes; first eight listed above.</text>
+<line x1="82.5" y1="630.6666666666666" x2="1417.5" y2="630.6666666666666" stroke="rgb(145,166,188)" stroke-width="1"/>
+<line x1="172.83834586466165" y1="526.6666666666666" x2="172.83834586466165" y2="630.6666666666666" stroke="rgb(55,195,202)" stroke-width="1"/>
+<line x1="273.2142857142857" y1="526.6666666666666" x2="273.2142857142857" y2="630.6666666666666" stroke="rgb(55,195,202)" stroke-width="1"/>
+<line x1="373.59022556390977" y1="526.6666666666666" x2="373.59022556390977" y2="630.6666666666666" stroke="rgb(55,195,202)" stroke-width="1"/>
+<line x1="473.9661654135338" y1="526.6666666666666" x2="473.9661654135338" y2="630.6666666666666" stroke="rgb(55,195,202)" stroke-width="1"/>
+<line x1="574.3421052631579" y1="526.6666666666666" x2="574.3421052631579" y2="630.6666666666666" stroke="rgb(55,195,202)" stroke-width="1"/>
+<line x1="674.718045112782" y1="526.6666666666666" x2="674.718045112782" y2="630.6666666666666" stroke="rgb(55,195,202)" stroke-width="1"/>
+<line x1="775.0939849624061" y1="526.6666666666666" x2="775.0939849624061" y2="630.6666666666666" stroke="rgb(55,195,202)" stroke-width="1"/>
+<line x1="875.4699248120301" y1="526.6666666666666" x2="875.4699248120301" y2="630.6666666666666" stroke="rgb(55,195,202)" stroke-width="1"/>
+<line x1="975.8458646616541" y1="526.6666666666666" x2="975.8458646616541" y2="630.6666666666666" stroke="rgb(55,195,202)" stroke-width="1"/>
+<line x1="1076.2218045112782" y1="526.6666666666666" x2="1076.2218045112782" y2="630.6666666666666" stroke="rgb(55,195,202)" stroke-width="1"/>
+<line x1="1176.5977443609022" y1="526.6666666666666" x2="1176.5977443609022" y2="630.6666666666666" stroke="rgb(55,195,202)" stroke-width="1"/>
+<line x1="1276.9736842105262" y1="526.6666666666666" x2="1276.9736842105262" y2="630.6666666666666" stroke="rgb(55,195,202)" stroke-width="1"/>
+<line x1="1377.3496240601503" y1="526.6666666666666" x2="1377.3496240601503" y2="630.6666666666666" stroke="rgb(55,195,202)" stroke-width="1"/>
+<text x="82.5" y="668" fill="rgb(235,242,250)" font-family="Courier New,monospace" font-size="22"> 0.5 GHz</text>
+<text x="1200" y="668" fill="rgb(235,242,250)" font-family="Courier New,monospace" font-size="22"> 67 GHz</text>
+<text x="52.5" y="713.3333333333333" fill="rgb(145,166,188)" font-family="Courier New,monospace" font-size="22">Mode positions only; not an S21 response.</text>
+<line x1="52.5" y1="736" x2="1447.5" y2="736" stroke="rgb(145,166,188)" stroke-width="1"/>
+<text x="52.5" y="774.6666666666666" fill="rgb(55,195,202)" font-family="Courier New,monospace" font-size="22">TAP: NEXT PAGE    M: MENU</text><text x="52.5" y="30" fill="#c5d2df" font-family="Courier New,monospace" font-size="18" font-weight="normal">HOST PREVIEW | legacy source artwork; numerical labels are hypothetical reference only</text>
+<text x="52.5" y="58" fill="#c5d2df" font-family="Courier New,monospace" font-size="18" font-weight="normal">Actual stack: Cu 2.2 um / LTC-25000 6 um / EME-G730 700 um / 0.5-67 GHz</text>
+<text x="52.5" y="89" fill="#ff8d8d" font-family="Courier New,monospace" font-size="24" font-weight="bold">Legacy GROUNDED model; actual stack has NO backplane</text>
+<text x="52.5" y="119" fill="#ffb78a" font-family="Courier New,monospace" font-size="16" font-weight="normal">Requested Cu 2.2 um also exceeds interactive MT/H &lt;= 0.1 guard; native labels below are NOT physical-stack predictions.</text></svg>

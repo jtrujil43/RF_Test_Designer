@@ -1,0 +1,426 @@
+[
+  {
+    "type": "RECT",
+    "values": [
+      0,
+      0,
+      479,
+      299,
+      20
+    ],
+    "font": 12,
+    "sourceLine": 750
+  },
+  {
+    "type": "GPRINT",
+    "values": [
+      "RF LEAKAGE COUPONS",
+      16,
+      26,
+      24
+    ],
+    "font": 12,
+    "sourceLine": 770
+  },
+  {
+    "type": "GPRINT",
+    "values": [
+      "P1 WEST / P2 EAST - BOTH TOPSIDE",
+      16,
+      46,
+      24
+    ],
+    "font": 12,
+    "sourceLine": 780
+  },
+  {
+    "type": "GPRINT",
+    "values": [
+      "N/S PARKED / ONE AT A TIME / NOT TO SCALE",
+      16,
+      60,
+      24
+    ],
+    "font": 12,
+    "sourceLine": 785
+  },
+  {
+    "type": "RECT",
+    "values": [
+      45,
+      104,
+      260,
+      130,
+      21
+    ],
+    "font": 12,
+    "sourceLine": 790
+  },
+  {
+    "type": "RECT",
+    "values": [
+      24,
+      108,
+      58,
+      126,
+      21
+    ],
+    "font": 12,
+    "sourceLine": 795
+  },
+  {
+    "type": "RECT",
+    "values": [
+      24,
+      75,
+      58,
+      87,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 796
+  },
+  {
+    "type": "RECT",
+    "values": [
+      24,
+      147,
+      58,
+      159,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 797
+  },
+  {
+    "type": "RECT",
+    "values": [
+      215,
+      142,
+      390,
+      168,
+      23
+    ],
+    "font": 12,
+    "sourceLine": 800
+  },
+  {
+    "type": "RECT",
+    "values": [
+      422,
+      108,
+      456,
+      126,
+      23
+    ],
+    "font": 12,
+    "sourceLine": 802
+  },
+  {
+    "type": "RECT",
+    "values": [
+      422,
+      75,
+      456,
+      87,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 803
+  },
+  {
+    "type": "RECT",
+    "values": [
+      422,
+      147,
+      456,
+      159,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 804
+  },
+  {
+    "type": "LINE",
+    "values": [
+      390,
+      155,
+      410,
+      155,
+      23
+    ],
+    "font": 12,
+    "sourceLine": 805
+  },
+  {
+    "type": "LINE",
+    "values": [
+      410,
+      155,
+      410,
+      117,
+      23
+    ],
+    "font": 12,
+    "sourceLine": 806
+  },
+  {
+    "type": "LINE",
+    "values": [
+      410,
+      117,
+      422,
+      117,
+      23
+    ],
+    "font": 12,
+    "sourceLine": 807
+  },
+  {
+    "type": "CIRCLE",
+    "values": [
+      410,
+      117,
+      5,
+      24,
+      0
+    ],
+    "font": 12,
+    "sourceLine": 808
+  },
+  {
+    "type": "LINE",
+    "values": [
+      220,
+      130,
+      220,
+      142,
+      24
+    ],
+    "font": 12,
+    "sourceLine": 810
+  },
+  {
+    "type": "LINE",
+    "values": [
+      260,
+      130,
+      260,
+      142,
+      24
+    ],
+    "font": 12,
+    "sourceLine": 820
+  },
+  {
+    "type": "GPRINT",
+    "values": [
+      "DRIVE L1     OVERLAP     PICKUP L2",
+      110,
+      90,
+      24
+    ],
+    "font": 12,
+    "sourceLine": 830
+  },
+  {
+    "type": "CIRCLE",
+    "values": [
+      52,
+      208,
+      4,
+      22,
+      1
+    ],
+    "font": 12,
+    "sourceLine": 850
+  },
+  {
+    "type": "CIRCLE",
+    "values": [
+      82,
+      208,
+      4,
+      22,
+      1
+    ],
+    "font": 12,
+    "sourceLine": 850
+  },
+  {
+    "type": "CIRCLE",
+    "values": [
+      112,
+      208,
+      4,
+      22,
+      1
+    ],
+    "font": 12,
+    "sourceLine": 850
+  },
+  {
+    "type": "CIRCLE",
+    "values": [
+      142,
+      208,
+      4,
+      22,
+      1
+    ],
+    "font": 12,
+    "sourceLine": 850
+  },
+  {
+    "type": "CIRCLE",
+    "values": [
+      172,
+      208,
+      4,
+      22,
+      1
+    ],
+    "font": 12,
+    "sourceLine": 850
+  },
+  {
+    "type": "CIRCLE",
+    "values": [
+      202,
+      208,
+      4,
+      22,
+      1
+    ],
+    "font": 12,
+    "sourceLine": 850
+  },
+  {
+    "type": "CIRCLE",
+    "values": [
+      232,
+      208,
+      4,
+      22,
+      1
+    ],
+    "font": 12,
+    "sourceLine": 850
+  },
+  {
+    "type": "CIRCLE",
+    "values": [
+      262,
+      208,
+      4,
+      22,
+      1
+    ],
+    "font": 12,
+    "sourceLine": 850
+  },
+  {
+    "type": "CIRCLE",
+    "values": [
+      292,
+      208,
+      4,
+      22,
+      1
+    ],
+    "font": 12,
+    "sourceLine": 850
+  },
+  {
+    "type": "CIRCLE",
+    "values": [
+      322,
+      208,
+      4,
+      22,
+      1
+    ],
+    "font": 12,
+    "sourceLine": 850
+  },
+  {
+    "type": "CIRCLE",
+    "values": [
+      352,
+      208,
+      4,
+      22,
+      1
+    ],
+    "font": 12,
+    "sourceLine": 850
+  },
+  {
+    "type": "CIRCLE",
+    "values": [
+      382,
+      208,
+      4,
+      22,
+      1
+    ],
+    "font": 12,
+    "sourceLine": 850
+  },
+  {
+    "type": "CIRCLE",
+    "values": [
+      412,
+      208,
+      4,
+      22,
+      1
+    ],
+    "font": 12,
+    "sourceLine": 850
+  },
+  {
+    "type": "GPRINT",
+    "values": [
+      "C PF  0.0389584264",
+      20,
+      186,
+      24
+    ],
+    "font": 12,
+    "sourceLine": 880
+  },
+  {
+    "type": "GPRINT",
+    "values": [
+      "L2 VIA TO EAST: ACCESS NOT MODELLED",
+      20,
+      242,
+      24
+    ],
+    "font": 12,
+    "sourceLine": 890
+  },
+  {
+    "type": "GPRINT",
+    "values": [
+      "METAL=BROWN/RED GROUNDS/FENCE=BLUE",
+      16,
+      262,
+      24
+    ],
+    "font": 12,
+    "sourceLine": 900
+  },
+  {
+    "type": "GPRINT",
+    "values": [
+      "TAP OR PRESS KEY FOR TEXT",
+      16,
+      284,
+      24
+    ],
+    "font": 12,
+    "sourceLine": 910
+  }
+]

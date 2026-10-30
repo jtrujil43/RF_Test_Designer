@@ -1,2 +1,21 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Stable source/provenance across Windows and Unix checkouts.
+*.bas text eol=lf
+*.BAS text eol=lf
+*.mjs text eol=lf
+*.json text eol=lf
+*.csv text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.TXT text eol=lf
+*.svg text eol=lf
+*.tex text eol=lf
+*.ps1 text eol=lf
+*.html text eol=lf
+*.prg binary
+*.PRG binary
+*.d64 binary
+*.png binary
+*.pdf binary

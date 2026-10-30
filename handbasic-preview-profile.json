@@ -1,0 +1,59 @@
+{
+  "id": "ltc25000_0p5-67ghz",
+  "materialName": "FUJIFILM LTC-25000 polyimide",
+  "substrate": {
+    "materialName": "Sumitomo Bakelite EME-G730 mold resin",
+    "thicknessUm": 700,
+    "er": null,
+    "tanDelta": null,
+    "status": "User specified EME-G730 at 700 um; exact suffix/grade and broadband dielectric data not supplied"
+  },
+  "groundPlane": {
+    "actualLocation": "No continuous ground plane; only top-side GSG grounds",
+    "calculationReference": "Hypothetical continuous plane immediately below the 6 um polyimide layer; absent in the physical stack",
+    "sourceModelsApplicableToPhysicalStack": false
+  },
+  "bandGHz": [0.5, 67],
+  "copperThicknessUm": 2.2,
+  "dielectricThicknessUm": 6,
+  "er": 3.3,
+  "tanDelta": 0.01,
+  "resistivityNohmM": 17.2,
+  "conductivitySPerM": 58139534.88372093,
+  "roughnessUm": 0.3,
+  "probeModel": "MPI TITAN GSG 67 GHz",
+  "probePitchUm": 150,
+  "probeRatingGHz": 67,
+  "adjacentProbeCentreUm": 1000,
+  "ringFundamentalGHz": 5,
+  "status": {
+    "bandGHz": "User specified",
+    "copperThicknessUm": "User specified",
+    "materialName": "User specified; no verified 0.5..67 GHz material dataset located",
+    "dielectricThicknessUm": "User specified cured LTC-25000 thickness",
+    "er": "Illustrative constant assumption, not an LTC-25000 specification or measurement",
+    "tanDelta": "Illustrative constant assumption, not an LTC-25000 specification or measurement",
+    "resistivityNohmM": "Existing coupon default, not measured on the fabricated copper",
+    "roughnessUm": "Existing coupon default, not measured on the fabricated copper",
+    "adjacentProbeCentreUm": "Adjustable layout starting rule; not certified probe-body clearance",
+    "ringFundamentalGHz": "Illustrative ring design choice to place multiple resonances in the requested band"
+  },
+  "stackAssumption": "The physical stack has 2.2 um top copper, 6 um LTC-25000, 700 um EME-G730, and no continuous ground plane. Existing BASIC homogeneous microstrip/grounded-CPW equations do not model it. Any numerical results are archived hypothetical grounded-polyimide reference calculations only, not physical-stack predictions; mold resin and ungrounded multilayer CPW are not solved.",
+  "sources": [
+    {
+      "title": "EV Group / FUJIFILM, SWTest 2024: digital lithography of low-temperature-cure polyimide",
+      "url": "https://www.swtest.org/swtw_library/2024proc/pdf/W06_03_VARGA_SWTest-2024.pdf",
+      "supports": "Identifies LTC 25000 and process trials; does not establish broadband RF permittivity or loss"
+    },
+    {
+      "title": "MPI Probe Selection Guide",
+      "url": "https://www.mpi-corporation.com/wp-content/uploads/ASTPDF/MPI-Probe-Selection-Guide.pdf",
+      "supports": "T67 family, DC to 67 GHz, 150 um GSG pitch option"
+    },
+    {
+      "title": "Sumitomo Bakelite SUMIKON EME semiconductor encapsulants",
+      "url": "https://www.sumibe.co.jp/product/it-materials/epoxy/sumikon-eme/",
+      "supports": "Lists G730 Ver.GR for WLP/PLP; the displayed dielectric figures for another grade must not be transferred to G730"
+    }
+  ]
+}

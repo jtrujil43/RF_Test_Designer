@@ -81,3 +81,33 @@ Repeat portable numerical/text checks with VICE:
 
 Render the source-derived drawing (requires ImageMagick on PATH):
   node preview_handbasic_cardinal.mjs
+
+FULL PREVIEW ATLAS AND PHYSICAL STACK (2026-10-30)
+
+Open handbasic-previews/index.html for all ten programs, or the PDF at
+reports/handbasic-ltc25000-eme-g730.pdf. Editable LaTeX source and a
+pdfLaTeX rebuild script are in reports. Full rebuild:
+  powershell -File reports/build.ps1
+
+The user-specified stack is 2.2um top copper, 6um LTC-25000 insulation and
+700um EME-G730 mold resin, with top-side GSG grounds only and NO continuous
+ground plane. The requested frequency range is500MHz..67GHz, using the
+same MPI TITAN150um/67GHz probes. Native artwork is source-derived on the
+host and is not an app screenshot or scaled fabrication geometry.
+
+The existing source microstrip/grounded-CPW models require a continuous
+return plane and do NOT predict this actual stack. Numeric labels and
+response plots are clearly marked hypothetical grounded references.
+Their er3.3/tanDelta.01 inputs are illustrative, not measured broadband
+LTC-25000 properties. No mold Dk/Df is assigned. A multilayer ungrounded
+CPW model and connected top-ground geometry are required; see the report.
+The original BASIC sources and C64 programs are unchanged by this atlas.
+
+Generate the RF artwork, ring pages, utility text, or reference curves:
+  node preview_handbasic_rf.mjs
+  node preview_handbasic_ring.mjs
+  node preview_handbasic_utilities.mjs
+  node analyze_handbasic_rf.mjs
+
+preview_handbasic_cardinal.mjs now invokes the complete RF preview
+generator, preserving the final profile and warnings in the RDXTALK image.

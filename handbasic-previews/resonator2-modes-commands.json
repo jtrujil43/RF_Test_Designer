@@ -1,0 +1,541 @@
+[
+  {
+    "line": 7010,
+    "type": "SCREEN",
+    "values": [
+      2
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 7010,
+    "type": "TITLE",
+    "values": [
+      "RING DESIGNER V1.1"
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 7120,
+    "type": "CSET",
+    "values": [
+      20,
+      10,
+      20,
+      35,
+      255
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 7120,
+    "type": "CSET",
+    "values": [
+      21,
+      246,
+      190,
+      74,
+      255
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 7130,
+    "type": "CSET",
+    "values": [
+      22,
+      55,
+      195,
+      202,
+      255
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 7130,
+    "type": "CSET",
+    "values": [
+      23,
+      235,
+      242,
+      250,
+      255
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 7140,
+    "type": "CSET",
+    "values": [
+      24,
+      145,
+      166,
+      188,
+      255
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 7140,
+    "type": "CSET",
+    "values": [
+      25,
+      255,
+      125,
+      125,
+      255
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 7150,
+    "type": "BEGINFRAME",
+    "values": []
+  },
+  {
+    "line": 7150,
+    "type": "RECT",
+    "values": [
+      0,
+      0,
+      1500,
+      800,
+      20
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 7150,
+    "type": "LSET",
+    "values": [
+      1,
+      0
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 7160,
+    "type": "FSET",
+    "values": [
+      "Courier",
+      22
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 7171,
+    "type": "GPRINT",
+    "values": [
+      "RING DESIGNER V1.1  /  FIRST-PASS RF DESIGN",
+      52.5,
+      157.33333333333331,
+      24
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 7180,
+    "type": "GPRINT",
+    "values": [
+      "04 / NOMINAL RESONANCE MODES",
+      52.5,
+      196,
+      23
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 7190,
+    "type": "LINE",
+    "values": [
+      52.5,
+      217.33333333333331,
+      1447.5,
+      217.33333333333331,
+      24
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 4311,
+    "type": "GPRINT",
+    "values": [
+      "Mode frequency = order x F1; constant effective Er.",
+      52.5,
+      242.66666666666666,
+      23
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 4390,
+    "type": "GPRINT",
+    "values": [
+      "n= 1    5 GHz",
+      52.5,
+      293.3333333333333,
+      21
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 4390,
+    "type": "GPRINT",
+    "values": [
+      "n= 2    10 GHz",
+      52.5,
+      328,
+      21
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 4390,
+    "type": "GPRINT",
+    "values": [
+      "n= 3    15 GHz",
+      52.5,
+      362.66666666666663,
+      21
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 4390,
+    "type": "GPRINT",
+    "values": [
+      "n= 4    20 GHz",
+      52.5,
+      397.3333333333333,
+      21
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 4390,
+    "type": "GPRINT",
+    "values": [
+      "n= 5    25 GHz",
+      795,
+      293.3333333333333,
+      21
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 4390,
+    "type": "GPRINT",
+    "values": [
+      "n= 6    30 GHz",
+      795,
+      328,
+      21
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 4390,
+    "type": "GPRINT",
+    "values": [
+      "n= 7    35 GHz",
+      795,
+      362.66666666666663,
+      21
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 4390,
+    "type": "GPRINT",
+    "values": [
+      "n= 8    40 GHz",
+      795,
+      397.3333333333333,
+      21
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 4420,
+    "type": "GPRINT",
+    "values": [
+      " 13 estimated modes; first eight listed above.",
+      52.5,
+      460,
+      24
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 4430,
+    "type": "LINE",
+    "values": [
+      82.5,
+      630.6666666666666,
+      1417.5,
+      630.6666666666666,
+      24
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 4480,
+    "type": "LINE",
+    "values": [
+      172.83834586466165,
+      526.6666666666666,
+      172.83834586466165,
+      630.6666666666666,
+      22
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 4480,
+    "type": "LINE",
+    "values": [
+      273.2142857142857,
+      526.6666666666666,
+      273.2142857142857,
+      630.6666666666666,
+      22
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 4480,
+    "type": "LINE",
+    "values": [
+      373.59022556390977,
+      526.6666666666666,
+      373.59022556390977,
+      630.6666666666666,
+      22
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 4480,
+    "type": "LINE",
+    "values": [
+      473.9661654135338,
+      526.6666666666666,
+      473.9661654135338,
+      630.6666666666666,
+      22
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 4480,
+    "type": "LINE",
+    "values": [
+      574.3421052631579,
+      526.6666666666666,
+      574.3421052631579,
+      630.6666666666666,
+      22
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 4480,
+    "type": "LINE",
+    "values": [
+      674.718045112782,
+      526.6666666666666,
+      674.718045112782,
+      630.6666666666666,
+      22
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 4480,
+    "type": "LINE",
+    "values": [
+      775.0939849624061,
+      526.6666666666666,
+      775.0939849624061,
+      630.6666666666666,
+      22
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 4480,
+    "type": "LINE",
+    "values": [
+      875.4699248120301,
+      526.6666666666666,
+      875.4699248120301,
+      630.6666666666666,
+      22
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 4480,
+    "type": "LINE",
+    "values": [
+      975.8458646616541,
+      526.6666666666666,
+      975.8458646616541,
+      630.6666666666666,
+      22
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 4480,
+    "type": "LINE",
+    "values": [
+      1076.2218045112782,
+      526.6666666666666,
+      1076.2218045112782,
+      630.6666666666666,
+      22
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 4480,
+    "type": "LINE",
+    "values": [
+      1176.5977443609022,
+      526.6666666666666,
+      1176.5977443609022,
+      630.6666666666666,
+      22
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 4480,
+    "type": "LINE",
+    "values": [
+      1276.9736842105262,
+      526.6666666666666,
+      1276.9736842105262,
+      630.6666666666666,
+      22
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 4480,
+    "type": "LINE",
+    "values": [
+      1377.3496240601503,
+      526.6666666666666,
+      1377.3496240601503,
+      630.6666666666666,
+      22
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 4520,
+    "type": "GPRINT",
+    "values": [
+      " 0.5 GHz",
+      82.5,
+      668,
+      23
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 4540,
+    "type": "GPRINT",
+    "values": [
+      " 67 GHz",
+      1200,
+      668,
+      23
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 4550,
+    "type": "GPRINT",
+    "values": [
+      "Mode positions only; not an S21 response.",
+      52.5,
+      713.3333333333333,
+      24
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 7200,
+    "type": "LINE",
+    "values": [
+      52.5,
+      736,
+      1447.5,
+      736,
+      24
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 7210,
+    "type": "GPRINT",
+    "values": [
+      "TAP: NEXT PAGE    M: MENU",
+      52.5,
+      774.6666666666666,
+      22
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 7230,
+    "type": "ENDFRAME",
+    "values": []
+  }
+]

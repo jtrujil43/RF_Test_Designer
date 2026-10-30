@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="356" viewBox="0 0 480 356">
+<title>STUBTEST Hand BASIC preview</title>
+<desc>Legacy grounded-model source artwork, not a physical-stack design. Requested profile: 0.5-67 GHz; FUJIFILM LTC-25000 polyimide 6 um; copper 2.2 um; EME-G730 700 um. Actual stack has top-side grounds only and no continuous plane. Native numeric labels are archived hypothetical grounded-reference values only. MPI TITAN GSG 67 GHz, 150 um pitch.</desc>
+<rect width="480" height="56" fill="#fff0cf"/><path d="M0 55H480" stroke="#c4953d"/>
+<text x="240" y="16" text-anchor="middle" fill="#5e3e0b" font-family="Arial,sans-serif" font-size="12" font-weight="bold">LEGACY GROUNDED-MODEL ARTWORK</text>
+<text x="240" y="32" text-anchor="middle" fill="#5e3e0b" font-family="Arial,sans-serif" font-size="10">Actual stack: top-side GSG grounds only; no continuous ground plane</text>
+<text x="240" y="48" text-anchor="middle" fill="#5e3e0b" font-family="Arial,sans-serif" font-size="10">Native numbers are hypothetical references, not physical-stack predictions</text>
+<g transform="translate(0 56)">
+<rect x="0" y="0" width="479" height="299" fill="rgb(248,250,252)" stroke="rgb(248,250,252)"/>
+<text x="16" y="26" fill="rgb(20,30,45)" font-family="Courier New,monospace" font-size="12">SHUNT STUB COUPONS</text>
+<text x="16" y="46" fill="rgb(20,30,45)" font-family="Courier New,monospace" font-size="12">P1 WEST / P2 EAST - N/S PARKED</text>
+<text x="16" y="70" fill="rgb(20,30,45)" font-family="Courier New,monospace" font-size="12">ONE COUPON AT A TIME / NOT TO SCALE</text>
+<rect x="24" y="126" width="34" height="18" fill="rgb(190,100,24)" stroke="rgb(190,100,24)"/>
+<rect x="24" y="99" width="34" height="12" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<rect x="24" y="159" width="34" height="12" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<rect x="422" y="126" width="34" height="18" fill="rgb(190,100,24)" stroke="rgb(190,100,24)"/>
+<rect x="422" y="99" width="34" height="12" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<rect x="422" y="159" width="34" height="12" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<rect x="32" y="130" width="416" height="10" fill="rgb(190,100,24)" stroke="rgb(190,100,24)"/>
+<rect x="235" y="140" width="10" height="76" fill="rgb(190,100,24)" stroke="rgb(190,100,24)"/>
+<text x="110" y="96" fill="rgb(20,30,45)" font-family="Courier New,monospace" font-size="12">THRU           SHUNT STUB</text>
+<text x="20" y="232" fill="rgb(20,30,45)" font-family="Courier New,monospace" font-size="12">STUB W UM  6.22064513</text>
+<text x="20" y="248" fill="rgb(20,30,45)" font-family="Courier New,monospace" font-size="12">STUB L MM  2.46236002</text>
+<text x="16" y="262" fill="rgb(20,30,45)" font-family="Courier New,monospace" font-size="12">COPPER=BROWN GROUND=BLUE</text>
+<text x="16" y="284" fill="rgb(20,30,45)" font-family="Courier New,monospace" font-size="12">TAP OR PRESS KEY FOR TEXT</text>
+</g>
+</svg>

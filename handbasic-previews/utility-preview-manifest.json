@@ -1,0 +1,51 @@
+{
+  "method": "Literal PRINT strings and first INPUT prompt extracted from the unchanged Hand BASIC source; not an app screenshot or execution test.",
+  "programs": [
+    {
+      "source": "MATMUL.BAS",
+      "sourceSha256": "dd5325eca8f4c57663c614c12b9071bb675379cb002db29d5085c141cb248a6d",
+      "image": "matmul.png",
+      "extractedLines": [
+        160,
+        170,
+        180,
+        190,
+        200,
+        210,
+        220,
+        230,
+        240,
+        250,
+        260,
+        270,
+        280,
+        290,
+        300,
+        310,
+        320,
+        330,
+        331,
+        332,
+        333,
+        334,
+        335,
+        336,
+        337,
+        338,
+        340
+      ],
+      "limitations": "Text extraction only; no arithmetic or menu actions executed."
+    },
+    {
+      "source": "varprec.bas",
+      "sourceSha256": "cbddf6eae079ce19ea7c7e4b40ff472b24fe5195449ebd5a164d48769fdd19ff",
+      "image": "varprec.png",
+      "extractedLines": [
+        20,
+        30,
+        40
+      ],
+      "limitations": "Text extraction only; no arithmetic or menu actions executed."
+    }
+  ]
+}

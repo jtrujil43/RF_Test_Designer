@@ -1,0 +1,354 @@
+[
+  {
+    "type": "RECT",
+    "values": [
+      0,
+      0,
+      479,
+      299,
+      20
+    ],
+    "font": 12,
+    "sourceLine": 680
+  },
+  {
+    "type": "GPRINT",
+    "values": [
+      "IMPEDANCE COUPONS",
+      16,
+      26,
+      24
+    ],
+    "font": 12,
+    "sourceLine": 700
+  },
+  {
+    "type": "GPRINT",
+    "values": [
+      "P1 WEST / P2 EAST - N/S PARKED",
+      16,
+      46,
+      24
+    ],
+    "font": 12,
+    "sourceLine": 710
+  },
+  {
+    "type": "GPRINT",
+    "values": [
+      "ONE COUPON AT A TIME / NOT TO SCALE",
+      16,
+      70,
+      24
+    ],
+    "font": 12,
+    "sourceLine": 715
+  },
+  {
+    "type": "RECT",
+    "values": [
+      58,
+      105,
+      422,
+      115,
+      21
+    ],
+    "font": 12,
+    "sourceLine": 740
+  },
+  {
+    "type": "RECT",
+    "values": [
+      24,
+      100,
+      58,
+      120,
+      21
+    ],
+    "font": 12,
+    "sourceLine": 750
+  },
+  {
+    "type": "RECT",
+    "values": [
+      24,
+      86,
+      58,
+      92,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 752
+  },
+  {
+    "type": "RECT",
+    "values": [
+      24,
+      128,
+      58,
+      134,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 754
+  },
+  {
+    "type": "RECT",
+    "values": [
+      422,
+      100,
+      456,
+      120,
+      21
+    ],
+    "font": 12,
+    "sourceLine": 760
+  },
+  {
+    "type": "RECT",
+    "values": [
+      422,
+      86,
+      456,
+      92,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 762
+  },
+  {
+    "type": "RECT",
+    "values": [
+      422,
+      128,
+      456,
+      134,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 764
+  },
+  {
+    "type": "RECT",
+    "values": [
+      58,
+      155,
+      422,
+      169,
+      21
+    ],
+    "font": 12,
+    "sourceLine": 740
+  },
+  {
+    "type": "RECT",
+    "values": [
+      24,
+      152,
+      58,
+      172,
+      21
+    ],
+    "font": 12,
+    "sourceLine": 750
+  },
+  {
+    "type": "RECT",
+    "values": [
+      24,
+      138,
+      58,
+      144,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 752
+  },
+  {
+    "type": "RECT",
+    "values": [
+      24,
+      180,
+      58,
+      186,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 754
+  },
+  {
+    "type": "RECT",
+    "values": [
+      422,
+      152,
+      456,
+      172,
+      21
+    ],
+    "font": 12,
+    "sourceLine": 760
+  },
+  {
+    "type": "RECT",
+    "values": [
+      422,
+      138,
+      456,
+      144,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 762
+  },
+  {
+    "type": "RECT",
+    "values": [
+      422,
+      180,
+      456,
+      186,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 764
+  },
+  {
+    "type": "RECT",
+    "values": [
+      58,
+      205,
+      422,
+      223,
+      21
+    ],
+    "font": 12,
+    "sourceLine": 740
+  },
+  {
+    "type": "RECT",
+    "values": [
+      24,
+      204,
+      58,
+      224,
+      21
+    ],
+    "font": 12,
+    "sourceLine": 750
+  },
+  {
+    "type": "RECT",
+    "values": [
+      24,
+      190,
+      58,
+      196,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 752
+  },
+  {
+    "type": "RECT",
+    "values": [
+      24,
+      232,
+      58,
+      238,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 754
+  },
+  {
+    "type": "RECT",
+    "values": [
+      422,
+      204,
+      456,
+      224,
+      21
+    ],
+    "font": 12,
+    "sourceLine": 760
+  },
+  {
+    "type": "RECT",
+    "values": [
+      422,
+      190,
+      456,
+      196,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 762
+  },
+  {
+    "type": "RECT",
+    "values": [
+      422,
+      232,
+      456,
+      238,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 764
+  },
+  {
+    "type": "GPRINT",
+    "values": [
+      "LOW W / NOMINAL W / HIGH W",
+      144,
+      90,
+      24
+    ],
+    "font": 12,
+    "sourceLine": 780
+  },
+  {
+    "type": "GPRINT",
+    "values": [
+      "NOM W UM  12.4311394",
+      110,
+      244,
+      24
+    ],
+    "font": 12,
+    "sourceLine": 800
+  },
+  {
+    "type": "GPRINT",
+    "values": [
+      "LENGTH MM  5",
+      300,
+      244,
+      24
+    ],
+    "font": 12,
+    "sourceLine": 820
+  },
+  {
+    "type": "GPRINT",
+    "values": [
+      "COPPER=BROWN GROUND=BLUE",
+      16,
+      262,
+      24
+    ],
+    "font": 12,
+    "sourceLine": 830
+  },
+  {
+    "type": "GPRINT",
+    "values": [
+      "TAP OR PRESS KEY FOR TEXT",
+      16,
+      284,
+      24
+    ],
+    "font": 12,
+    "sourceLine": 840
+  }
+]

@@ -1,0 +1,455 @@
+[
+  {
+    "line": 7010,
+    "type": "SCREEN",
+    "values": [
+      2
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 7010,
+    "type": "TITLE",
+    "values": [
+      "RING DESIGNER V1.1"
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 7120,
+    "type": "CSET",
+    "values": [
+      20,
+      10,
+      20,
+      35,
+      255
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 7120,
+    "type": "CSET",
+    "values": [
+      21,
+      246,
+      190,
+      74,
+      255
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 7130,
+    "type": "CSET",
+    "values": [
+      22,
+      55,
+      195,
+      202,
+      255
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 7130,
+    "type": "CSET",
+    "values": [
+      23,
+      235,
+      242,
+      250,
+      255
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 7140,
+    "type": "CSET",
+    "values": [
+      24,
+      145,
+      166,
+      188,
+      255
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 7140,
+    "type": "CSET",
+    "values": [
+      25,
+      255,
+      125,
+      125,
+      255
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 7150,
+    "type": "BEGINFRAME",
+    "values": []
+  },
+  {
+    "line": 7150,
+    "type": "RECT",
+    "values": [
+      0,
+      0,
+      1500,
+      800,
+      20
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 7150,
+    "type": "LSET",
+    "values": [
+      1,
+      0
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 7160,
+    "type": "FSET",
+    "values": [
+      "Courier",
+      22
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 7171,
+    "type": "GPRINT",
+    "values": [
+      "RING DESIGNER V1.1  /  FIRST-PASS RF DESIGN",
+      52.5,
+      157.33333333333331,
+      24
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 7180,
+    "type": "GPRINT",
+    "values": [
+      "01 / RING DIMENSIONS",
+      52.5,
+      196,
+      23
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 7190,
+    "type": "LINE",
+    "values": [
+      52.5,
+      217.33333333333331,
+      1447.5,
+      217.33333333333331,
+      24
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 2610,
+    "type": "GPRINT",
+    "values": [
+      "MATERIAL / EXCITATION",
+      52.5,
+      242.66666666666666,
+      22
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 2620,
+    "type": "GPRINT",
+    "values": [
+      "LTC-25000 (REFERENCE ONLY)",
+      52.5,
+      288,
+      23
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 2640,
+    "type": "GPRINT",
+    "values": [
+      "Er = 3.3   h = 6 um",
+      52.5,
+      328,
+      23
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 2660,
+    "type": "GPRINT",
+    "values": [
+      "Band 0.5 to 67 GHz",
+      52.5,
+      368,
+      23
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 2680,
+    "type": "GPRINT",
+    "values": [
+      "Fundamental 5 GHz",
+      52.5,
+      408,
+      21
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 2700,
+    "type": "GPRINT",
+    "values": [
+      "50-ohm trace 12.4466 um",
+      52.5,
+      448,
+      23
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 2720,
+    "type": "GPRINT",
+    "values": [
+      "Effective Er 2.4768",
+      52.5,
+      488,
+      23
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 2740,
+    "type": "GPRINT",
+    "values": [
+      "Metal thickness 2.2 um",
+      52.5,
+      528,
+      23
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 2760,
+    "type": "GPRINT",
+    "values": [
+      "Lobes 0   depth 0",
+      52.5,
+      568,
+      23
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 2770,
+    "type": "GPRINT",
+    "values": [
+      "RING / PROBE GEOMETRY",
+      795,
+      242.66666666666666,
+      22
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 2790,
+    "type": "GPRINT",
+    "values": [
+      "R scale 6.0635 mm",
+      795,
+      288,
+      23
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 2810,
+    "type": "GPRINT",
+    "values": [
+      "Max copper radius 6.0697 mm",
+      795,
+      328,
+      21
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 2830,
+    "type": "GPRINT",
+    "values": [
+      "Centreline length 38.0981 mm",
+      795,
+      368,
+      23
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 2850,
+    "type": "GPRINT",
+    "values": [
+      "Coupling gap 2 um",
+      795,
+      408,
+      23
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 2870,
+    "type": "GPRINT",
+    "values": [
+      "Minimum bend R 6.0635 mm",
+      795,
+      448,
+      23
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 2890,
+    "type": "GPRINT",
+    "values": [
+      "GSG pitch 150 um",
+      795,
+      488,
+      23
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 2910,
+    "type": "GPRINT",
+    "values": [
+      "Modes in band 13",
+      795,
+      528,
+      23
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 2930,
+    "type": "GPRINT",
+    "values": [
+      "Checks flagged 2",
+      795,
+      568,
+      22
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 2935,
+    "type": "GPRINT",
+    "values": [
+      "MPI TITAN GSG150 / 67 GHz",
+      52.5,
+      606.6666666666666,
+      22
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 2941,
+    "type": "GPRINT",
+    "values": [
+      "R: centreline radius (circle), radial scale (lobes).",
+      52.5,
+      641.3333333333333,
+      24
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 2951,
+    "type": "GPRINT",
+    "values": [
+      "Starting geometry; inspect checks before fabrication.",
+      52.5,
+      684,
+      24
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 7200,
+    "type": "LINE",
+    "values": [
+      52.5,
+      736,
+      1447.5,
+      736,
+      24
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 7210,
+    "type": "GPRINT",
+    "values": [
+      "TAP: NEXT PAGE    M: MENU",
+      52.5,
+      774.6666666666666,
+      22
+    ],
+    "font": 22,
+    "lineWidth": 1
+  },
+  {
+    "line": 7230,
+    "type": "ENDFRAME",
+    "values": []
+  }
+]

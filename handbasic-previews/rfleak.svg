@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="356" viewBox="0 0 480 356">
+<title>RFLEAK Hand BASIC preview</title>
+<desc>Legacy grounded-model source artwork, not a physical-stack design. Requested profile: 0.5-67 GHz; FUJIFILM LTC-25000 polyimide 6 um; copper 2.2 um; EME-G730 700 um. Actual stack has top-side grounds only and no continuous plane. Native numeric labels are archived hypothetical grounded-reference values only. MPI TITAN GSG 67 GHz, 150 um pitch.</desc>
+<rect width="480" height="56" fill="#fff0cf"/><path d="M0 55H480" stroke="#c4953d"/>
+<text x="240" y="16" text-anchor="middle" fill="#5e3e0b" font-family="Arial,sans-serif" font-size="12" font-weight="bold">LEGACY GROUNDED-MODEL ARTWORK</text>
+<text x="240" y="32" text-anchor="middle" fill="#5e3e0b" font-family="Arial,sans-serif" font-size="10">Actual stack: top-side GSG grounds only; no continuous ground plane</text>
+<text x="240" y="48" text-anchor="middle" fill="#5e3e0b" font-family="Arial,sans-serif" font-size="10">Native numbers are hypothetical references, not physical-stack predictions</text>
+<g transform="translate(0 56)">
+<rect x="0" y="0" width="479" height="299" fill="rgb(248,250,252)" stroke="rgb(248,250,252)"/>
+<text x="16" y="26" fill="rgb(20,30,45)" font-family="Courier New,monospace" font-size="12">RF LEAKAGE COUPONS</text>
+<text x="16" y="46" fill="rgb(20,30,45)" font-family="Courier New,monospace" font-size="12">P1 WEST / P2 EAST - BOTH TOPSIDE</text>
+<text x="16" y="60" fill="rgb(20,30,45)" font-family="Courier New,monospace" font-size="12">N/S PARKED / ONE AT A TIME / NOT TO SCALE</text>
+<rect x="45" y="104" width="215" height="26" fill="rgb(190,100,24)" stroke="rgb(190,100,24)"/>
+<rect x="24" y="108" width="34" height="18" fill="rgb(190,100,24)" stroke="rgb(190,100,24)"/>
+<rect x="24" y="75" width="34" height="12" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<rect x="24" y="147" width="34" height="12" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<rect x="215" y="142" width="175" height="26" fill="rgb(180,35,55)" stroke="rgb(180,35,55)"/>
+<rect x="422" y="108" width="34" height="18" fill="rgb(180,35,55)" stroke="rgb(180,35,55)"/>
+<rect x="422" y="75" width="34" height="12" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<rect x="422" y="147" width="34" height="12" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<line x1="390" y1="155" x2="410" y2="155" stroke="rgb(180,35,55)"/>
+<line x1="410" y1="155" x2="410" y2="117" stroke="rgb(180,35,55)"/>
+<line x1="410" y1="117" x2="422" y2="117" stroke="rgb(180,35,55)"/>
+<circle cx="410" cy="117" r="5" fill="none" stroke="rgb(20,30,45)"/>
+<line x1="220" y1="130" x2="220" y2="142" stroke="rgb(20,30,45)"/>
+<line x1="260" y1="130" x2="260" y2="142" stroke="rgb(20,30,45)"/>
+<text x="110" y="90" fill="rgb(20,30,45)" font-family="Courier New,monospace" font-size="12">DRIVE L1     OVERLAP     PICKUP L2</text>
+<circle cx="52" cy="208" r="4" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<circle cx="82" cy="208" r="4" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<circle cx="112" cy="208" r="4" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<circle cx="142" cy="208" r="4" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<circle cx="172" cy="208" r="4" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<circle cx="202" cy="208" r="4" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<circle cx="232" cy="208" r="4" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<circle cx="262" cy="208" r="4" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<circle cx="292" cy="208" r="4" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<circle cx="322" cy="208" r="4" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<circle cx="352" cy="208" r="4" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<circle cx="382" cy="208" r="4" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<circle cx="412" cy="208" r="4" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<text x="20" y="186" fill="rgb(20,30,45)" font-family="Courier New,monospace" font-size="12">C PF  0.0389584264</text>
+<text x="20" y="242" fill="rgb(20,30,45)" font-family="Courier New,monospace" font-size="12">L2 VIA TO EAST: ACCESS NOT MODELLED</text>
+<text x="16" y="262" fill="rgb(20,30,45)" font-family="Courier New,monospace" font-size="12">METAL=BROWN/RED GROUNDS/FENCE=BLUE</text>
+<text x="16" y="284" fill="rgb(20,30,45)" font-family="Courier New,monospace" font-size="12">TAP OR PRESS KEY FOR TEXT</text>
+</g>
+</svg>

@@ -1,0 +1,33 @@
+HAND BASIC ATLAS AND PDF - 2026-10-30
+
+PASS full reports/build.ps1, including all preview generators, numerical
+reference checks and two pdfLaTeX passes.
+PASS 18 PDF pages; all pages visually inspected after rendering with
+Poppler at120dpi. No clipped/overlapping text or diagrams. Section
+headings have separate paragraphs. Latest rebuilt pages match the
+visually checked rendered images exactly.
+PASS zero overfull/underfull boxes in the final LaTeX log.
+PASS70 numerical values checked against source-driven routines.
+PASS all RF source/profile provenance hashes; SHA-256 uses canonical
+UTF-8 text with CRLF/CR normalized toLF for portable Git checkouts.
+PASS utility preview source hashes for MATMUL.BAS andvarprec.bas.
+PASS113 local gallery links/image targets and26 README links/targets.
+
+Inventory:14 RF source-drawing views,2 literal utility text previews,
+1 physical-stack concept figure,7 hypothetical reference-response plots.
+All10 parent-folder Hand BASIC programs are represented.
+
+The physical stack is2.2um top Cu /6um LTC-25000 /700um EME-G730,
+with top-side GSG grounds only and no continuous ground plane.
+Probe profile:MPI TITAN67GHz,150um adjacent-tip pitch;0.5..67GHz band.
+
+Model applicability to physical stack:FALSE. Existing grounded line
+equations and idealized plate/closed-return surrogates do not constitute
+an ungrounded multilayer CPW model. All numeric reference plots and
+native artwork labels are clearly qualified. No mold Dk/Df is assigned.
+The illustrative reference er3.3/tanDelta.01 are not verified material
+properties. The ring preview also flags its copper-thickness input guard.
+
+No original BASIC source or C64 program was changed by this atlas.
+The mobile Hand BASIC app, mechanical probe clearance, fabricated
+structures and physical RF performance were not tested.

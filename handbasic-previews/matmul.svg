@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="662" viewBox="0 0 800 662"><rect width="800" height="662" fill="#f8fafc"/>
+<rect width="800" height="42" fill="#153047"/>
+<text x="24" y="28" fill="white" font-family="Arial,sans-serif" font-size="17">MATMUL.BAS / SOURCE TEXT PREVIEW</text>
+<text x="24" y="69" fill="#172c40" font-family="Courier New,monospace" font-size="18">MATRIX LIBRARY</text>
+<text x="24" y="90" fill="#172c40" font-family="Courier New,monospace" font-size="18">1: INPUT A</text>
+<text x="24" y="111" fill="#172c40" font-family="Courier New,monospace" font-size="18">2: INPUT B</text>
+<text x="24" y="132" fill="#172c40" font-family="Courier New,monospace" font-size="18">3: SHOW A</text>
+<text x="24" y="153" fill="#172c40" font-family="Courier New,monospace" font-size="18">4: SHOW B</text>
+<text x="24" y="174" fill="#172c40" font-family="Courier New,monospace" font-size="18">5: A + B</text>
+<text x="24" y="195" fill="#172c40" font-family="Courier New,monospace" font-size="18">6: A - B</text>
+<text x="24" y="216" fill="#172c40" font-family="Courier New,monospace" font-size="18">7: A * B</text>
+<text x="24" y="237" fill="#172c40" font-family="Courier New,monospace" font-size="18">8: TRANSPOSE A</text>
+<text x="24" y="258" fill="#172c40" font-family="Courier New,monospace" font-size="18">9: IDENTITY</text>
+<text x="24" y="279" fill="#172c40" font-family="Courier New,monospace" font-size="18">10: DETERMINANT</text>
+<text x="24" y="300" fill="#172c40" font-family="Courier New,monospace" font-size="18">11: K * A</text>
+<text x="24" y="321" fill="#172c40" font-family="Courier New,monospace" font-size="18">12: SWAP ROWS IN A</text>
+<text x="24" y="342" fill="#172c40" font-family="Courier New,monospace" font-size="18">13: SWAP COLS IN A</text>
+<text x="24" y="363" fill="#172c40" font-family="Courier New,monospace" font-size="18">14: INVERSE A</text>
+<text x="24" y="384" fill="#172c40" font-family="Courier New,monospace" font-size="18">15: GAUSS-JORDAN</text>
+<text x="24" y="405" fill="#172c40" font-family="Courier New,monospace" font-size="18">16: SOLVE AX=B</text>
+<text x="24" y="426" fill="#172c40" font-family="Courier New,monospace" font-size="18">17: MATRIX POWER</text>
+<text x="24" y="447" fill="#172c40" font-family="Courier New,monospace" font-size="18">18: COPY A TO C</text>
+<text x="24" y="468" fill="#172c40" font-family="Courier New,monospace" font-size="18">19: RREF</text>
+<text x="24" y="489" fill="#172c40" font-family="Courier New,monospace" font-size="18">20: TRACE</text>
+<text x="24" y="510" fill="#172c40" font-family="Courier New,monospace" font-size="18">21: RANK</text>
+<text x="24" y="531" fill="#172c40" font-family="Courier New,monospace" font-size="18">22: LU DECOMP</text>
+<text x="24" y="552" fill="#172c40" font-family="Courier New,monospace" font-size="18">23: EIGENVALUES 2X2</text>
+<text x="24" y="573" fill="#172c40" font-family="Courier New,monospace" font-size="18">24: EIGENVALUES 3X3</text>
+<text x="24" y="594" fill="#172c40" font-family="Courier New,monospace" font-size="18">25: EXIT</text>
+<text x="24" y="615" fill="#172c40" font-family="Courier New,monospace" font-size="18">CHOICE?</text>
+<text x="24" y="646" fill="#556879" font-family="Arial,sans-serif" font-size="13">RF frequency, insulation and probe settings do not apply.</text></svg>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="800" viewBox="0 0 1500 800"><title>LTC-25000 illustrative profile / 0.5-67 GHz / Cu 2.2 um / MPI GSG 150 um</title><desc>Actual resonator2.bas drawing statements rendered on the host. Source-derived preview, not an app screenshot. Legacy grounded model is inapplicable to actual ungrounded PI/EME-G730 stack. All numerical labels are hypothetical backplane-reference results only. Geometry view uses source scaling and one-pixel minimum trace width.</desc><rect x="0" y="0" width="1500" height="800" fill="rgb(10,20,35)" stroke="rgb(10,20,35)" stroke-width="1"/>
+<text x="52.5" y="157.33333333333331" fill="rgb(145,166,188)" font-family="Courier New,monospace" font-size="22">RING DESIGNER V1.1  /  FIRST-PASS RF DESIGN</text>
+<text x="52.5" y="196" fill="rgb(235,242,250)" font-family="Courier New,monospace" font-size="22">03 / GSG LAUNCH DETAIL</text>
+<line x1="52.5" y1="217.33333333333331" x2="1447.5" y2="217.33333333333331" stroke="rgb(145,166,188)" stroke-width="1"/>
+<rect x="112.5" y="286.66666666666663" width="440" height="80" fill="rgb(55,195,202)" stroke="rgb(55,195,202)" stroke-width="1"/>
+<rect x="112.5" y="526.6666666666666" width="440" height="80" fill="rgb(55,195,202)" stroke="rgb(55,195,202)" stroke-width="1"/>
+<polygon points="112.5,406.66666666666663 192.5,406.66666666666663 192.5,486.66666666666663" fill="rgb(246,190,74)" stroke="rgb(246,190,74)" stroke-width="1"/>
+<polygon points="112.5,406.66666666666663 192.5,486.66666666666663 112.5,486.66666666666663" fill="rgb(246,190,74)" stroke="rgb(246,190,74)" stroke-width="1"/>
+<polygon points="192.5,406.66666666666663 312.5,440.06662703453134 312.5,453.2667062988019" fill="rgb(246,190,74)" stroke="rgb(246,190,74)" stroke-width="1"/>
+<polygon points="192.5,406.66666666666663 312.5,453.2667062988019 192.5,486.66666666666663" fill="rgb(246,190,74)" stroke="rgb(246,190,74)" stroke-width="1"/>
+<polygon points="312.5,440.06662703453134 552.5,440.06662703453134 552.5,453.2667062988019" fill="rgb(246,190,74)" stroke="rgb(246,190,74)" stroke-width="1"/>
+<polygon points="312.5,440.06662703453134 552.5,453.2667062988019 312.5,453.2667062988019" fill="rgb(246,190,74)" stroke="rgb(246,190,74)" stroke-width="1"/>
+<line x1="146.5" y1="326.66666666666663" x2="158.5" y2="326.66666666666663" stroke="rgb(235,242,250)" stroke-width="1"/>
+<line x1="152.5" y1="320.66666666666663" x2="152.5" y2="332.66666666666663" stroke="rgb(235,242,250)" stroke-width="1"/>
+<line x1="146.5" y1="446.66666666666663" x2="158.5" y2="446.66666666666663" stroke="rgb(235,242,250)" stroke-width="1"/>
+<line x1="152.5" y1="440.66666666666663" x2="152.5" y2="452.66666666666663" stroke="rgb(235,242,250)" stroke-width="1"/>
+<line x1="146.5" y1="566.6666666666666" x2="158.5" y2="566.6666666666666" stroke="rgb(235,242,250)" stroke-width="1"/>
+<line x1="152.5" y1="560.6666666666666" x2="152.5" y2="572.6666666666666" stroke="rgb(235,242,250)" stroke-width="1"/>
+<text x="60" y="333.3333333333333" fill="rgb(55,195,202)" font-family="Courier New,monospace" font-size="22">G</text>
+<text x="60" y="453.3333333333333" fill="rgb(246,190,74)" font-family="Courier New,monospace" font-size="22">S</text>
+<text x="60" y="573.3333333333333" fill="rgb(55,195,202)" font-family="Courier New,monospace" font-size="22">G</text>
+<text x="52.5" y="245.33333333333331" fill="rgb(235,242,250)" font-family="Courier New,monospace" font-size="22">Contact centres: y = -pitch, 0, +pitch</text>
+<text x="900" y="293.3333333333333" fill="rgb(235,242,250)" font-family="Courier New,monospace" font-size="22">Pitch 150 um</text>
+<text x="900" y="333.3333333333333" fill="rgb(235,242,250)" font-family="Courier New,monospace" font-size="22">Pad width 100 um</text>
+<text x="900" y="373.3333333333333" fill="rgb(235,242,250)" font-family="Courier New,monospace" font-size="22">Pad length 100 um</text>
+<text x="900" y="413.3333333333333" fill="rgb(145,166,188)" font-family="Courier New,monospace" font-size="22">Pad local Z 11.1815 ohm</text>
+<text x="900" y="466.66666666666663" fill="rgb(246,190,74)" font-family="Courier New,monospace" font-size="22">Neck width 16.5001 um</text>
+<text x="900" y="506.66666666666663" fill="rgb(235,242,250)" font-family="Courier New,monospace" font-size="22">Neck slot 91.75 um</text>
+<text x="900" y="546.6666666666666" fill="rgb(235,242,250)" font-family="Courier New,monospace" font-size="22">Neck Z 50 ohm</text>
+<text x="900" y="586.6666666666666" fill="rgb(235,242,250)" font-family="Courier New,monospace" font-size="22">Contact X +/- 7.6217 mm</text>
+<text x="52.5" y="646.6666666666666" fill="rgb(145,166,188)" font-family="Courier New,monospace" font-size="22">West detail; east mirrored. Crosses: tip centres.</text>
+<text x="52.5" y="684" fill="rgb(145,166,188)" font-family="Courier New,monospace" font-size="22">W/E active; N/S parked. Local Z: long GCPW section.</text>
+<line x1="52.5" y1="736" x2="1447.5" y2="736" stroke="rgb(145,166,188)" stroke-width="1"/>
+<text x="52.5" y="774.6666666666666" fill="rgb(55,195,202)" font-family="Courier New,monospace" font-size="22">TAP: NEXT PAGE    M: MENU</text><text x="52.5" y="30" fill="#c5d2df" font-family="Courier New,monospace" font-size="18" font-weight="normal">HOST PREVIEW | legacy source artwork; numerical labels are hypothetical reference only</text>
+<text x="52.5" y="58" fill="#c5d2df" font-family="Courier New,monospace" font-size="18" font-weight="normal">Actual stack: Cu 2.2 um / LTC-25000 6 um / EME-G730 700 um / 0.5-67 GHz</text>
+<text x="52.5" y="89" fill="#ff8d8d" font-family="Courier New,monospace" font-size="24" font-weight="bold">Legacy GROUNDED model; actual stack has NO backplane</text>
+<text x="52.5" y="119" fill="#ffb78a" font-family="Courier New,monospace" font-size="16" font-weight="normal">Requested Cu 2.2 um also exceeds interactive MT/H &lt;= 0.1 guard; native labels below are NOT physical-stack predictions.</text></svg>

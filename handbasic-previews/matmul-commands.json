@@ -1,0 +1,137 @@
+[
+  {
+    "line": 160,
+    "type": "PRINT",
+    "text": "MATRIX LIBRARY"
+  },
+  {
+    "line": 170,
+    "type": "PRINT",
+    "text": "1: INPUT A"
+  },
+  {
+    "line": 180,
+    "type": "PRINT",
+    "text": "2: INPUT B"
+  },
+  {
+    "line": 190,
+    "type": "PRINT",
+    "text": "3: SHOW A"
+  },
+  {
+    "line": 200,
+    "type": "PRINT",
+    "text": "4: SHOW B"
+  },
+  {
+    "line": 210,
+    "type": "PRINT",
+    "text": "5: A + B"
+  },
+  {
+    "line": 220,
+    "type": "PRINT",
+    "text": "6: A - B"
+  },
+  {
+    "line": 230,
+    "type": "PRINT",
+    "text": "7: A * B"
+  },
+  {
+    "line": 240,
+    "type": "PRINT",
+    "text": "8: TRANSPOSE A"
+  },
+  {
+    "line": 250,
+    "type": "PRINT",
+    "text": "9: IDENTITY"
+  },
+  {
+    "line": 260,
+    "type": "PRINT",
+    "text": "10: DETERMINANT"
+  },
+  {
+    "line": 270,
+    "type": "PRINT",
+    "text": "11: K * A"
+  },
+  {
+    "line": 280,
+    "type": "PRINT",
+    "text": "12: SWAP ROWS IN A"
+  },
+  {
+    "line": 290,
+    "type": "PRINT",
+    "text": "13: SWAP COLS IN A"
+  },
+  {
+    "line": 300,
+    "type": "PRINT",
+    "text": "14: INVERSE A"
+  },
+  {
+    "line": 310,
+    "type": "PRINT",
+    "text": "15: GAUSS-JORDAN"
+  },
+  {
+    "line": 320,
+    "type": "PRINT",
+    "text": "16: SOLVE AX=B"
+  },
+  {
+    "line": 330,
+    "type": "PRINT",
+    "text": "17: MATRIX POWER"
+  },
+  {
+    "line": 331,
+    "type": "PRINT",
+    "text": "18: COPY A TO C"
+  },
+  {
+    "line": 332,
+    "type": "PRINT",
+    "text": "19: RREF"
+  },
+  {
+    "line": 333,
+    "type": "PRINT",
+    "text": "20: TRACE"
+  },
+  {
+    "line": 334,
+    "type": "PRINT",
+    "text": "21: RANK"
+  },
+  {
+    "line": 335,
+    "type": "PRINT",
+    "text": "22: LU DECOMP"
+  },
+  {
+    "line": 336,
+    "type": "PRINT",
+    "text": "23: EIGENVALUES 2X2"
+  },
+  {
+    "line": 337,
+    "type": "PRINT",
+    "text": "24: EIGENVALUES 3X3"
+  },
+  {
+    "line": 338,
+    "type": "PRINT",
+    "text": "25: EXIT"
+  },
+  {
+    "line": 340,
+    "type": "INPUT",
+    "text": "CHOICE?"
+  }
+]

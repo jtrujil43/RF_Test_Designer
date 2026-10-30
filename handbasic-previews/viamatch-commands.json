@@ -1,0 +1,222 @@
+[
+  {
+    "type": "RECT",
+    "values": [
+      0,
+      0,
+      479,
+      299,
+      20
+    ],
+    "font": 12,
+    "sourceLine": 830
+  },
+  {
+    "type": "GPRINT",
+    "values": [
+      "STUD VIA MATCH",
+      16,
+      26,
+      24
+    ],
+    "font": 12,
+    "sourceLine": 850
+  },
+  {
+    "type": "GPRINT",
+    "values": [
+      "P1 WEST INPUT - E/N/S PARKED",
+      16,
+      46,
+      24
+    ],
+    "font": 12,
+    "sourceLine": 860
+  },
+  {
+    "type": "GPRINT",
+    "values": [
+      "INTERNAL RL/RX LOAD / NOT TO SCALE",
+      16,
+      70,
+      24
+    ],
+    "font": 12,
+    "sourceLine": 865
+  },
+  {
+    "type": "RECT",
+    "values": [
+      24,
+      126,
+      58,
+      144,
+      21
+    ],
+    "font": 12,
+    "sourceLine": 866
+  },
+  {
+    "type": "RECT",
+    "values": [
+      24,
+      99,
+      58,
+      111,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 867
+  },
+  {
+    "type": "RECT",
+    "values": [
+      24,
+      159,
+      58,
+      171,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 868
+  },
+  {
+    "type": "RECT",
+    "values": [
+      32,
+      130,
+      135,
+      140,
+      21
+    ],
+    "font": 12,
+    "sourceLine": 870
+  },
+  {
+    "type": "RECT",
+    "values": [
+      135,
+      102,
+      171,
+      168,
+      21
+    ],
+    "font": 12,
+    "sourceLine": 880
+  },
+  {
+    "type": "RECT",
+    "values": [
+      171,
+      120,
+      202,
+      150,
+      21
+    ],
+    "font": 12,
+    "sourceLine": 890
+  },
+  {
+    "type": "RECT",
+    "values": [
+      202,
+      130,
+      316,
+      140,
+      21
+    ],
+    "font": 12,
+    "sourceLine": 900
+  },
+  {
+    "type": "RECT",
+    "values": [
+      320,
+      112,
+      362,
+      158,
+      23
+    ],
+    "font": 12,
+    "sourceLine": 910
+  },
+  {
+    "type": "LINE",
+    "values": [
+      32,
+      200,
+      418,
+      200,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 920
+  },
+  {
+    "type": "LINE",
+    "values": [
+      120,
+      190,
+      120,
+      200,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 930
+  },
+  {
+    "type": "GPRINT",
+    "values": [
+      "MATCH      STUD VIA   INTERNAL LOAD",
+      90,
+      88,
+      24
+    ],
+    "font": 12,
+    "sourceLine": 940
+  },
+  {
+    "type": "GPRINT",
+    "values": [
+      "RETURN: CLOSED CYLINDER MODEL",
+      20,
+      224,
+      24
+    ],
+    "font": 12,
+    "sourceLine": 950
+  },
+  {
+    "type": "GPRINT",
+    "values": [
+      "PAD R UM  35",
+      20,
+      242,
+      24
+    ],
+    "font": 12,
+    "sourceLine": 970
+  },
+  {
+    "type": "GPRINT",
+    "values": [
+      "COPPER=BROWN GROUND=BLUE",
+      16,
+      262,
+      24
+    ],
+    "font": 12,
+    "sourceLine": 980
+  },
+  {
+    "type": "GPRINT",
+    "values": [
+      "TAP OR PRESS KEY FOR TEXT",
+      16,
+      284,
+      24
+    ],
+    "font": 12,
+    "sourceLine": 990
+  }
+]

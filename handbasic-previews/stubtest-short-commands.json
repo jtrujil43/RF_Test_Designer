@@ -1,0 +1,210 @@
+[
+  {
+    "type": "RECT",
+    "values": [
+      0,
+      0,
+      479,
+      299,
+      20
+    ],
+    "font": 12,
+    "sourceLine": 630
+  },
+  {
+    "type": "GPRINT",
+    "values": [
+      "SHUNT STUB COUPONS",
+      16,
+      26,
+      24
+    ],
+    "font": 12,
+    "sourceLine": 650
+  },
+  {
+    "type": "GPRINT",
+    "values": [
+      "P1 WEST / P2 EAST - N/S PARKED",
+      16,
+      46,
+      24
+    ],
+    "font": 12,
+    "sourceLine": 660
+  },
+  {
+    "type": "GPRINT",
+    "values": [
+      "ONE COUPON AT A TIME / NOT TO SCALE",
+      16,
+      70,
+      24
+    ],
+    "font": 12,
+    "sourceLine": 665
+  },
+  {
+    "type": "RECT",
+    "values": [
+      24,
+      126,
+      58,
+      144,
+      21
+    ],
+    "font": 12,
+    "sourceLine": 10010
+  },
+  {
+    "type": "RECT",
+    "values": [
+      24,
+      99,
+      58,
+      111,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 10020
+  },
+  {
+    "type": "RECT",
+    "values": [
+      24,
+      159,
+      58,
+      171,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 10030
+  },
+  {
+    "type": "RECT",
+    "values": [
+      422,
+      126,
+      456,
+      144,
+      21
+    ],
+    "font": 12,
+    "sourceLine": 10040
+  },
+  {
+    "type": "RECT",
+    "values": [
+      422,
+      99,
+      456,
+      111,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 10050
+  },
+  {
+    "type": "RECT",
+    "values": [
+      422,
+      159,
+      456,
+      171,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 10060
+  },
+  {
+    "type": "RECT",
+    "values": [
+      32,
+      130,
+      448,
+      140,
+      21
+    ],
+    "font": 12,
+    "sourceLine": 670
+  },
+  {
+    "type": "RECT",
+    "values": [
+      235,
+      140,
+      245,
+      216,
+      21
+    ],
+    "font": 12,
+    "sourceLine": 680
+  },
+  {
+    "type": "CIRCLE",
+    "values": [
+      240,
+      216,
+      9,
+      22,
+      0
+    ],
+    "font": 12,
+    "sourceLine": 700
+  },
+  {
+    "type": "GPRINT",
+    "values": [
+      "THRU           SHUNT STUB",
+      110,
+      96,
+      24
+    ],
+    "font": 12,
+    "sourceLine": 2340
+  },
+  {
+    "type": "GPRINT",
+    "values": [
+      "STUB W UM  6.22064513",
+      20,
+      232,
+      24
+    ],
+    "font": 12,
+    "sourceLine": 2360
+  },
+  {
+    "type": "GPRINT",
+    "values": [
+      "STUB L MM  4.9291725",
+      20,
+      248,
+      24
+    ],
+    "font": 12,
+    "sourceLine": 2380
+  },
+  {
+    "type": "GPRINT",
+    "values": [
+      "COPPER=BROWN GROUND=BLUE",
+      16,
+      262,
+      24
+    ],
+    "font": 12,
+    "sourceLine": 720
+  },
+  {
+    "type": "GPRINT",
+    "values": [
+      "TAP OR PRESS KEY FOR TEXT",
+      16,
+      284,
+      24
+    ],
+    "font": 12,
+    "sourceLine": 730
+  }
+]

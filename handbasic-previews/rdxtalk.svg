@@ -1,4 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="480" height="300" viewBox="0 0 480 300"><rect x="0" y="0" width="479" height="299" fill="rgb(248,250,252)" stroke="rgb(248,250,252)"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="356" viewBox="0 0 480 356">
+<title>RDXTALK Hand BASIC preview</title>
+<desc>Legacy grounded-model source artwork, not a physical-stack design. Requested profile: 0.5-67 GHz; FUJIFILM LTC-25000 polyimide 6 um; copper 2.2 um; EME-G730 700 um. Actual stack has top-side grounds only and no continuous plane. Native numeric labels are archived hypothetical grounded-reference values only. MPI TITAN GSG 67 GHz, 150 um pitch.</desc>
+<rect width="480" height="56" fill="#fff0cf"/><path d="M0 55H480" stroke="#c4953d"/>
+<text x="240" y="16" text-anchor="middle" fill="#5e3e0b" font-family="Arial,sans-serif" font-size="12" font-weight="bold">LEGACY GROUNDED-MODEL ARTWORK</text>
+<text x="240" y="32" text-anchor="middle" fill="#5e3e0b" font-family="Arial,sans-serif" font-size="10">Actual stack: top-side GSG grounds only; no continuous ground plane</text>
+<text x="240" y="48" text-anchor="middle" fill="#5e3e0b" font-family="Arial,sans-serif" font-size="10">Native numbers are hypothetical references, not physical-stack predictions</text>
+<g transform="translate(0 56)">
+<rect x="0" y="0" width="479" height="299" fill="rgb(248,250,252)" stroke="rgb(248,250,252)"/>
 <text x="16" y="26" fill="rgb(20,30,45)" font-family="Courier New,monospace" font-size="12">RDL CROSSTALK</text>
 <text x="16" y="46" fill="rgb(20,30,45)" font-family="Courier New,monospace" font-size="12">SCHEMATIC - NOT TO SCALE / FOUR GSG PROBES</text>
 <rect x="50" y="132" width="280" height="6" fill="rgb(190,100,24)" stroke="rgb(190,100,24)"/>
@@ -40,4 +48,6 @@
 <line x1="146" y1="249" x2="150" y2="243" stroke="rgb(180,35,55)"/>
 <line x1="154" y1="249" x2="150" y2="243" stroke="rgb(180,35,55)"/>
 <text x="16" y="278" fill="rgb(20,30,45)" font-family="Courier New,monospace" font-size="12">W 45 GAP 20 L 5 MM / BROWN S, BLUE G</text>
-<text x="16" y="294" fill="rgb(20,30,45)" font-family="Courier New,monospace" font-size="12">TAP/KEY: TEXT. FANOUTS/BENDS EXCLUDED.</text></svg>
+<text x="16" y="294" fill="rgb(20,30,45)" font-family="Courier New,monospace" font-size="12">TAP/KEY: TEXT. FANOUTS/BENDS EXCLUDED.</text>
+</g>
+</svg>

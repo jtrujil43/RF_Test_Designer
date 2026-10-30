@@ -20,3 +20,13 @@ rad.json
 *.flf
 #Test results file
 TestResults.xml
+
+# Local previews/build intermediates; final PDF, SVG, PNG and source are tracked.
+/tmp/
+/reports/*.log
+/reports/*.aux
+/reports/*.out
+/reports/*.toc
+/handbasic-previews/rf-analysis-console.txt
+.DS_Store
+Thumbs.db

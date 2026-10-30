@@ -1,0 +1,584 @@
+[
+  {
+    "type": "RECT",
+    "values": [
+      0,
+      0,
+      479,
+      299,
+      20
+    ],
+    "font": 12,
+    "sourceLine": 690
+  },
+  {
+    "type": "GPRINT",
+    "values": [
+      "MULTILINE TRL DESIGN",
+      16,
+      26,
+      24
+    ],
+    "font": 12,
+    "sourceLine": 710
+  },
+  {
+    "type": "GPRINT",
+    "values": [
+      "ONE STANDARD AT A TIME / NOT TO SCALE",
+      16,
+      46,
+      24
+    ],
+    "font": 12,
+    "sourceLine": 720
+  },
+  {
+    "type": "GPRINT",
+    "values": [
+      "P1 WEST / P2 EAST - N/S PARKED",
+      16,
+      70,
+      24
+    ],
+    "font": 12,
+    "sourceLine": 725
+  },
+  {
+    "type": "RECT",
+    "values": [
+      110,
+      92,
+      370,
+      98,
+      21
+    ],
+    "font": 12,
+    "sourceLine": 750
+  },
+  {
+    "type": "RECT",
+    "values": [
+      86,
+      91,
+      110,
+      99,
+      21
+    ],
+    "font": 12,
+    "sourceLine": 760
+  },
+  {
+    "type": "RECT",
+    "values": [
+      86,
+      85,
+      110,
+      88,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 762
+  },
+  {
+    "type": "RECT",
+    "values": [
+      86,
+      102,
+      110,
+      105,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 764
+  },
+  {
+    "type": "RECT",
+    "values": [
+      370,
+      91,
+      394,
+      99,
+      21
+    ],
+    "font": 12,
+    "sourceLine": 770
+  },
+  {
+    "type": "RECT",
+    "values": [
+      370,
+      85,
+      394,
+      88,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 772
+  },
+  {
+    "type": "RECT",
+    "values": [
+      370,
+      102,
+      394,
+      105,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 774
+  },
+  {
+    "type": "RECT",
+    "values": [
+      100,
+      114,
+      380,
+      120,
+      21
+    ],
+    "font": 12,
+    "sourceLine": 750
+  },
+  {
+    "type": "RECT",
+    "values": [
+      76,
+      113,
+      100,
+      121,
+      21
+    ],
+    "font": 12,
+    "sourceLine": 760
+  },
+  {
+    "type": "RECT",
+    "values": [
+      76,
+      107,
+      100,
+      110,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 762
+  },
+  {
+    "type": "RECT",
+    "values": [
+      76,
+      124,
+      100,
+      127,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 764
+  },
+  {
+    "type": "RECT",
+    "values": [
+      380,
+      113,
+      404,
+      121,
+      21
+    ],
+    "font": 12,
+    "sourceLine": 770
+  },
+  {
+    "type": "RECT",
+    "values": [
+      380,
+      107,
+      404,
+      110,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 772
+  },
+  {
+    "type": "RECT",
+    "values": [
+      380,
+      124,
+      404,
+      127,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 774
+  },
+  {
+    "type": "RECT",
+    "values": [
+      90,
+      136,
+      390,
+      142,
+      21
+    ],
+    "font": 12,
+    "sourceLine": 750
+  },
+  {
+    "type": "RECT",
+    "values": [
+      66,
+      135,
+      90,
+      143,
+      21
+    ],
+    "font": 12,
+    "sourceLine": 760
+  },
+  {
+    "type": "RECT",
+    "values": [
+      66,
+      129,
+      90,
+      132,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 762
+  },
+  {
+    "type": "RECT",
+    "values": [
+      66,
+      146,
+      90,
+      149,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 764
+  },
+  {
+    "type": "RECT",
+    "values": [
+      390,
+      135,
+      414,
+      143,
+      21
+    ],
+    "font": 12,
+    "sourceLine": 770
+  },
+  {
+    "type": "RECT",
+    "values": [
+      390,
+      129,
+      414,
+      132,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 772
+  },
+  {
+    "type": "RECT",
+    "values": [
+      390,
+      146,
+      414,
+      149,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 774
+  },
+  {
+    "type": "RECT",
+    "values": [
+      80,
+      158,
+      400,
+      164,
+      21
+    ],
+    "font": 12,
+    "sourceLine": 750
+  },
+  {
+    "type": "RECT",
+    "values": [
+      56,
+      157,
+      80,
+      165,
+      21
+    ],
+    "font": 12,
+    "sourceLine": 760
+  },
+  {
+    "type": "RECT",
+    "values": [
+      56,
+      151,
+      80,
+      154,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 762
+  },
+  {
+    "type": "RECT",
+    "values": [
+      56,
+      168,
+      80,
+      171,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 764
+  },
+  {
+    "type": "RECT",
+    "values": [
+      400,
+      157,
+      424,
+      165,
+      21
+    ],
+    "font": 12,
+    "sourceLine": 770
+  },
+  {
+    "type": "RECT",
+    "values": [
+      400,
+      151,
+      424,
+      154,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 772
+  },
+  {
+    "type": "RECT",
+    "values": [
+      400,
+      168,
+      424,
+      171,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 774
+  },
+  {
+    "type": "RECT",
+    "values": [
+      70,
+      180,
+      410,
+      186,
+      21
+    ],
+    "font": 12,
+    "sourceLine": 750
+  },
+  {
+    "type": "RECT",
+    "values": [
+      46,
+      179,
+      70,
+      187,
+      21
+    ],
+    "font": 12,
+    "sourceLine": 760
+  },
+  {
+    "type": "RECT",
+    "values": [
+      46,
+      173,
+      70,
+      176,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 762
+  },
+  {
+    "type": "RECT",
+    "values": [
+      46,
+      190,
+      70,
+      193,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 764
+  },
+  {
+    "type": "RECT",
+    "values": [
+      410,
+      179,
+      434,
+      187,
+      21
+    ],
+    "font": 12,
+    "sourceLine": 770
+  },
+  {
+    "type": "RECT",
+    "values": [
+      410,
+      173,
+      434,
+      176,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 772
+  },
+  {
+    "type": "RECT",
+    "values": [
+      410,
+      190,
+      434,
+      193,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 774
+  },
+  {
+    "type": "RECT",
+    "values": [
+      60,
+      202,
+      420,
+      208,
+      21
+    ],
+    "font": 12,
+    "sourceLine": 750
+  },
+  {
+    "type": "RECT",
+    "values": [
+      36,
+      201,
+      60,
+      209,
+      21
+    ],
+    "font": 12,
+    "sourceLine": 760
+  },
+  {
+    "type": "RECT",
+    "values": [
+      36,
+      195,
+      60,
+      198,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 762
+  },
+  {
+    "type": "RECT",
+    "values": [
+      36,
+      212,
+      60,
+      215,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 764
+  },
+  {
+    "type": "RECT",
+    "values": [
+      420,
+      201,
+      444,
+      209,
+      21
+    ],
+    "font": 12,
+    "sourceLine": 770
+  },
+  {
+    "type": "RECT",
+    "values": [
+      420,
+      195,
+      444,
+      198,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 772
+  },
+  {
+    "type": "RECT",
+    "values": [
+      420,
+      212,
+      444,
+      215,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 774
+  },
+  {
+    "type": "GPRINT",
+    "values": [
+      "SEPARATE THRU/LINES; SAME REFLECT PLANE",
+      110,
+      246,
+      24
+    ],
+    "font": 12,
+    "sourceLine": 800
+  },
+  {
+    "type": "GPRINT",
+    "values": [
+      "COPPER=BROWN GROUND=BLUE",
+      16,
+      262,
+      24
+    ],
+    "font": 12,
+    "sourceLine": 810
+  },
+  {
+    "type": "GPRINT",
+    "values": [
+      "TAP OR PRESS KEY FOR TEXT",
+      16,
+      284,
+      24
+    ],
+    "font": 12,
+    "sourceLine": 820
+  }
+]

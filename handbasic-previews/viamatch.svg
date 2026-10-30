@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="356" viewBox="0 0 480 356">
+<title>VIAMATCH Hand BASIC preview</title>
+<desc>Legacy grounded-model source artwork, not a physical-stack design. Requested profile: 0.5-67 GHz; FUJIFILM LTC-25000 polyimide 6 um; copper 2.2 um; EME-G730 700 um. Actual stack has top-side grounds only and no continuous plane. Native numeric labels are archived hypothetical grounded-reference values only. MPI TITAN GSG 67 GHz, 150 um pitch.</desc>
+<rect width="480" height="56" fill="#fff0cf"/><path d="M0 55H480" stroke="#c4953d"/>
+<text x="240" y="16" text-anchor="middle" fill="#5e3e0b" font-family="Arial,sans-serif" font-size="12" font-weight="bold">LEGACY GROUNDED-MODEL ARTWORK</text>
+<text x="240" y="32" text-anchor="middle" fill="#5e3e0b" font-family="Arial,sans-serif" font-size="10">Actual stack: top-side GSG grounds only; no continuous ground plane</text>
+<text x="240" y="48" text-anchor="middle" fill="#5e3e0b" font-family="Arial,sans-serif" font-size="10">Native numbers are hypothetical references, not physical-stack predictions</text>
+<g transform="translate(0 56)">
+<rect x="0" y="0" width="479" height="299" fill="rgb(248,250,252)" stroke="rgb(248,250,252)"/>
+<text x="16" y="26" fill="rgb(20,30,45)" font-family="Courier New,monospace" font-size="12">STUD VIA MATCH</text>
+<text x="16" y="46" fill="rgb(20,30,45)" font-family="Courier New,monospace" font-size="12">P1 WEST INPUT - E/N/S PARKED</text>
+<text x="16" y="70" fill="rgb(20,30,45)" font-family="Courier New,monospace" font-size="12">INTERNAL RL/RX LOAD / NOT TO SCALE</text>
+<rect x="24" y="126" width="34" height="18" fill="rgb(190,100,24)" stroke="rgb(190,100,24)"/>
+<rect x="24" y="99" width="34" height="12" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<rect x="24" y="159" width="34" height="12" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<rect x="32" y="130" width="103" height="10" fill="rgb(190,100,24)" stroke="rgb(190,100,24)"/>
+<rect x="135" y="102" width="36" height="66" fill="rgb(190,100,24)" stroke="rgb(190,100,24)"/>
+<rect x="171" y="120" width="31" height="30" fill="rgb(190,100,24)" stroke="rgb(190,100,24)"/>
+<rect x="202" y="130" width="114" height="10" fill="rgb(190,100,24)" stroke="rgb(190,100,24)"/>
+<rect x="320" y="112" width="42" height="46" fill="rgb(180,35,55)" stroke="rgb(180,35,55)"/>
+<line x1="32" y1="200" x2="418" y2="200" stroke="rgb(30,86,150)"/>
+<line x1="120" y1="190" x2="120" y2="200" stroke="rgb(30,86,150)"/>
+<text x="90" y="88" fill="rgb(20,30,45)" font-family="Courier New,monospace" font-size="12">MATCH      STUD VIA   INTERNAL LOAD</text>
+<text x="20" y="224" fill="rgb(20,30,45)" font-family="Courier New,monospace" font-size="12">RETURN: CLOSED CYLINDER MODEL</text>
+<text x="20" y="242" fill="rgb(20,30,45)" font-family="Courier New,monospace" font-size="12">PAD R UM  35</text>
+<text x="16" y="262" fill="rgb(20,30,45)" font-family="Courier New,monospace" font-size="12">COPPER=BROWN GROUND=BLUE</text>
+<text x="16" y="284" fill="rgb(20,30,45)" font-family="Courier New,monospace" font-size="12">TAP OR PRESS KEY FOR TEXT</text>
+</g>
+</svg>

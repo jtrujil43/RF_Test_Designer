@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="800" viewBox="0 0 1500 800"><title>LTC-25000 illustrative profile / 0.5-67 GHz / Cu 2.2 um / MPI GSG 150 um</title><desc>Actual resonator2.bas drawing statements rendered on the host. Source-derived preview, not an app screenshot. Legacy grounded model is inapplicable to actual ungrounded PI/EME-G730 stack. All numerical labels are hypothetical backplane-reference results only. Geometry view uses source scaling and one-pixel minimum trace width.</desc><rect x="0" y="0" width="1500" height="800" fill="rgb(10,20,35)" stroke="rgb(10,20,35)" stroke-width="1"/>
+<text x="52.5" y="157.33333333333331" fill="rgb(145,166,188)" font-family="Courier New,monospace" font-size="22">RING DESIGNER V1.1  /  FIRST-PASS RF DESIGN</text>
+<text x="52.5" y="196" fill="rgb(235,242,250)" font-family="Courier New,monospace" font-size="22">01 / RING DIMENSIONS</text>
+<line x1="52.5" y1="217.33333333333331" x2="1447.5" y2="217.33333333333331" stroke="rgb(145,166,188)" stroke-width="1"/>
+<text x="52.5" y="242.66666666666666" fill="rgb(55,195,202)" font-family="Courier New,monospace" font-size="22">MATERIAL / EXCITATION</text>
+<text x="52.5" y="288" fill="rgb(235,242,250)" font-family="Courier New,monospace" font-size="22">LTC-25000 (REFERENCE ONLY)</text>
+<text x="52.5" y="328" fill="rgb(235,242,250)" font-family="Courier New,monospace" font-size="22">Er = 3.3   h = 6 um</text>
+<text x="52.5" y="368" fill="rgb(235,242,250)" font-family="Courier New,monospace" font-size="22">Band 0.5 to 67 GHz</text>
+<text x="52.5" y="408" fill="rgb(246,190,74)" font-family="Courier New,monospace" font-size="22">Fundamental 5 GHz</text>
+<text x="52.5" y="448" fill="rgb(235,242,250)" font-family="Courier New,monospace" font-size="22">50-ohm trace 12.4466 um</text>
+<text x="52.5" y="488" fill="rgb(235,242,250)" font-family="Courier New,monospace" font-size="22">Effective Er 2.4768</text>
+<text x="52.5" y="528" fill="rgb(235,242,250)" font-family="Courier New,monospace" font-size="22">Metal thickness 2.2 um</text>
+<text x="52.5" y="568" fill="rgb(235,242,250)" font-family="Courier New,monospace" font-size="22">Lobes 0   depth 0</text>
+<text x="795" y="242.66666666666666" fill="rgb(55,195,202)" font-family="Courier New,monospace" font-size="22">RING / PROBE GEOMETRY</text>
+<text x="795" y="288" fill="rgb(235,242,250)" font-family="Courier New,monospace" font-size="22">R scale 6.0635 mm</text>
+<text x="795" y="328" fill="rgb(246,190,74)" font-family="Courier New,monospace" font-size="22">Max copper radius 6.0697 mm</text>
+<text x="795" y="368" fill="rgb(235,242,250)" font-family="Courier New,monospace" font-size="22">Centreline length 38.0981 mm</text>
+<text x="795" y="408" fill="rgb(235,242,250)" font-family="Courier New,monospace" font-size="22">Coupling gap 2 um</text>
+<text x="795" y="448" fill="rgb(235,242,250)" font-family="Courier New,monospace" font-size="22">Minimum bend R 6.0635 mm</text>
+<text x="795" y="488" fill="rgb(235,242,250)" font-family="Courier New,monospace" font-size="22">GSG pitch 150 um</text>
+<text x="795" y="528" fill="rgb(235,242,250)" font-family="Courier New,monospace" font-size="22">Modes in band 13</text>
+<text x="795" y="568" fill="rgb(55,195,202)" font-family="Courier New,monospace" font-size="22">Checks flagged 2</text>
+<text x="52.5" y="606.6666666666666" fill="rgb(55,195,202)" font-family="Courier New,monospace" font-size="22">MPI TITAN GSG150 / 67 GHz</text>
+<text x="52.5" y="641.3333333333333" fill="rgb(145,166,188)" font-family="Courier New,monospace" font-size="22">R: centreline radius (circle), radial scale (lobes).</text>
+<text x="52.5" y="684" fill="rgb(145,166,188)" font-family="Courier New,monospace" font-size="22">Starting geometry; inspect checks before fabrication.</text>
+<line x1="52.5" y1="736" x2="1447.5" y2="736" stroke="rgb(145,166,188)" stroke-width="1"/>
+<text x="52.5" y="774.6666666666666" fill="rgb(55,195,202)" font-family="Courier New,monospace" font-size="22">TAP: NEXT PAGE    M: MENU</text><text x="52.5" y="30" fill="#c5d2df" font-family="Courier New,monospace" font-size="18" font-weight="normal">HOST PREVIEW | legacy source artwork; numerical labels are hypothetical reference only</text>
+<text x="52.5" y="58" fill="#c5d2df" font-family="Courier New,monospace" font-size="18" font-weight="normal">Actual stack: Cu 2.2 um / LTC-25000 6 um / EME-G730 700 um / 0.5-67 GHz</text>
+<text x="52.5" y="89" fill="#ff8d8d" font-family="Courier New,monospace" font-size="24" font-weight="bold">Legacy GROUNDED model; actual stack has NO backplane</text>
+<text x="52.5" y="119" fill="#ffb78a" font-family="Courier New,monospace" font-size="16" font-weight="normal">Requested Cu 2.2 um also exceeds interactive MT/H &lt;= 0.1 guard; native labels below are NOT physical-stack predictions.</text></svg>
