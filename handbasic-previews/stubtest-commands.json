@@ -119,6 +119,66 @@
   {
     "type": "RECT",
     "values": [
+      58,
+      99,
+      422,
+      111,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 10062
+  },
+  {
+    "type": "RECT",
+    "values": [
+      58,
+      159,
+      224,
+      171,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 10064
+  },
+  {
+    "type": "RECT",
+    "values": [
+      256,
+      159,
+      422,
+      171,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 10066
+  },
+  {
+    "type": "RECT",
+    "values": [
+      218,
+      159,
+      224,
+      220,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 10068
+  },
+  {
+    "type": "RECT",
+    "values": [
+      256,
+      159,
+      262,
+      220,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 10070
+  },
+  {
+    "type": "RECT",
+    "values": [
       32,
       130,
       448,

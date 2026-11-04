@@ -16,10 +16,16 @@
 <rect x="32" y="130" width="103" height="10" fill="rgb(190,100,24)" stroke="rgb(190,100,24)"/>
 <rect x="135" y="102" width="36" height="66" fill="rgb(190,100,24)" stroke="rgb(190,100,24)"/>
 <rect x="171" y="120" width="31" height="30" fill="rgb(190,100,24)" stroke="rgb(190,100,24)"/>
-<rect x="202" y="130" width="114" height="10" fill="rgb(190,100,24)" stroke="rgb(190,100,24)"/>
+<rect x="202" y="130" width="118" height="10" fill="rgb(190,100,24)" stroke="rgb(190,100,24)"/>
 <rect x="320" y="112" width="42" height="46" fill="rgb(180,35,55)" stroke="rgb(180,35,55)"/>
-<line x1="32" y1="200" x2="418" y2="200" stroke="rgb(30,86,150)"/>
-<line x1="120" y1="190" x2="120" y2="200" stroke="rgb(30,86,150)"/>
+<rect x="58" y="99" width="62" height="12" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<rect x="114" y="90" width="6" height="21" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<rect x="114" y="90" width="266" height="6" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<rect x="58" y="159" width="62" height="12" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<rect x="114" y="159" width="6" height="29" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<rect x="114" y="182" width="266" height="6" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<rect x="374" y="90" width="6" height="98" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<rect x="344" y="158" width="6" height="30" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
 <text x="90" y="88" fill="rgb(20,30,45)" font-family="Courier New,monospace" font-size="12">MATCH      STUD VIA   INTERNAL LOAD</text>
 <text x="20" y="224" fill="rgb(20,30,45)" font-family="Courier New,monospace" font-size="12">RETURN: CLOSED CYLINDER MODEL</text>
 <text x="20" y="242" fill="rgb(20,30,45)" font-family="Courier New,monospace" font-size="12">PAD R UM  35</text>

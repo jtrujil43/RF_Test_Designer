@@ -17,6 +17,8 @@
 <rect x="422" y="100" width="34" height="20" fill="rgb(190,100,24)" stroke="rgb(190,100,24)"/>
 <rect x="422" y="86" width="34" height="6" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
 <rect x="422" y="128" width="34" height="6" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<rect x="58" y="86" width="364" height="6" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<rect x="58" y="128" width="364" height="6" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
 <rect x="58" y="155" width="364" height="14" fill="rgb(190,100,24)" stroke="rgb(190,100,24)"/>
 <rect x="24" y="152" width="34" height="20" fill="rgb(190,100,24)" stroke="rgb(190,100,24)"/>
 <rect x="24" y="138" width="34" height="6" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
@@ -24,6 +26,8 @@
 <rect x="422" y="152" width="34" height="20" fill="rgb(190,100,24)" stroke="rgb(190,100,24)"/>
 <rect x="422" y="138" width="34" height="6" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
 <rect x="422" y="180" width="34" height="6" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<rect x="58" y="138" width="364" height="6" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<rect x="58" y="180" width="364" height="6" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
 <rect x="58" y="205" width="364" height="18" fill="rgb(190,100,24)" stroke="rgb(190,100,24)"/>
 <rect x="24" y="204" width="34" height="20" fill="rgb(190,100,24)" stroke="rgb(190,100,24)"/>
 <rect x="24" y="190" width="34" height="6" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
@@ -31,6 +35,8 @@
 <rect x="422" y="204" width="34" height="20" fill="rgb(190,100,24)" stroke="rgb(190,100,24)"/>
 <rect x="422" y="190" width="34" height="6" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
 <rect x="422" y="232" width="34" height="6" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<rect x="58" y="190" width="364" height="6" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<rect x="58" y="232" width="364" height="6" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
 <text x="144" y="90" fill="rgb(20,30,45)" font-family="Courier New,monospace" font-size="12">LOW W / NOMINAL W / HIGH W</text>
 <text x="110" y="244" fill="rgb(20,30,45)" font-family="Courier New,monospace" font-size="12">NOM W UM  12.4311394</text>
 <text x="300" y="244" fill="rgb(20,30,45)" font-family="Courier New,monospace" font-size="12">LENGTH MM  5</text>

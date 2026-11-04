@@ -100,13 +100,13 @@
     ],
     "curveGrid": "2001 linear points plus exact band endpoints, named sample frequencies and known stub notch frequencies; plotted on logarithmic frequency axis",
     "sourceHashes": {
-      "rdlloss.bas": "4cc0360e4e9c3c9a8214545dd8c23b0cff110e0ad6c93c921427c285682b75da",
-      "rdxtalk.bas": "550f089dc68d45653281fbe30eb0ab6d3e8eeb56bb6807497369a4e4f7d39696",
-      "rfleak.bas": "c8b434e59128e6de8aadd6ca9fafb19b4b8d29650a391aa5f7f7356eb68e941c",
-      "stubtest.bas": "2d8242534ce493ab15ce7a678e7f3d522689ec031b2de4e37da04518e0070635",
-      "trlset.bas": "bbc5c6d5b861e7ea511f93ff3f3a29ff431e4973a7b3b5b75d97c7f0af9e9b2f",
-      "viamatch.bas": "915aea333db846a4718254d0644aa8324d40006100a7f603b9234294de6c8c8b",
-      "zcoupon.bas": "df3d0edc95d0c70eefe3f945c95b4387cafeca7e5f4e4fe35e3659527b4b1169"
+      "rdlloss.bas": "31d41295356b04591f7a45b22704c13c4076831acecc793dc876dd07366081a4",
+      "rdxtalk.bas": "b0607985bbca049b7fa17e921d72aa84db323b0e0e1fca72a2c44d1750fd3982",
+      "rfleak.bas": "44bb93f68478631e0d8e57c67df7cb61c6ea6cbfc0e4980bbeca4e52a99af140",
+      "stubtest.bas": "118710952394e00dd9be56a184337dc3aef702aedaea4bcb60f6ea795456f3f7",
+      "trlset.bas": "ccda6fa2dafb1f51a6f6635ff22eb9b1fd2d25d259f5132a7961d5f3ff8e6529",
+      "viamatch.bas": "8551d48bac21da13dda6220ec4dee5a71332e8ac6262d11aa5cc06b5bfe38a9d",
+      "zcoupon.bas": "041cfca56dcddc29245c489b602b33755db4cf7c796bdaa827bac3ab34bbe336"
     }
   },
   "programs": {
@@ -16273,7 +16273,7 @@
           2450
         ]
       },
-      "sourceSha256": "4cc0360e4e9c3c9a8214545dd8c23b0cff110e0ad6c93c921427c285682b75da",
+      "sourceSha256": "31d41295356b04591f7a45b22704c13c4076831acecc793dc876dd07366081a4",
       "responseFigure": "handbasic-previews/rdlloss-response.png"
     },
     "rdxtalk": {
@@ -52615,7 +52615,7 @@
           11440
         ]
       },
-      "sourceSha256": "550f089dc68d45653281fbe30eb0ab6d3e8eeb56bb6807497369a4e4f7d39696",
+      "sourceSha256": "b0607985bbca049b7fa17e921d72aa84db323b0e0e1fca72a2c44d1750fd3982",
       "responseFigure": "handbasic-previews/rdxtalk-response.png"
     },
     "rfleak": {
@@ -76851,7 +76851,7 @@
           2500
         ]
       },
-      "sourceSha256": "c8b434e59128e6de8aadd6ca9fafb19b4b8d29650a391aa5f7f7356eb68e941c",
+      "sourceSha256": "44bb93f68478631e0d8e57c67df7cb61c6ea6cbfc0e4980bbeca4e52a99af140",
       "responseFigure": "handbasic-previews/rfleak-response.png"
     },
     "stubtest": {
@@ -101109,7 +101109,7 @@
           2310
         ]
       },
-      "sourceSha256": "2d8242534ce493ab15ce7a678e7f3d522689ec031b2de4e37da04518e0070635",
+      "sourceSha256": "118710952394e00dd9be56a184337dc3aef702aedaea4bcb60f6ea795456f3f7",
       "responseFigure": "handbasic-previews/stubtest-response.png"
     },
     "trlset": {
@@ -116714,7 +116714,7 @@
           2280
         ]
       },
-      "sourceSha256": "bbc5c6d5b861e7ea511f93ff3f3a29ff431e4973a7b3b5b75d97c7f0af9e9b2f",
+      "sourceSha256": "ccda6fa2dafb1f51a6f6635ff22eb9b1fd2d25d259f5132a7961d5f3ff8e6529",
       "responseFigure": "handbasic-previews/trlset-response.png"
     },
     "viamatch": {
@@ -130889,7 +130889,7 @@
           2960
         ]
       },
-      "sourceSha256": "915aea333db846a4718254d0644aa8324d40006100a7f603b9234294de6c8c8b",
+      "sourceSha256": "8551d48bac21da13dda6220ec4dee5a71332e8ac6262d11aa5cc06b5bfe38a9d",
       "responseFigure": "handbasic-previews/viamatch-response.png"
     },
     "zcoupon": {
@@ -161170,7 +161170,7 @@
           2030
         ]
       },
-      "sourceSha256": "df3d0edc95d0c70eefe3f945c95b4387cafeca7e5f4e4fe35e3659527b4b1169",
+      "sourceSha256": "041cfca56dcddc29245c489b602b33755db4cf7c796bdaa827bac3ab34bbe336",
       "responseFigure": "handbasic-previews/zcoupon-response.png"
     }
   },

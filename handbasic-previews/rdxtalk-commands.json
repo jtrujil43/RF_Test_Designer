@@ -226,6 +226,102 @@
     "sourceLine": 10100
   },
   {
+    "type": "RECT",
+    "values": [
+      50,
+      108,
+      308,
+      114,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 10112
+  },
+  {
+    "type": "RECT",
+    "values": [
+      303,
+      78,
+      309,
+      114,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 10113
+  },
+  {
+    "type": "RECT",
+    "values": [
+      50,
+      156,
+      129,
+      162,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 10114
+  },
+  {
+    "type": "RECT",
+    "values": [
+      123,
+      156,
+      129,
+      220,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 10115
+  },
+  {
+    "type": "RECT",
+    "values": [
+      351,
+      78,
+      357,
+      154,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 10116
+  },
+  {
+    "type": "RECT",
+    "values": [
+      351,
+      148,
+      430,
+      154,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 10117
+  },
+  {
+    "type": "RECT",
+    "values": [
+      171,
+      196,
+      430,
+      202,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 10118
+  },
+  {
+    "type": "RECT",
+    "values": [
+      171,
+      196,
+      177,
+      220,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 10119
+  },
+  {
     "type": "LINE",
     "values": [
       240,
@@ -310,7 +406,7 @@
     "values": [
       "AGGRESSOR W-N",
       140,
-      114,
+      104,
       24
     ],
     "font": 12,
@@ -321,7 +417,7 @@
     "values": [
       "VICTIM S-E",
       230,
-      202,
+      222,
       24
     ],
     "font": 12,

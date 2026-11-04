@@ -131,6 +131,30 @@
   {
     "type": "RECT",
     "values": [
+      108,
+      92,
+      372,
+      98,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 766
+  },
+  {
+    "type": "RECT",
+    "values": [
+      108,
+      134,
+      372,
+      140,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 768
+  },
+  {
+    "type": "RECT",
+    "values": [
       76,
       164,
       404,
@@ -215,6 +239,30 @@
   {
     "type": "RECT",
     "values": [
+      76,
+      144,
+      404,
+      150,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 766
+  },
+  {
+    "type": "RECT",
+    "values": [
+      76,
+      186,
+      404,
+      192,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 768
+  },
+  {
+    "type": "RECT",
+    "values": [
       44,
       216,
       436,
@@ -295,6 +343,30 @@
     ],
     "font": 12,
     "sourceLine": 764
+  },
+  {
+    "type": "RECT",
+    "values": [
+      44,
+      196,
+      436,
+      202,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 766
+  },
+  {
+    "type": "RECT",
+    "values": [
+      44,
+      238,
+      436,
+      244,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 768
   },
   {
     "type": "GPRINT",

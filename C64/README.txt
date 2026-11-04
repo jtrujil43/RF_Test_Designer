@@ -122,6 +122,13 @@ The original RF model assumptions and limitations still apply. Numerical
 synthesis and especially TRL coverage can take time at normal C64 speed;
 VICE warp mode speeds up these calculations.
 
+The 2026-11-03 drawings connect ground rails along the signal routes and
+around stub junctions and the ring's outer halves. RFLEAK has a top view
+and a signal side view: upper-left L1 drops through a via to lower-right
+L2; three east vias return G-S-G to top-side pads. Its isolated-plate
+numerical model is unchanged and does not predict this connected path.
+VIAMATCH retains its single west input and internal load.
+
 REBUILD AFTER EDITING
 
 The ready-made PRGs and D64 need no rebuilding to run. To rebuild them,

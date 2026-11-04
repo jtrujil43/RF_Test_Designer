@@ -1,6 +1,19 @@
 HAND BASIC RF TEST DESIGNER - CARDINAL PROBE UPDATE
 2026-10-30
 
+DRAWING REVISION 2026-11-03
+Ground rails now connect to the GSG pads and follow the signal paths in
+both BASIC versions. Stub grounds follow the branch; the short variant
+connects its tip to these rails. Ring outer half-return rails join both
+launch banks; no floating inner ground island is drawn.
+RFLEAK shows a top view and signal side view: upper-left L1 connects by
+via to lower-right L2, with three east G-S-G vias back to top-side pads.
+Ground rails also transition between layers. The unchanged isolated-plate
+leakage calculation does NOT model this via-connected drawing.
+VIAMATCH remains one-port with its internal load. All new routing is
+schematic; rail/slot widths and electrical models still need EM design.
+The C64 PRGs/disk and source-derived preview atlas are rebuilt separately.
+
 The eight RF .bas files in this directory are the original Hand BASIC
 versions. They now share the probe layout and equipment profile used by
 the versions in the C64 subfolder. Their native SCREEN, CSET, RECT, LINE,

@@ -80,9 +80,11 @@ cases need a separately designed narrow neck/taper or different geometry.
 
 Fanouts, the two turns, pads, transitions, probe-to-probe coupling and
 their parasitics are excluded from the uniform coupled-line predictions.
-Use matched controls and deembed the actual access structures. In RFLEAK,
-the lower-layer pickup is brought to the top-side east launch by an access
-transition/via outside the parallel-plate capacitance model.
+Use matched controls and deembed the actual access structures. RFLEAK's
+revised drawing connects the upper-left L1 trace to lower-right L2 by a
+central via. Three east vias return G-S-G to the top-side probe pads;
+ground rails have their own layer transitions. The retained isolated-plate
+capacitance model does not model this via-connected drawing.
 
 The 150um pitch and 67GHz installed-probe rating are shown in the reports.
 Other custom pitches/frequencies remain calculation options and receive

@@ -186,7 +186,7 @@
     "line": 4720,
     "type": "GPRINT",
     "values": [
-      "Continuous backside ground.",
+      "Model assumes backside ground.",
       52.5,
       290.66666666666663,
       23
@@ -198,7 +198,7 @@
     "line": 4730,
     "type": "GPRINT",
     "values": [
-      "Tie both GSG grounds to it.",
+      "Sketch: top-side return rails.",
       52.5,
       328,
       23
@@ -210,7 +210,7 @@
     "line": 4740,
     "type": "GPRINT",
     "values": [
-      "Add low-inductance vias/bonds.",
+      "No inner floating ground island.",
       52.5,
       365.3333333333333,
       23

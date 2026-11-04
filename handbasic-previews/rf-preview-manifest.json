@@ -97,7 +97,7 @@
     {
       "name": "rdlloss",
       "source": "rdlloss.bas",
-      "sourceSha256": "4cc0360e4e9c3c9a8214545dd8c23b0cff110e0ad6c93c921427c285682b75da",
+      "sourceSha256": "31d41295356b04591f7a45b22704c13c4076831acecc793dc876dd07366081a4",
       "calculationEntry": 380,
       "graphicsEntry": 610,
       "parameters": {
@@ -159,6 +159,8 @@
         760,
         762,
         764,
+        766,
+        768,
         770,
         780,
         790,
@@ -224,7 +226,7 @@
         2440,
         2450
       ],
-      "nativeCommandCount": 29,
+      "nativeCommandCount": 35,
       "setupText": [],
       "files": [
         "handbasic-previews/rdlloss.svg",
@@ -235,7 +237,7 @@
     {
       "name": "rdxtalk",
       "source": "rdxtalk.bas",
-      "sourceSha256": "550f089dc68d45653281fbe30eb0ab6d3e8eeb56bb6807497369a4e4f7d39696",
+      "sourceSha256": "b0607985bbca049b7fa17e921d72aa84db323b0e0e1fca72a2c44d1750fd3982",
       "calculationEntry": 340,
       "graphicsEntry": 770,
       "parameters": {
@@ -350,6 +352,15 @@
         10090,
         10100,
         10110,
+        10111,
+        10112,
+        10113,
+        10114,
+        10115,
+        10116,
+        10117,
+        10118,
+        10119,
         10120,
         10130,
         10140,
@@ -388,7 +399,7 @@
         11060,
         11070
       ],
-      "nativeCommandCount": 43,
+      "nativeCommandCount": 51,
       "setupText": [],
       "files": [
         "handbasic-previews/rdxtalk.svg",
@@ -399,7 +410,7 @@
     {
       "name": "rfleak",
       "source": "rfleak.bas",
-      "sourceSha256": "c8b434e59128e6de8aadd6ca9fafb19b4b8d29650a391aa5f7f7356eb68e941c",
+      "sourceSha256": "44bb93f68478631e0d8e57c67df7cb61c6ea6cbfc0e4980bbeca4e52a99af140",
       "calculationEntry": 370,
       "graphicsEntry": 680,
       "parameters": {
@@ -468,11 +479,9 @@
         802,
         803,
         804,
-        805,
-        806,
-        807,
-        808,
         810,
+        812,
+        814,
         820,
         830,
         840,
@@ -480,6 +489,10 @@
         860,
         870,
         880,
+        882,
+        884,
+        886,
+        888,
         890,
         900,
         910,
@@ -527,9 +540,19 @@
         1700,
         1710,
         1720,
-        1730
+        1730,
+        10000,
+        10010,
+        10020,
+        10030,
+        10040,
+        10050,
+        10060,
+        10070,
+        10080,
+        10090
       ],
-      "nativeCommandCount": 36,
+      "nativeCommandCount": 38,
       "setupText": [],
       "files": [
         "handbasic-previews/rfleak.svg",
@@ -540,7 +563,7 @@
     {
       "name": "stubtest",
       "source": "stubtest.bas",
-      "sourceSha256": "2d8242534ce493ab15ce7a678e7f3d522689ec031b2de4e37da04518e0070635",
+      "sourceSha256": "118710952394e00dd9be56a184337dc3aef702aedaea4bcb60f6ea795456f3f7",
       "calculationEntry": 340,
       "graphicsEntry": 560,
       "parameters": {
@@ -658,9 +681,14 @@
         10040,
         10050,
         10060,
-        10070
+        10062,
+        10064,
+        10066,
+        10068,
+        10070,
+        10080
       ],
-      "nativeCommandCount": 17,
+      "nativeCommandCount": 22,
       "setupText": [],
       "files": [
         "handbasic-previews/stubtest.svg",
@@ -671,7 +699,7 @@
     {
       "name": "trlset",
       "source": "trlset.bas",
-      "sourceSha256": "bbc5c6d5b861e7ea511f93ff3f3a29ff431e4973a7b3b5b75d97c7f0af9e9b2f",
+      "sourceSha256": "ccda6fa2dafb1f51a6f6635ff22eb9b1fd2d25d259f5132a7961d5f3ff8e6529",
       "calculationEntry": 350,
       "graphicsEntry": 620,
       "parameters": {
@@ -748,6 +776,8 @@
         770,
         772,
         774,
+        776,
+        778,
         780,
         790,
         800,
@@ -799,7 +829,7 @@
         1630,
         1640
       ],
-      "nativeCommandCount": 49,
+      "nativeCommandCount": 61,
       "setupText": [],
       "files": [
         "handbasic-previews/trlset.svg",
@@ -810,7 +840,7 @@
     {
       "name": "viamatch",
       "source": "viamatch.bas",
-      "sourceSha256": "915aea333db846a4718254d0644aa8324d40006100a7f603b9234294de6c8c8b",
+      "sourceSha256": "8551d48bac21da13dda6220ec4dee5a71332e8ac6262d11aa5cc06b5bfe38a9d",
       "calculationEntry": 390,
       "graphicsEntry": 760,
       "parameters": {
@@ -881,6 +911,12 @@
         900,
         910,
         920,
+        921,
+        922,
+        923,
+        924,
+        925,
+        926,
         930,
         940,
         950,
@@ -954,7 +990,7 @@
         2920,
         2930
       ],
-      "nativeCommandCount": 19,
+      "nativeCommandCount": 25,
       "setupText": [],
       "files": [
         "handbasic-previews/viamatch.svg",
@@ -965,7 +1001,7 @@
     {
       "name": "zcoupon",
       "source": "zcoupon.bas",
-      "sourceSha256": "df3d0edc95d0c70eefe3f945c95b4387cafeca7e5f4e4fe35e3659527b4b1169",
+      "sourceSha256": "041cfca56dcddc29245c489b602b33755db4cf7c796bdaa827bac3ab34bbe336",
       "calculationEntry": 330,
       "graphicsEntry": 610,
       "parameters": {
@@ -1016,6 +1052,8 @@
         760,
         762,
         764,
+        766,
+        768,
         770,
         780,
         790,
@@ -1070,7 +1108,7 @@
         1650,
         1660
       ],
-      "nativeCommandCount": 30,
+      "nativeCommandCount": 36,
       "setupText": [],
       "files": [
         "handbasic-previews/zcoupon.svg",
@@ -1081,7 +1119,7 @@
     {
       "name": "stubtest-short",
       "source": "stubtest.bas",
-      "sourceSha256": "2d8242534ce493ab15ce7a678e7f3d522689ec031b2de4e37da04518e0070635",
+      "sourceSha256": "118710952394e00dd9be56a184337dc3aef702aedaea4bcb60f6ea795456f3f7",
       "calculationEntry": 340,
       "graphicsEntry": 560,
       "parameters": {
@@ -1200,9 +1238,14 @@
         10040,
         10050,
         10060,
-        10070
+        10062,
+        10064,
+        10066,
+        10068,
+        10070,
+        10080
       ],
-      "nativeCommandCount": 18,
+      "nativeCommandCount": 23,
       "setupText": [],
       "files": [
         "handbasic-previews/stubtest-short.svg",

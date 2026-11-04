@@ -6,6 +6,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { ViceTestClient } from './vice-test-client.mjs';
 import { captureBitmap } from './bitmap-preview.mjs';
+import assert from 'node:assert/strict';
 
 const root = path.dirname(fileURLToPath(import.meta.url));
 const vice = process.argv[2];
@@ -15,7 +16,8 @@ const previews = path.join(root, 'previews'); mkdirSync(previews, { recursive: t
 const onlyArgument = process.argv.indexOf('--only');
 const selected = onlyArgument < 0 ? null : new Set(process.argv[onlyArgument + 1].split(','));
 const results = selected ? readFileSync(path.join(root, 'bitmap-validation.txt'), 'utf8')
-  .split(/\r?\n/).filter(line => line.startsWith('PASS ')) : [];
+  .split(/\r?\n/).filter(line => line.startsWith('PASS ') && line.includes(':') &&
+    !selected.has(line.slice(5).split(':')[0])) : [];
 const record = message => { results.push(message); console.log(message); };
 function compile(name, lines) {
   lines.sort((a, b) => parseInt(a) - parseInt(b));
@@ -52,22 +54,87 @@ async function save(name, colors = [1]) {
   return frame;
 }
 
+function checkGroundPaths(name, frame) {
+  const pixel = (x, y) => {
+    const offset = (y >> 3) * 320 + (x >> 2) * 8 + (y & 7);
+    return (frame.bitmap[offset] >> ((3 - (x & 3)) * 2)) & 3;
+  };
+  const groundPath = (x, y) => pixel(x, y) === 2 || (name === 'rfleak' && pixel(x, y) === 3);
+  const labels = new Int32Array(160 * 200), bounds = [];
+  for (let y = 0; y < 200; y++) for (let x = 0; x < 160; x++) {
+    if (!groundPath(x, y) || labels[y * 160 + x]) continue;
+    const id = bounds.length + 1, queue = [[x, y]], box = [x, y, x, y];
+    labels[y * 160 + x] = id;
+    while (queue.length) {
+      const [cx, cy] = queue.pop();
+      box[0] = Math.min(box[0], cx); box[1] = Math.min(box[1], cy);
+      box[2] = Math.max(box[2], cx); box[3] = Math.max(box[3], cy);
+      for (let dy = -1; dy <= 1; dy++) for (let dx = -1; dx <= 1; dx++) {
+        const nx = cx + dx, ny = cy + dy;
+        if (nx < 0 || nx >= 160 || ny < 0 || ny >= 200) continue;
+        if (!groundPath(nx, ny) || labels[ny * 160 + nx]) continue;
+        labels[ny * 160 + nx] = id; queue.push([nx, ny]);
+      }
+    }
+    bounds.push(box);
+  }
+  const connected = (a, b) => {
+    const id = labels[a[1] * 160 + a[0]];
+    return id !== 0 && id === labels[b[1] * 160 + b[0]];
+  };
+  if (['rdlloss', 'trlset', 'zcoupon'].includes(name)) {
+    assert(bounds.length >= 6 && bounds.every(b => b[2] - b[0] > 14), name + ': isolated ground pads');
+  } else if (name === 'rdxtalk') {
+    for (const [a, b] of [
+      [[13, 58], [98, 20]], [[13, 106], [38, 180]],
+      [[122, 20], [146, 94]], [[62, 180], [146, 142]],
+    ]) assert(connected(a, b), name + ': broken cardinal return');
+  } else if (name.startsWith('stubtest')) {
+    assert(connected([14, 39], [145, 39]), name + ': broken upper rail');
+    assert(connected([14, 96], [66, 145]), name + ': broken left branch rail');
+    assert(connected([145, 96], [94, 145]), name + ': broken right branch rail');
+    assert.equal(connected([66, 145], [94, 145]), name === 'stubtest-short', name + ': wrong termination');
+  } else if (name.startsWith('viamatch')) {
+    assert(connected([10, 68], [10, 112]), name + ': disconnected input grounds');
+    assert(connected([10, 112], [140, 179]), name + ': disconnected load return');
+    assert.equal(pixel(139, 178), 3, name + ': load lead does not reach return');
+    for (const x of [24, 59]) {
+      assert.equal(pixel(x - 5, 125) === 2, false, name + ': shunt element bypassed by ground');
+    }
+  } else if (name === 'rfleak') {
+    for (const y of [55, 111]) assert(connected([10, y], [150, y]), name + ': disconnected GSG rail');
+    for (const x of [80, 137]) for (const y of [55, 83, 111]) {
+      assert.equal(pixel(x, y - 5), 3, name + ': missing GSG via marker');
+    }
+    for (const [x, y, color] of [[40, 147, 1], [80, 160, 1], [110, 177, 3], [137, 160, 1], [150, 147, 1]]) {
+      assert.equal(pixel(x, y), color, name + ': broken upper/lower side-view path');
+    }
+  } else if (name === 'ring-circle' || name === 'ring-six-lobes') {
+    assert.equal(bounds.filter(b => b[2] - b[0] > 30 && b[3] - b[1] > 30).length, 2,
+      name + ': both outer half-ring returns must reach the launch banks');
+  } else return;
+  record(`PASS ${name}: connected ground paths and intended termination/layer topology`);
+}
+
 try {
   const configs = [
     ['rdlloss', 1060, 380, 610, 840],
     ['rdxtalk', 1280, 340, 770, 1060],
     ['rfleak', 1150, 370, 680, 930],
     ['stubtest', 970, 340, 560, 750],
+    ['stubtest-short', 970, 340, 560, 750],
     ['trlset', 1060, 350, 620, 840],
     ['viamatch', 1230, 390, 760, 1010],
+    ['viamatch-series', 1230, 390, 760, 1010],
     ['zcoupon', 1080, 330, 610, 860],
   ];
   for (const [name, validation, calculate, sketch, close] of configs) {
     if (selected && !selected.has(name)) continue;
-    const source = readFileSync(path.join(root, name + '.bas'), 'ascii').trim().split(/\r?\n/);
+    const source = readFileSync(path.join(root, name.replace(/-(short|series)$/, '') + '.bas'), 'ascii').trim().split(/\r?\n/);
     const firstPrint = source.findIndex(line => /^\d+ PRINT CHR\$\(147\)/.test(line));
     source[firstPrint] = source[firstPrint].match(/^\d+/)[0] + ' GOTO 29000';
-    source.push(`29000 GOSUB ${validation}:GOSUB ${calculate}`,
+    const override = name === 'stubtest-short' ? 'SY=2:' : name === 'viamatch-series' ? 'RL=100:' : '';
+    source.push(`29000 ${override}GOSUB ${validation}:GOSUB ${calculate}`,
       `29010 GOSUB ${sketch}:GOSUB ${close}`,
       '29020 PRINT "BITMAP TEST DONE":END');
     const program = compile(name, source);
@@ -80,7 +147,7 @@ try {
     if (!waitLine) throw Error(name + ': missing close GET');
     await client.keys('\r');
     await waitBitmap(waitLine);
-    await save(name, [1, 2]);
+    checkGroundPaths(name, await save(name, [1, 2]));
     await client.keys('\r');
     await client.waitText(/bitmap test done/i);
     await assertTextMode();
@@ -114,13 +181,13 @@ try {
     await client.waitBasicLine(7540);
     await client.keys('x');
     await waitBitmap(7320);
-    await save(test.name, test.entry === 4300 ? (test.fa ? [3] : [1, 3]) : [1, 2, 3]);
+    checkGroundPaths(test.name, await save(test.name, test.entry === 4300 ? (test.fa ? [3] : [1, 3]) : [1, 2, 3]));
     await client.keys('m');
     await client.waitText(/bitmap test done/i);
     await assertTextMode();
     record(`PASS ${test.name}: text legend -> bitmap -> M restores text`);
   }
-  record('PASS all 8 graphical programs and ring viewer variants');
+  record(selected ? 'PASS selected bitmap cases' : 'PASS all 8 graphical programs and viewer variants');
 } finally {
   writeFileSync(path.join(root, 'bitmap-validation.txt'),
     'VICE 3.10 / actual C64 BASIC V2 ROM\n' + results.join('\n') + '\n', 'utf8');

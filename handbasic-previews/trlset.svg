@@ -17,6 +17,8 @@
 <rect x="370" y="91" width="24" height="8" fill="rgb(190,100,24)" stroke="rgb(190,100,24)"/>
 <rect x="370" y="85" width="24" height="3" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
 <rect x="370" y="102" width="24" height="3" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<rect x="110" y="85" width="260" height="3" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<rect x="110" y="102" width="260" height="3" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
 <rect x="100" y="114" width="280" height="6" fill="rgb(190,100,24)" stroke="rgb(190,100,24)"/>
 <rect x="76" y="113" width="24" height="8" fill="rgb(190,100,24)" stroke="rgb(190,100,24)"/>
 <rect x="76" y="107" width="24" height="3" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
@@ -24,6 +26,8 @@
 <rect x="380" y="113" width="24" height="8" fill="rgb(190,100,24)" stroke="rgb(190,100,24)"/>
 <rect x="380" y="107" width="24" height="3" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
 <rect x="380" y="124" width="24" height="3" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<rect x="100" y="107" width="280" height="3" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<rect x="100" y="124" width="280" height="3" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
 <rect x="90" y="136" width="300" height="6" fill="rgb(190,100,24)" stroke="rgb(190,100,24)"/>
 <rect x="66" y="135" width="24" height="8" fill="rgb(190,100,24)" stroke="rgb(190,100,24)"/>
 <rect x="66" y="129" width="24" height="3" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
@@ -31,6 +35,8 @@
 <rect x="390" y="135" width="24" height="8" fill="rgb(190,100,24)" stroke="rgb(190,100,24)"/>
 <rect x="390" y="129" width="24" height="3" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
 <rect x="390" y="146" width="24" height="3" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<rect x="90" y="129" width="300" height="3" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<rect x="90" y="146" width="300" height="3" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
 <rect x="80" y="158" width="320" height="6" fill="rgb(190,100,24)" stroke="rgb(190,100,24)"/>
 <rect x="56" y="157" width="24" height="8" fill="rgb(190,100,24)" stroke="rgb(190,100,24)"/>
 <rect x="56" y="151" width="24" height="3" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
@@ -38,6 +44,8 @@
 <rect x="400" y="157" width="24" height="8" fill="rgb(190,100,24)" stroke="rgb(190,100,24)"/>
 <rect x="400" y="151" width="24" height="3" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
 <rect x="400" y="168" width="24" height="3" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<rect x="80" y="151" width="320" height="3" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<rect x="80" y="168" width="320" height="3" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
 <rect x="70" y="180" width="340" height="6" fill="rgb(190,100,24)" stroke="rgb(190,100,24)"/>
 <rect x="46" y="179" width="24" height="8" fill="rgb(190,100,24)" stroke="rgb(190,100,24)"/>
 <rect x="46" y="173" width="24" height="3" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
@@ -45,6 +53,8 @@
 <rect x="410" y="179" width="24" height="8" fill="rgb(190,100,24)" stroke="rgb(190,100,24)"/>
 <rect x="410" y="173" width="24" height="3" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
 <rect x="410" y="190" width="24" height="3" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<rect x="70" y="173" width="340" height="3" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<rect x="70" y="190" width="340" height="3" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
 <rect x="60" y="202" width="360" height="6" fill="rgb(190,100,24)" stroke="rgb(190,100,24)"/>
 <rect x="36" y="201" width="24" height="8" fill="rgb(190,100,24)" stroke="rgb(190,100,24)"/>
 <rect x="36" y="195" width="24" height="3" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
@@ -52,6 +62,8 @@
 <rect x="420" y="201" width="24" height="8" fill="rgb(190,100,24)" stroke="rgb(190,100,24)"/>
 <rect x="420" y="195" width="24" height="3" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
 <rect x="420" y="212" width="24" height="3" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<rect x="60" y="195" width="360" height="3" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<rect x="60" y="212" width="360" height="3" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
 <text x="110" y="246" fill="rgb(20,30,45)" font-family="Courier New,monospace" font-size="12">SEPARATE THRU/LINES; SAME REFLECT PLANE</text>
 <text x="16" y="262" fill="rgb(20,30,45)" font-family="Courier New,monospace" font-size="12">COPPER=BROWN GROUND=BLUE</text>
 <text x="16" y="284" fill="rgb(20,30,45)" font-family="Courier New,monospace" font-size="12">TAP OR PRESS KEY FOR TEXT</text>

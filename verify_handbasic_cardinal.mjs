@@ -7,6 +7,7 @@ import { execFileSync } from 'node:child_process';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { ViceTestClient } from './C64/vice-test-client.mjs';
+import { HandBasicPreview } from './handbasic-preview-runtime.mjs';
 
 const root = path.dirname(fileURLToPath(import.meta.url));
 const options = process.argv.slice(2);
@@ -132,6 +133,73 @@ try {
   }
   pass('RDXTALK cardinal input guards, contact equations and reports agree with C64');
 
+  // Test source-executed copper geometry, not a second copy of the drawing.
+  function drawing(name, entry, overrides = {}) {
+    const runtime = new HandBasicPreview(sources.get(name).text).initialize();
+    Object.assign(runtime.variables, overrides);
+    runtime.run(entry);
+    const rectangles = runtime.commands.filter(c => c.type === 'RECT' && [21, 22, 23].includes(c.values[4]));
+    const grounds = rectangles.filter(c => c.values[4] === 22).map(c => c.values);
+    const signals = rectangles.filter(c => c.values[4] === 21).map(c => c.values);
+    const touches = (a, b) => a[0] <= b[2] && a[2] >= b[0] && a[1] <= b[3] && a[3] >= b[1];
+    const connected = (from, to) => {
+      const start = grounds.findIndex(r => touches(r, [...from, ...from]));
+      assert(start >= 0, `${name}: missing ground contact ${from}`);
+      const seen = new Set([start]), queue = [start];
+      while (queue.length) {
+        const index = queue.pop();
+        if (touches(grounds[index], [...to, ...to])) return true;
+        grounds.forEach((rect, i) => {
+          if (!seen.has(i) && touches(grounds[index], rect)) { seen.add(i); queue.push(i); }
+        });
+      }
+      return false;
+    };
+    const shorted = grounds.some(g => signals.some(s => touches(g, s)));
+    assert.equal(shorted, name === 'stubtest' && overrides.SY === 2, name + ': unintended signal/ground contact');
+    return { runtime, connected };
+  }
+  for (const [name, entry] of [['rdlloss', 610], ['zcoupon', 610], ['trlset', 620]]) {
+    const { runtime, connected } = drawing(name, entry);
+    const count = name === 'trlset' ? runtime.variables.NL + 1 : 3;
+    for (let i = 0; i < count; i++) {
+      const y = name === 'trlset' ? 92 + i * 22 : (name === 'rdlloss' ? 112 : 110) + i * 52;
+      const x = name === 'trlset' ? 110 - i * 10 : name === 'rdlloss' ? 108 - i * 32 : 58;
+      const offsets = name === 'trlset' ? [-5, 11] : name === 'rdlloss' ? [-17, 25] : [-21, 21];
+      for (const dy of offsets) assert(connected([x - 10, y + dy], [490 - x, y + dy]), name + ': broken ground rail');
+    }
+    pass(name + ': both ground rails join west/east G pads on every row');
+  }
+  const crosstalk = drawing('rdxtalk', 10000).connected;
+  for (const [a, b] of [
+    [[50, 111], [306, 78]], [[50, 159], [126, 220]],
+    [[354, 78], [430, 151]], [[174, 220], [430, 199]],
+  ]) assert(crosstalk(a, b), 'RDXTALK: disconnected cardinal ground');
+  pass('RDXTALK: grounds follow both fanouts without shorting either signal');
+  for (const sy of [1, 2]) {
+    const { connected } = drawing('stubtest', 560, { SY: sy });
+    assert(connected([40, 105], [440, 105]), 'STUBTEST: upper ground broken');
+    assert(connected([40, 165], [221, 216]), 'STUBTEST: left branch ground broken');
+    assert(connected([440, 165], [259, 216]), 'STUBTEST: right branch ground broken');
+    assert.equal(connected([221, 216], [259, 216]), sy === 2, 'STUBTEST: open/short termination');
+  }
+  pass('STUBTEST: branch grounds connected; only short variant touches signal');
+  const via = drawing('viamatch', 760).connected;
+  assert(via([40, 105], [347, 180]) && via([40, 165], [347, 180]), 'VIAMATCH: floating return/load ground');
+  pass('VIAMATCH: one-port grounds reach the internal load return');
+  const leak = drawing('rfleak', 680);
+  for (const y of [81, 153]) assert(leak.connected([40, y], [440, y]), 'RFLEAK: broken G rail');
+  for (const x of [230, 410]) for (const y of [81, 117, 153]) {
+    assert(leak.runtime.commands.some(c => c.type === 'CIRCLE' && c.values[0] === x && c.values[1] === y),
+      'RFLEAK: missing signal/ground layer-transition via');
+  }
+  const signalRects = leak.runtime.commands.filter(c => c.type === 'RECT' && [21, 23].includes(c.values[4])).map(c => c.values);
+  for (const point of [[100, 194], [230, 210], [300, 224], [410, 210], [440, 194]]) {
+    assert(signalRects.some(r => point[0] >= r[0] && point[0] <= r[2] && point[1] >= r[1] && point[1] <= r[3]),
+      'RFLEAK: side-view upper/lower path or connecting via missing');
+  }
+  pass('RFLEAK: L1-left/L2-right path, central transition and three east GSG vias');
+
   if (vice) {
     const client = await ViceTestClient.start(vice, 6545);
     try {
@@ -194,7 +262,7 @@ try {
   throw error;
 } finally {
   writeFileSync(path.join(root, 'HAND_BASIC_VALIDATION.txt'),
-    'HAND BASIC CARDINAL PROPAGATION VERIFICATION - 2026-10-30\n' +
+    'HAND BASIC SOURCE AND GROUND-PATH VERIFICATION\n' +
     `Run status: ${completed ? 'all requested checks passed' : 'FAILED: ' + failure}\n\n` +
     results.join('\n') + '\n\n' +
     `Numerical/text-only emulator cases passed: ${results.filter(line => /numerical\/text-only C64 driver|numerical-only driver agrees/.test(line)).length}.\n` +

@@ -131,6 +131,30 @@
   {
     "type": "RECT",
     "values": [
+      110,
+      85,
+      370,
+      88,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 776
+  },
+  {
+    "type": "RECT",
+    "values": [
+      110,
+      102,
+      370,
+      105,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 778
+  },
+  {
+    "type": "RECT",
+    "values": [
       100,
       114,
       380,
@@ -211,6 +235,30 @@
     ],
     "font": 12,
     "sourceLine": 774
+  },
+  {
+    "type": "RECT",
+    "values": [
+      100,
+      107,
+      380,
+      110,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 776
+  },
+  {
+    "type": "RECT",
+    "values": [
+      100,
+      124,
+      380,
+      127,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 778
   },
   {
     "type": "RECT",
@@ -299,6 +347,30 @@
   {
     "type": "RECT",
     "values": [
+      90,
+      129,
+      390,
+      132,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 776
+  },
+  {
+    "type": "RECT",
+    "values": [
+      90,
+      146,
+      390,
+      149,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 778
+  },
+  {
+    "type": "RECT",
+    "values": [
       80,
       158,
       400,
@@ -379,6 +451,30 @@
     ],
     "font": 12,
     "sourceLine": 774
+  },
+  {
+    "type": "RECT",
+    "values": [
+      80,
+      151,
+      400,
+      154,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 776
+  },
+  {
+    "type": "RECT",
+    "values": [
+      80,
+      168,
+      400,
+      171,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 778
   },
   {
     "type": "RECT",
@@ -467,6 +563,30 @@
   {
     "type": "RECT",
     "values": [
+      70,
+      173,
+      410,
+      176,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 776
+  },
+  {
+    "type": "RECT",
+    "values": [
+      70,
+      190,
+      410,
+      193,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 778
+  },
+  {
+    "type": "RECT",
+    "values": [
       60,
       202,
       420,
@@ -547,6 +667,30 @@
     ],
     "font": 12,
     "sourceLine": 774
+  },
+  {
+    "type": "RECT",
+    "values": [
+      60,
+      195,
+      420,
+      198,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 776
+  },
+  {
+    "type": "RECT",
+    "values": [
+      60,
+      212,
+      420,
+      215,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 778
   },
   {
     "type": "GPRINT",

@@ -36,13 +36,13 @@ Installed probes & MPI TITAN, rated to 67 GHz, 150 \ensuremath{\mu\mathrm{m}} ad
 The atlas supplies native-source artwork, port assignments, drawing-command records and reproducible generation files. It includes 14 RF drawing views and two utility text views. Schematics show program concepts and are not scaled mask layouts. The mobile Hand BASIC app was not executed.
 Published material information located for LTC-25000 and EME-G730 did not establish complex permittivity over this frequency range. No actual-stack impedance, loss, crosstalk, leakage isolation or ring resonance is asserted in this report.
 \vfill
-{\small\color{muted}Prepared 30 October 2026. PDF typeset with pdfLaTeX. Source programs remain unchanged.}
+{\small\color{muted}Drawing revision 3 November 2026. PDF typeset with pdfLaTeX. Legacy numerical equations remain unchanged.}
 \newpage
 \pageTitle{Stack and RF return path}{The insulation thickness is not the full electromagnetic substrate height}
 \begin{center}\includegraphics[width=.99\linewidth,height=.46\textheight,keepaspectratio]{assets/physical-stack.png}\end{center}
 The physical structure is a two-dielectric, top-conductor configuration. Coplanar-waveguide fields occupy air, polyimide and mold resin. A 6 \ensuremath{\mu\mathrm{m}} polyimide coating cannot be substituted for the complete CPW substrate or for a 6 \ensuremath{\mu\mathrm{m}} distance to an absent ground plane. A prober chuck or support underneath the mold may also affect the boundary conditions and belongs in the final model.
 \subhead{Connected ground conductors are required}
-GSG tips establish three contacts at each landing. Their presence alone does not define the return conductors along a line or around a ring. Add explicit top-ground regions connected to the probe grounds, define their widths and slots, and model ground continuity at bends and junctions. Where separate ground regions can support unwanted modes, determine suitable bonds or bridges without shorting the signal. The concept drawing is not a released ground-routing design.
+The revised BASIC drawings connect ground rails to the probe grounds and follow straight lines, bends and stub junctions. The ring has two outer half-ring returns connected to the launch banks, without an isolated inner ground island. These are schematic connectivity corrections, not synthesized CPW dimensions. Define physical widths and slots and model the bends, junctions and any required ground bonds or bridges without shorting the signal.
 \subhead{Material properties remain open inputs}
 \par\noindent\begin{tabular}{@{}p{.29\linewidth}p{.66\linewidth}@{}}\toprule
 LTC-25000 & Grade identified in public process work [2]; verified 0.5--67 GHz Dk/Df not located.\\
@@ -58,13 +58,13 @@ The manufacturer's Dk/Df shown for G314 at 1 MHz are for a different grade and f
 \subhead{Measurement concept}
 Three separate coupons use common launches and short, middle and long line lengths. The intended measurement is the change in attenuation with length.
 \subhead{Changes needed for the supplied stack}
-Replace microstrip width and attenuation synthesis with ungrounded multilayer CPW. Provide connected top-side ground rails along each line and identical transitions. Include copper thickness, roughness, both dielectric losses, mismatch and calibration.
+The sketch now connects top-side ground rails along each line. Replace microstrip width and attenuation synthesis with ungrounded multilayer CPW and size the rails, slots and identical transitions. Include copper thickness, roughness, both dielectric losses, mismatch and calibration.
 \textbf{Specific model limit.} The source loss approximation also assumes a thick conductor. At 500 MHz its hypothetical skin depth is about 2.952 \ensuremath{\mu\mathrm{m}}, exceeding the 2.2 \ensuremath{\mu\mathrm{m}} copper thickness. Its three-skin-depth condition is reached only above about 8.102 GHz.
 
 \newpage
 \pageTitle{RDXTALK / four-port crosstalk}{P1 west, P2 north, P3 south, P4 east. Aggressor W-to-N; victim S-to-E.}
 \callout{\textbf{Source artwork only.} Native numerical labels below belong to the legacy grounded reference and do not establish electrical behavior on the supplied ungrounded stack.}
-\preview{rdxtalk}{Four cardinal GSG landings, with no crossing of the two signal routes. Copper width/gap labels describe the source example.}
+\preview{rdxtalk}{Four cardinal GSG landings with connected outer grounds and no signal crossover. The coupled pair retains an unshielded central gap.}
 \subhead{Measurement concept}
 Preserve the two parallel coupled conductors and cardinal access fanouts. P1 drives the aggressor; P2 is through, P3 is near-end and P4 is far-end coupling.
 \subhead{Changes needed for the supplied stack}
@@ -74,14 +74,14 @@ Define the top-ground layout before solving the coupled CPW modes. Ground rails,
 \smallskip\textbf{Port meaning:} S21 is W-to-N aggressor through, S31 is W-to-S near-end coupling, and S41 is W-to-E far-end coupling. Full four-port calibration is required.
 
 \newpage
-\pageTitle{RFLEAK / broadside leakage}{Two top-side ports: P1 west, P2 east; north/south parked.}
+\pageTitle{RFLEAK / via-connected layer transition}{Two top-side ports: P1 west, P2 east; north/south parked.}
 \callout{\textbf{Source artwork only.} Native numerical labels below belong to the legacy grounded reference and do not establish electrical behavior on the supplied ungrounded stack.}
-\preview{rfleak}{The capacitance label uses assumed er=3.3 and a 6 \ensuremath{\mu\mathrm{m}} gap. It is a reference calculation, not a measured capacitance.}
+\preview{rfleak}{Top view: connected G-S-G routing and via locations. Signal side view: upper-left L1 drops to lower-right L2, then returns to L1 at the east pads. Not to scale.}
 \subhead{Measurement concept}
-The drawing represents overlap between two patterned metal levels separated by dielectric. A transition brings the lower pickup electrode to the east probe landing.
+The west trace is on upper layer L1. A central signal via joins it to the right-hand trace on lower layer L2. Separate G-S-G vias at the east end return all three conductors to the top-side probe pads. Ground rails follow the traces and have their own layer transitions.
 \subhead{Changes needed for the supplied stack}
-Confirm that a second patterned metal layer exists beneath the 6 \ensuremath{\mu\mathrm{m}} insulation. It is an isolated electrode, not a continuous backplane. Model plate fringing, CPW access, layer transition and connected top-ground geometry together.
-\textbf{Specific model limit.} The supplied stack does not confirm this second electrode. The parallel-plate capacitance needs the actual RF permittivity of LTC-25000. The via-fence pitch rule predicts no shielding improvement in dB; posts without a defined RF return do not establish a shield.
+Confirm the second patterned metal layer and define its thickness and dielectric separation. Size the signal and ground vias, rails and slots using a multilayer EM model. This connected structure is not an isolated broadside leakage capacitor.
+\textbf{Specific model limit.} The retained numerical routines calculate coupling between isolated plates, not this via-connected path. Their capacitance, isolation and via-fence rules must not be interpreted as the response of the new drawing.
 
 \newpage
 \pageTitle{STUBTEST / open and short shunt stubs}{Two ports: P1 west, P2 east; north/south parked.}
@@ -134,7 +134,7 @@ For CPW, specify both signal width and ground slot width, finite ground width an
 \clearpage\begin{landscape}
 \pageTitle{Circular ring and west/east access}{RESONATOR2 / legacy grounded-model evaluation / no physical-stack electrical prediction}
 \begin{center}\includegraphics[width=.98\linewidth,height=.76\textheight,keepaspectratio]{assets/resonator2-circle.png}\end{center}
-{\small The circular artwork preserves the source ring and opposite-side probes. Top-ground continuity and the CPW feed-to-ring coupling must be designed for the ungrounded two-dielectric structure. Native instructions about backside ground describe the legacy model, which is absent in the actual stack.}
+{\small Connected outer half-ring ground rails follow the signal and join both launch banks. No floating inner ground island is drawn. Rail and slot dimensions and feed-to-ring coupling still require an ungrounded multilayer model; the legacy numerical model assumes an absent backplane.}
 \end{landscape}
 
 \clearpage\begin{landscape}

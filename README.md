@@ -47,6 +47,8 @@ The root folder contains ten Hand BASIC programs. Their C64 counterparts are in 
 
 The designs retain their original port counts. Two-port coupons use west/east probes with north/south parked. VIAMATCH has one west input and an internal load.
 
+The revised Hand BASIC and C64 drawings connect ground rails along the signal paths, including bends, stub branches and the ring's outer return paths. RFLEAK now shows an upper-left L1 trace connected by a via to a lower-right L2 trace, with separate G-S-G vias returning to the east top-side pads. Its top view and signal side view show connectivity, not fabrication dimensions. The unchanged RFLEAK calculations describe isolated plates and **do not model this via-connected coupon**.
+
 RDXTALK uses the following four-port mapping to avoid crossed signal routes:
 
 | Port | Side | Role |

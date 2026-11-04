@@ -16,6 +16,11 @@
 <rect x="422" y="126" width="34" height="18" fill="rgb(190,100,24)" stroke="rgb(190,100,24)"/>
 <rect x="422" y="99" width="34" height="12" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
 <rect x="422" y="159" width="34" height="12" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<rect x="58" y="99" width="364" height="12" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<rect x="58" y="159" width="166" height="12" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<rect x="256" y="159" width="166" height="12" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<rect x="218" y="159" width="6" height="61" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
+<rect x="256" y="159" width="6" height="61" fill="rgb(30,86,150)" stroke="rgb(30,86,150)"/>
 <rect x="32" y="130" width="416" height="10" fill="rgb(190,100,24)" stroke="rgb(190,100,24)"/>
 <rect x="235" y="140" width="10" height="76" fill="rgb(190,100,24)" stroke="rgb(190,100,24)"/>
 <text x="110" y="96" fill="rgb(20,30,45)" font-family="Courier New,monospace" font-size="12">THRU           SHUNT STUB</text>
