@@ -27,6 +27,8 @@ TestResults.xml
 /reports/*.aux
 /reports/*.out
 /reports/*.toc
+/gds/*.HEX
+/gds/*.hex
 /handbasic-previews/rf-analysis-console.txt
 .DS_Store
 Thumbs.db

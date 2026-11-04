@@ -1,0 +1,209 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[margin=0.68in]{geometry}
+\usepackage[T1]{fontenc}\usepackage{lmodern}
+\usepackage{graphicx,xcolor,booktabs,array,longtable,fancyhdr,amsmath,pdflscape}
+\usepackage[hidelinks]{hyperref}
+\definecolor{navy}{HTML}{153047}\definecolor{teal}{HTML}{007C89}
+\definecolor{muted}{HTML}{526574}\definecolor{alert}{HTML}{A42D2D}
+\setlength{\parindent}{0pt}\setlength{\parskip}{6pt}
+\setlength{\headheight}{14pt}\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small\color{navy}RF Packaging Test Structure Preview}
+\fancyhead[R]{\small\color{muted}500 MHz to 67 GHz}
+\fancyfoot[L]{\footnotesize\color{muted}6 \ensuremath{\mu\mathrm{m}} LTC-25000 / 700 \ensuremath{\mu\mathrm{m}} EME-G730 / top-side grounds only}
+\fancyfoot[R]{\small\thepage}
+\newcommand{\pageTitle}[2]{{\LARGE\bfseries\color{navy}#1}\par{\small\color{muted}#2}\par\vspace{7pt}}
+\newcommand{\subhead}[1]{\par\addvspace{7pt}\noindent{\large\bfseries\color{teal}#1}\par\nobreak\vspace{2pt}}
+\newcommand{\callout}[1]{\begingroup\setlength{\fboxsep}{8pt}\fcolorbox{alert}{white}{\parbox{\dimexpr\linewidth-18pt\relax}{\small\color{alert}#1}}\endgroup\par}
+\newcommand{\preview}[2]{\begin{center}\includegraphics[width=.96\linewidth,height=.49\textheight,keepaspectratio]{assets/#1.png}\par\smallskip{\footnotesize\color{muted}#2}\end{center}}
+\hypersetup{pdftitle={RF Test Structures for LTC-25000 insulators and EME-G730 substrates},pdfauthor={Jovan Trujillo},pdfsubject={500 MHz to 67 GHz source previews and model applicability}}
+\begin{document}
+\pageTitle{Preliminary RF Design Draft}{RF test structures for the supplied copper / polyimide / mold-resin stack}
+{\huge\bfseries\color{teal}500 MHz to 67 GHz}\par
+\vspace{6pt}
+This report collects eight RF test structure proposals. It records the requested physical stack, preserves the cardinal RF probe arrangement, and identifies the model changes needed before electrical dimensions or performance can be assigned to this stack.
+\subhead{Physical configuration supplied by the user}
+\par\noindent\begin{tabular}{@{}p{.37\linewidth}p{.58\linewidth}@{}}\toprule
+Frequency range & 0.500 to 67.000 GHz\\
+Top copper thickness & 2.2 \ensuremath{\mu\mathrm{m}}\\
+Insulation & FUJIFILM LTC-25000 polyimide, 6 \ensuremath{\mu\mathrm{m}} cured thickness\\
+Substrate & EME-G730 mold resin, 700 \ensuremath{\mu\mathrm{m}} thick\\
+RF grounds & Top-side GSG grounds only; no continuous ground plane\\
+Installed probes & MPI TITAN, rated to 67 GHz, 150 \ensuremath{\mu\mathrm{m}} adjacent-tip pitch\\\bottomrule
+\end{tabular}\par
+\vspace{9pt}
+\callout{\textbf{The existing grounded models do not predict the supplied stack.} The design programs synthesize microstrip and, in the ring launch, grounded CPW using a homogeneous dielectric and a continuous return plane. That plane is absent here. All printed impedances, widths, electrical lengths, mode frequencies and response curves inherited from those models are hypothetical reference results.}
+\subhead{What this delivery establishes}
+The atlas supplies native-source artwork, port assignments, drawing-command records and reproducible generation files. It includes 14 RF drawing views and two utility text views. Schematics show program concepts and are not scaled mask layouts.
+Published material information located for LTC-25000 and EME-G730 did not establish complex permittivity over this frequency range. No actual-stack impedance, loss, crosstalk, leakage isolation or ring resonance is asserted in this report.
+\vfill
+{\small\color{muted}Prepared 30 October 2026. PDF typeset with pdfLaTeX. Source programs remain unchanged.}
+\newpage
+\pageTitle{Stack and RF return path}{The insulation thickness is not the full electromagnetic substrate height}
+\begin{center}\includegraphics[width=.99\linewidth,height=.46\textheight,keepaspectratio]{assets/physical-stack.png}\end{center}
+The physical structure is a two-dielectric, top-conductor configuration. Coplanar-waveguide fields occupy air, polyimide and mold resin. A 6 \ensuremath{\mu\mathrm{m}} polyimide coating cannot be substituted for the complete CPW substrate or for a 6 \ensuremath{\mu\mathrm{m}} distance to an absent ground plane. A prober chuck or support underneath the mold may also affect the boundary conditions and belongs in the final model.
+\subhead{Connected ground conductors are required}
+GSG tips establish three contacts at each landing. Their presence alone does not define the return conductors along a line or around a ring. Add explicit top-ground regions connected to the probe grounds, define their widths and slots, and model ground continuity at bends and junctions. Where separate ground regions can support unwanted modes, determine suitable bonds or bridges without shorting the signal. The concept drawing is not a released ground-routing design.
+\subhead{Material properties remain open inputs}
+\par\noindent\begin{tabular}{@{}p{.29\linewidth}p{.66\linewidth}@{}}\toprule
+LTC-25000 & Grade identified in public process work [2]; verified 0.5--67 GHz Dk/Df not located.\\
+EME-G730 & Exact suffix and RF data remain unspecified. Manufacturer G730 Ver. GR information concerns process/mechanical properties [3].\\
+Reference calculations & Constant er=3.3 and loss tangent=0.01 are illustrative polyimide assumptions only. No mold Dk or Df was assigned.\\\bottomrule
+\end{tabular}\par
+The manufacturer's Dk/Df shown for G314 at 1 MHz are for a different grade and frequency. They are not used for EME-G730. Qucs distinguishes the CPW topology from microstrip and includes finite-substrate and conductor-thickness effects [4,5]; a stack-aware CPW or full-wave model is required here.
+
+\newpage
+\pageTitle{RDLLOSS / differential line loss}{Two ports: P1 west, P2 east; north/south parked.}
+\callout{\textbf{Source artwork only.} Native numerical labels below belong to the legacy grounded reference and do not establish electrical behavior on the supplied ungrounded stack.}
+\preview{rdlloss}{Actual native drawing commands; the printed delta length is a hypothetical grounded-model result.}
+\subhead{Measurement concept}
+Three separate coupons use common launches and short, middle and long line lengths. The intended measurement is the change in attenuation with length.
+\subhead{Changes needed for the supplied stack}
+Replace microstrip width and attenuation synthesis with ungrounded multilayer CPW. Provide connected top-side ground rails along each line and identical transitions. Include copper thickness, roughness, both dielectric losses, mismatch and calibration.
+\textbf{Specific model limit.} The source loss approximation also assumes a thick conductor. At 500 MHz its hypothetical skin depth is about 2.952 \ensuremath{\mu\mathrm{m}}, exceeding the 2.2 \ensuremath{\mu\mathrm{m}} copper thickness. Its three-skin-depth condition is reached only above about 8.102 GHz.
+
+\newpage
+\pageTitle{RDXTALK / four-port crosstalk}{P1 west, P2 north, P3 south, P4 east. Aggressor W-to-N; victim S-to-E.}
+\callout{\textbf{Source artwork only.} Native numerical labels below belong to the legacy grounded reference and do not establish electrical behavior on the supplied ungrounded stack.}
+\preview{rdxtalk}{Four cardinal GSG landings, with no crossing of the two signal routes. Copper width/gap labels describe the source example.}
+\subhead{Measurement concept}
+Preserve the two parallel coupled conductors and cardinal access fanouts. P1 drives the aggressor; P2 is through, P3 is near-end and P4 is far-end coupling.
+\subhead{Changes needed for the supplied stack}
+Define the top-ground layout before solving the coupled CPW modes. Ground rails, slots, corners and finite ground regions all affect coupling. Use a four-port multilayer EM model and calibrate all four probe planes.
+\textbf{Specific model limit.} The current coupled microstrip calculation uses zero-thickness DUT conductors and omits access bends and probe parasitics. Its 1 mm adjacent landing-centre rule is adjustable and does not establish mechanical clearance of the installed probe bodies.
+
+\smallskip\textbf{Port meaning:} S21 is W-to-N aggressor through, S31 is W-to-S near-end coupling, and S41 is W-to-E far-end coupling. Full four-port calibration is required.
+
+\newpage
+\pageTitle{RFLEAK / broadside leakage}{Two top-side ports: P1 west, P2 east; north/south parked.}
+\callout{\textbf{Source artwork only.} Native numerical labels below belong to the legacy grounded reference and do not establish electrical behavior on the supplied ungrounded stack.}
+\preview{rfleak}{The capacitance label uses assumed er=3.3 and a 6 \ensuremath{\mu\mathrm{m}} gap. It is a reference calculation, not a measured capacitance.}
+\subhead{Measurement concept}
+The drawing represents overlap between two patterned metal levels separated by dielectric. A transition brings the lower pickup electrode to the east probe landing.
+\subhead{Changes needed for the supplied stack}
+Confirm that a second patterned metal layer exists beneath the 6 \ensuremath{\mu\mathrm{m}} insulation. It is an isolated electrode, not a continuous backplane. Model plate fringing, CPW access, layer transition and connected top-ground geometry together.
+\textbf{Specific model limit.} The supplied stack does not confirm this second electrode. The parallel-plate capacitance needs the actual RF permittivity of LTC-25000. The via-fence pitch rule predicts no shielding improvement in dB; posts without a defined RF return do not establish a shield.
+
+\newpage
+\pageTitle{STUBTEST / open and short shunt stubs}{Two ports: P1 west, P2 east; north/south parked.}
+\callout{\textbf{Source artwork only.} Native numerical labels below belong to the legacy grounded reference and do not establish electrical behavior on the supplied ungrounded stack.}
+\preview{stubtest}{Open-stub source artwork. The numerical width and length are legacy grounded-reference labels.}
+\subhead{Measurement concept}
+A shunt branch is added to a through line. Both the open-ended and short-ended native schematic variants are included in the gallery.
+\subhead{Changes needed for the supplied stack}
+Design the through line, branch, tee junction and their ground rails as CPW on the actual two-dielectric stack. An RF short needs a defined connection to the top grounds. Include fringing at an open end and parasitics at a short.
+\textbf{Specific model limit.} The native 70 ohm stub synthesis and 20 GHz notch example use the grounded microstrip reference. They cannot establish a physical CPW length or notch frequency for this stack.
+
+The gallery also contains \texttt{stubtest-short.png}, rendered from the source short-stub branch. Both variants retain two external ports.
+
+\newpage
+\pageTitle{TRLSET / multiline calibration standards}{Two ports: P1 west, P2 east; one standard measured at a time.}
+\callout{\textbf{Source artwork only.} Native numerical labels below belong to the legacy grounded reference and do not establish electrical behavior on the supplied ungrounded stack.}
+\preview{trlset}{Native schematic of separate standards; row spacing and drawn lengths are illustrative and not a mask layout.}
+\subhead{Measurement concept}
+The standards retain a common cross section and launches, with a thru and several extra line lengths. The same reflect reference is used across measurements.
+\subhead{Changes needed for the supplied stack}
+Use the same connected CPW grounds, slots and stack as the DUTs. Choose line lengths from the actual dispersive propagation constant, then check pairwise phase and calibration conditioning across 0.5 to 67 GHz.
+\textbf{Specific model limit.} The legacy source uses a homogeneous microstrip effective permittivity. Its two-port west/east standards do not supply the complete four-head calibration needed for the cardinal RDXTALK device.
+
+\newpage
+\pageTitle{VIAMATCH / one-port stud and via match}{One external port: P1 west. The RL/RX load is internal; east/north/south parked.}
+\callout{\textbf{Source artwork only.} Native numerical labels below belong to the legacy grounded reference and do not establish electrical behavior on the supplied ungrounded stack.}
+\preview{viamatch}{The right-hand block is the internal load, not a second external probe landing.}
+\subhead{Measurement concept}
+The original calculation combines surrogate stud/via impedances and an ideal matching network feeding a specified internal load. Its RF output is input reflection or return loss.
+\subhead{Changes needed for the supplied stack}
+Specify the actual vertical metal path and its top-side return conductors. Replace the source closed cylindrical return with the fabricated geometry and a multilayer port model. Check finite-Q components and self-resonance.
+\textbf{Specific model limit.} An ungrounded mold substrate does not provide the assumed cylindrical return. The ideal match and its numerical return-loss floor cannot be treated as realizable device performance. This program has no external east through port or S21 prediction.
+
+\newpage
+\pageTitle{ZCOUPON / impedance and width variation}{Two ports: P1 west, P2 east; separate width-variation coupons.}
+\callout{\textbf{Source artwork only.} Native numerical labels below belong to the legacy grounded reference and do not establish electrical behavior on the supplied ungrounded stack.}
+\preview{zcoupon}{Native low/nominal/high-width artwork. Three rows are separate devices, not simultaneous probe positions.}
+\subhead{Measurement concept}
+The source varies conductor width around a nominal value while retaining a common line length. This is a useful measurement concept for process sensitivity.
+\subhead{Changes needed for the supplied stack}
+For CPW, specify both signal width and ground slot width, finite ground width and top-ground continuity. Define whether the slot is held fixed or changes with the width DOE. Re-synthesize the nominal geometry on the actual stack.
+\textbf{Specific model limit.} The printed nominal width of about 12.431 \ensuremath{\mu\mathrm{m}} was synthesized for a hypothetical grounded 6 \ensuremath{\mu\mathrm{m}} dielectric. It is not a validated 50 ohm CPW width on EME-G730.
+
+\clearpage\begin{landscape}
+\pageTitle{Ring dimensions and source assumptions}{RESONATOR2 / legacy grounded-model evaluation / no physical-stack electrical prediction}
+\begin{center}\includegraphics[width=.98\linewidth,height=.76\textheight,keepaspectratio]{assets/resonator2-dimensions.png}\end{center}
+{\small The source reports a hypothetical 50 ohm trace of 12.4466 \ensuremath{\mu\mathrm{m}} and a ring radius of 6.0635 mm for an illustrative 5 GHz fundamental. Neither dimension is a synthesized CPW design for the actual mold stack.}
+\end{landscape}
+
+\clearpage\begin{landscape}
+\pageTitle{Circular ring and west/east access}{RESONATOR2 / legacy grounded-model evaluation / no physical-stack electrical prediction}
+\begin{center}\includegraphics[width=.98\linewidth,height=.76\textheight,keepaspectratio]{assets/resonator2-circle.png}\end{center}
+{\small The circular artwork preserves the source ring and opposite-side probes. Top-ground continuity and the CPW feed-to-ring coupling must be designed for the ungrounded two-dielectric structure. Native instructions about backside ground describe the legacy model, which is absent in the actual stack.}
+\end{landscape}
+
+\clearpage\begin{landscape}
+\pageTitle{GSG launch detail}{RESONATOR2 / legacy grounded-model evaluation / no physical-stack electrical prediction}
+\begin{center}\includegraphics[width=.98\linewidth,height=.76\textheight,keepaspectratio]{assets/resonator2-gsg-launch.png}\end{center}
+{\small The 150 \ensuremath{\mu\mathrm{m}} contact pitch is retained. The source launch uses a grounded-CPW approximation of zero metal thickness; its neck and pad impedance labels do not describe this ungrounded stack. The 2.2 \ensuremath{\mu\mathrm{m}} metal thickness must be included in a replacement launch model.}
+\end{landscape}
+
+\clearpage\begin{landscape}
+\pageTitle{Nominal resonance-mode page}{RESONATOR2 / legacy grounded-model evaluation / no physical-stack electrical prediction}
+\begin{center}\includegraphics[width=.98\linewidth,height=.76\textheight,keepaspectratio]{assets/resonator2-modes.png}\end{center}
+{\small A 5 GHz illustrative fundamental produces 13 nominal reference modes at 5,10,...,65 GHz. These are unloaded length-model positions, not measured resonances, not actual-stack predictions, and not an S21 passband.}
+\end{landscape}
+
+\clearpage\begin{landscape}
+\pageTitle{Native model checks}{RESONATOR2 / legacy grounded-model evaluation / no physical-stack electrical prediction}
+\begin{center}\includegraphics[width=.98\linewidth,height=.76\textheight,keepaspectratio]{assets/resonator2-checks.png}\end{center}
+{\small At 6 \ensuremath{\mu\mathrm{m}} insulation, the source input guard permits at most 0.6 \ensuremath{\mu\mathrm{m}} copper; requested copper is 2.2 \ensuremath{\mu\mathrm{m}}. These host previews evaluate the unchanged equations directly outside that interactive guard. The source also flags both microstrip and GCPW thin-metal conditions.}
+\end{landscape}
+
+\clearpage\begin{landscape}
+\pageTitle{Six-lobe source variant}{RESONATOR2 / legacy grounded-model evaluation / no physical-stack electrical prediction}
+\begin{center}\includegraphics[width=.98\linewidth,height=.76\textheight,keepaspectratio]{assets/resonator2-six-lobes.png}\end{center}
+{\small The extra variant uses six cosine lobes at 10 percent depth. It illustrates the source shape parameterization, not a validated alternative for the physical stack. It retains two west/east ports and parked north/south heads.}
+\end{landscape}
+
+\clearpage
+\pageTitle{Mathematical utilities}{Source text previews complete the ten-program Hand BASIC inventory}
+\begin{center}\includegraphics[width=.94\linewidth,height=.60\textheight,keepaspectratio]{assets/matmul.png}\end{center}
+\begin{center}\includegraphics[width=.94\linewidth,height=.19\textheight,keepaspectratio]{assets/varprec.png}\end{center}
+These two programs have no RF frequency, dielectric, copper or probe inputs. The previews extract the actual initial PRINT text and first INPUT prompt; menu actions and arithmetic are not executed by the preview generator.
+\newpage
+\pageTitle{Archived reference calculations}{Debugging the existing equations; excluded from actual-stack design claims}
+\callout{\textbf{This archive does not solve the physical stack.} Microstrip widths and line responses assume a hypothetical continuous plane under the polyimide. Leakage capacitance and via matching use separate idealized plate and closed-return surrogates. The ungrounded multilayer structure is not solved. Agreement with source equations establishes reproducibility only.}
+The archive uses er=3.3, loss tangent=0.01, copper resistivity=17.2 nOhm m and RMS roughness=0.3 \ensuremath{\mu\mathrm{m}}. The last two values are retained source defaults; none is a measurement on this fabrication. Source equations were translated independently and checked against the source-driven interpreter at 70 values.
+\par\noindent\begin{tabular}{@{}p{.21\linewidth}p{.74\linewidth}@{}}\toprule
+Program & Example hypothetical result and interpretation\\\midrule
+RDLLOSS & 67 GHz loss: 1.2765 dB/mm. Used only to reproduce the source loss-length calculation.\\
+RDXTALK & Base-gap S31=-17.608 dB, S41=-15.472 dB at 67 GHz; coupled microstrip reference only.\\
+RFLEAK & 0.038958 pF from the parallel-plate formula with assumed er and 6 \ensuremath{\mu\mathrm{m}} gap.\\
+STUBTEST & Open-stub reference length 2.46236 mm for the source 20 GHz example.\\
+TRLSET & One long line exceeds 40 mm; remaining eligible pairs cover the 201 sampled reference points. This does not establish physical CPW calibration coverage.\\
+VIAMATCH & Ideal matching values 0.18212 nH and 0.15927 pF at 20 GHz depend on the surrogate return and load.\\
+ZCOUPON & Nominal reference width 12.43114 \ensuremath{\mu\mathrm{m}} is 50 ohms by the microstrip synthesis. It is not a CPW width.\\\bottomrule
+\end{tabular}\par
+\begin{center}\includegraphics[width=.97\linewidth,height=.34\textheight,keepaspectratio]{assets/rdlloss-response.png}\end{center}
+The gallery stores all seven response plots under a separate, initially collapsed reference section. Raw results, assumptions, source-line provenance and cross-check results are in \texttt{rf-results.json} and \texttt{rf-results.csv}. No actual-stack S-parameter file is generated.
+\newpage
+\pageTitle{Files, verification and next design steps}{Reproduce the previews and PDF without changing the BASIC listings}
+\subhead{Delivered files}
+\par\noindent\begin{tabular}{@{}p{.44\linewidth}p{.51\linewidth}@{}}\toprule
+\texttt{handbasic-previews/index.html} & Preview gallery, with RF artwork, utility text and reference-plot sections.\\
+\texttt{handbasic-preview-profile.json} & User stack and probes; explicit reference assumptions and model applicability.\\
+\texttt{handbasic-previews/*.svg / *.png} & Editable vector artwork and viewing images.\\
+\texttt{*-commands.json / *manifest.json} & Source commands, source/profile hashes, calculation entry points and limits.\\
+\texttt{reports/build.ps1} & Regenerate previews, data, gallery and report with pdfLaTeX.\\
+\texttt{reports/handbasic-ltc25000-eme-g730.tex} & Editable report source.\\\bottomrule
+\end{tabular}\par
+Run \texttt{powershell -File reports/build.ps1} from the project folder. Node.js, ImageMagick and pdfLaTeX are required. The build checks that all RF manifests use the same profile and unchanged BASIC sources; mathematical text previews are literal extraction. Mobile app behavior, probe-body fit, fabricated dimensions and physical RF performance are not validated by this build.
+\subhead{Scope of the program inventory}
+All ten parent-folder BASIC programs are represented. The C64-only \texttt{RING67.PRG} is a separate synthetic ideal two-port model, not an additional Hand BASIC program; it is not a solver for this physical stack and is not presented as one.
+\subhead{Before assigning fabrication dimensions or RF predictions}
+Obtain the complex permittivity of both exact cured material grades over 0.5--67 GHz, together with copper conductivity/roughness and the support/chuck boundary. Define connected top-ground regions, CPW slots, optional bridges, the RFLEAK second metal layer and VIAMATCH return geometry. Then solve the finite-thickness multilayer CPW structures and launches, synthesize the nominal 50 ohm geometry, and check calibration on matching standards. Preserve the existing cardinal port counts and assignments during that redesign.
+\subhead{Sources}
+{\small
+[1] MPI Corporation, \href{https://www.mpi-corporation.com/wp-content/uploads/ASTPDF/MPI-Probe-Selection-Guide.pdf}{Probe Selection Guide}, T67, p.6: 67 GHz family and available GSG pitches. Rating is a probe specification, not a guarantee for the DUT or the complete measurement system.\par
+[2] EV Group / FUJIFILM, \href{https://www.swtest.org/swtw_library/2024proc/pdf/W06_03_VARGA_SWTest-2024.pdf}{SWTest 2024 digital-lithography process study}. Identifies LTC 25000 in process trials; it is not broadband dielectric characterization.\par
+[3] Sumitomo Bakelite, \href{https://www.sumibe.co.jp/product/it-materials/epoxy/sumikon-eme/}{SUMIKON EME semiconductor encapsulants}. G730 Ver. GR and G314 are separate entries. Exact user grade suffix is unconfirmed.\par
+[4] Qucs technical documentation, \href{https://qucs.github.io/tech/node86.html}{Coplanar waveguides}. Topology, finite-substrate and conductor-thickness considerations.\par
+[5] Qucs technical documentation, \href{https://qucs.github.io/tech/node75.html}{Single microstrip line}. Source model family and thickness corrections.\par
+}
+\end{document}

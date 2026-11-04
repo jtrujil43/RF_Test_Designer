@@ -124,3 +124,18 @@ Generate the RF artwork, ring pages, utility text, or reference curves:
 
 preview_handbasic_cardinal.mjs now invokes the complete RF preview
 generator, preserving the final profile and warnings in the RDXTALK image.
+
+GDSII UNIT CELLS AND REPORT MATH
+
+The gds folder holds eight CBM BASIC V2 scripts (gds_*.bas) that write
+GDSII unit cells with a continuous ground plane under the 6um polyimide,
+one per RF structure. They are not Hand BASIC programs: they run in an SDL
+build of cbmbasic (SYSTEM is required). See gds/README.txt, and run
+  powershell -File gds/run_gds.ps1
+to regenerate and verify every cell.
+
+The PDF report now includes governing equations, worked reference values
+and expected test data in each Measurement concept section. Those relations
+are checked against handbasic-previews/rf-results.json whenever the report
+is built. The values are grounded reference-model results with illustrative
+er and tanDelta, not predictions for the as-supplied (no ground plane) stack.

@@ -5,6 +5,7 @@ import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { buildMath, gdsSection } from './report_math.mjs';
 const reports = path.dirname(fileURLToPath(import.meta.url));
 const root = path.dirname(reports), previews = path.join(root, 'handbasic-previews');
 const read = file => JSON.parse(readFileSync(path.join(root, file), 'utf8'));
@@ -43,6 +44,7 @@ copyFileSync(path.join(root, 'handbasic-preview-profile.json'), path.join(report
 const fmt = (n, digits = 4) => Number(n).toFixed(digits).replace(/0+$/, '').replace(/\.$/, '');
 const tex = value => String(value).replace(/[\\&%$#_{}~^]/g, c => ({'\\':'\\textbackslash{}','&':'\\&','%':'\\%','$':'\\$','#':'\\#','_':'\\_','{':'\\{','}':'\\}','~':'\\textasciitilde{}','^':'\\textasciicircum{}'}[c]));
 const xml = value => String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
+const math = buildMath(data, ring);
 const specs = [
   { name:'rdlloss', title:'RD LLOSS / differential line loss', plain:'RD LLOSS: differential line loss', ports:'Two ports: P1 west, P2 east; north/south parked.',
     purpose:'Three separate coupons use common launches and short, middle and long line lengths. The intended measurement is the change in attenuation with length.',
@@ -83,7 +85,7 @@ const specs = [
 let body = String.raw`\documentclass[10pt,letterpaper]{article}
 \usepackage[margin=0.68in]{geometry}
 \usepackage[T1]{fontenc}\usepackage{lmodern}
-\usepackage{graphicx,xcolor,booktabs,array,longtable,fancyhdr,amsmath,pdflscape}
+\usepackage{graphicx,xcolor,booktabs,array,longtable,fancyhdr,amsmath,amssymb,pdflscape}
 \usepackage[hidelinks]{hyperref}
 \definecolor{navy}{HTML}{153047}\definecolor{teal}{HTML}{007C89}
 \definecolor{muted}{HTML}{526574}\definecolor{alert}{HTML}{A42D2D}
@@ -91,11 +93,14 @@ let body = String.raw`\documentclass[10pt,letterpaper]{article}
 \setlength{\headheight}{14pt}\pagestyle{fancy}\fancyhf{}
 \fancyhead[L]{\small\color{navy}Hand BASIC preview atlas}
 \fancyhead[R]{\small\color{muted}500 MHz to 67 GHz}
-\fancyfoot[L]{\footnotesize\color{muted}6 um LTC-25000 / 700 um EME-G730 / top-side grounds only}
+\fancyfoot[L]{\footnotesize\color{muted}6 um LTC-25000 / 700 um EME-G730 / as-supplied: no ground plane}
 \fancyfoot[R]{\small\thepage}
 \newcommand{\pageTitle}[2]{{\LARGE\bfseries\color{navy}#1}\par{\small\color{muted}#2}\par\vspace{7pt}}
 \newcommand{\subhead}[1]{\par\addvspace{7pt}\noindent{\large\bfseries\color{teal}#1}\par\nobreak\vspace{2pt}}
 \newcommand{\callout}[1]{\begingroup\setlength{\fboxsep}{8pt}\fcolorbox{alert}{white}{\parbox{\dimexpr\linewidth-18pt\relax}{\small\color{alert}#1}}\endgroup\par}
+\newcommand{\minihead}[1]{\par\addvspace{4pt}\noindent{\bfseries\color{navy}#1}\par\nobreak\vspace{1pt}}
+\newcommand{\response}[2]{\begin{center}\includegraphics[width=.9\linewidth,height=.27\textheight,keepaspectratio]{assets/#1.png}\par\smallskip{\footnotesize\color{muted}#2}\end{center}}
+\newcommand{\gdsfig}[2]{\begin{center}\includegraphics[width=.96\linewidth,height=.26\textheight,keepaspectratio]{assets/gds-#1.png}\par\smallskip{\footnotesize\color{muted}#2}\end{center}}
 \newcommand{\preview}[2]{\begin{center}\includegraphics[width=.96\linewidth,height=.49\textheight,keepaspectratio]{assets/#1.png}\par\smallskip{\footnotesize\color{muted}#2}\end{center}}
 \begin{document}
 \pageTitle{Hand BASIC preview atlas}{RF test structures for the supplied copper / polyimide / mold-resin stack}
@@ -108,11 +113,12 @@ Frequency range & 0.500 to 67.000 GHz\\
 Top copper thickness & 2.2 um\\
 Insulation & FUJIFILM LTC-25000 polyimide, 6 um cured thickness\\
 Substrate & EME-G730 mold resin, 700 um thick\\
-RF grounds & Top-side GSG grounds only; no continuous ground plane\\
+RF grounds, as supplied & Top-side GSG grounds only; no continuous ground plane\\
+RF grounds, GDSII cells & Continuous ground plane directly under the 6 um polyimide (layer 1), added by request\\
 Installed probes & MPI TITAN, rated to 67 GHz, 150 um adjacent-tip pitch\\\bottomrule
 \end{tabular}
 \vspace{9pt}
-\callout{\textbf{The existing grounded models do not predict the supplied stack.} The BASIC programs synthesize microstrip and, in the ring launch, grounded CPW using a homogeneous dielectric and a continuous return plane. That plane is absent here. All printed impedances, widths, electrical lengths, mode frequencies and response curves inherited from those models are hypothetical reference results.}
+\callout{\textbf{The existing grounded models do not predict the supplied stack.} The BASIC programs synthesize microstrip and, in the ring launch, grounded CPW using a homogeneous dielectric and a continuous return plane. That plane is absent in the supplied stack. All printed impedances, widths, electrical lengths, mode frequencies and response curves inherited from those models are hypothetical reference results. They apply to the GDSII unit cells only because those cells add the plane the models assume.}
 \subhead{What this delivery establishes}
 The atlas supplies native-source artwork, port assignments, drawing-command records and reproducible generation files. It includes 14 RF drawing views and two utility text views. Schematics show program concepts and are not scaled mask layouts. The mobile Hand BASIC app was not executed.
 Published material information located for LTC-25000 and EME-G730 did not establish complex permittivity over this frequency range. No actual-stack impedance, loss, crosstalk, leakage isolation or ring resonance is asserted in this report.
@@ -132,11 +138,12 @@ Reference calculations & Constant er=3.3 and loss tangent=0.01 are illustrative 
 \end{tabular}
 The manufacturer's Dk/Df shown for G314 at 1 MHz are for a different grade and frequency. They are not used for EME-G730. Qucs distinguishes the CPW topology from microstrip and includes finite-substrate and conductor-thickness effects [4,5]; a stack-aware CPW or full-wave model is required here.
 `;
+body += math.common;
 for (const s of specs) {
   body += '\n\\newpage\n\\pageTitle{' + tex(s.title) + '}{' + tex(s.ports) + '}\n';
   body += '\\callout{\\textbf{Source artwork only.} Native numerical labels below belong to the legacy grounded reference and do not establish electrical behavior on the supplied ungrounded stack.}\n';
   body += '\\preview{' + s.name + '}{' + tex(s.caption) + '}\n';
-  body += '\\subhead{Measurement concept}\n' + tex(s.purpose) + '\n';
+  body += '\\subhead{Measurement concept}\n' + tex(s.purpose) + '\n' + math[s.name] + '\n';
   body += '\\subhead{Changes needed for the supplied stack}\n' + tex(s.requirement) + '\n';
   body += '\\textbf{Specific model limit.} ' + tex(s.limit) + '\n';
   if (s.name === 'rdxtalk') body += '\n\\smallskip\\textbf{Port meaning:} S21 is W-to-N aggressor through, S31 is W-to-S near-end coupling, and S41 is W-to-E far-end coupling. Full four-port calibration is required.\n';
@@ -144,17 +151,19 @@ for (const s of specs) {
 }
 const ringPages = [
   ['resonator2-dimensions','Ring dimensions and source assumptions','The source reports a hypothetical 50 ohm trace of 12.4466 um and a ring radius of 6.0635 mm for an illustrative 5 GHz fundamental. Neither dimension is a synthesized CPW design for the actual mold stack.'],
-  ['resonator2-circle','Circular ring and west/east access','Connected outer half-ring ground rails follow the signal and join both launch banks. No floating inner ground island is drawn. Rail and slot dimensions and feed-to-ring coupling still require an ungrounded multilayer model; the legacy numerical model assumes an absent backplane.'],
+  ['resonator2-circle','Circular ring and west/east access','Connected outer half-ring ground rails follow the signal and join both launch banks. No floating inner ground island is drawn. Rail and slot dimensions and feed-to-ring coupling still require an ungrounded multilayer model; the legacy numerical model assumes a continuous backplane.'],
   ['resonator2-gsg-launch','GSG launch detail','The 150 um contact pitch is retained. The source launch uses a grounded-CPW approximation of zero metal thickness; its neck and pad impedance labels do not describe this ungrounded stack. The 2.2 um metal thickness must be included in a replacement launch model.'],
   ['resonator2-modes','Nominal resonance-mode page','A 5 GHz illustrative fundamental produces 13 nominal reference modes at 5,10,...,65 GHz. These are unloaded length-model positions, not measured resonances, not actual-stack predictions, and not an S21 passband.'],
   ['resonator2-checks','Native model checks','At 6 um insulation, the source input guard permits at most 0.6 um copper; requested copper is 2.2 um. These host previews evaluate the unchanged equations directly outside that interactive guard. The source also flags both microstrip and GCPW thin-metal conditions.'],
   ['resonator2-six-lobes','Six-lobe source variant','The extra variant uses six cosine lobes at 10 percent depth. It illustrates the source shape parameterization, not a validated alternative for the physical stack. It retains two west/east ports and parked north/south heads.'],
 ];
+body += math.resonator;
 for (const [name,title,note] of ringPages) {
   body += '\n\\clearpage\\begin{landscape}\n\\pageTitle{' + tex(title) + '}{RESONATOR2 / legacy grounded-model evaluation / no physical-stack electrical prediction}\n';
   body += '\\begin{center}\\includegraphics[width=.98\\linewidth,height=.76\\textheight,keepaspectratio]{assets/' + name + '.png}\\end{center}\n';
   body += '{\\small ' + tex(note) + '}\n\\end{landscape}\n';
 }
+body += gdsSection(root, assets);
 body += String.raw`
 \clearpage
 \pageTitle{Mathematical utilities}{Source text previews complete the ten-program Hand BASIC inventory}
@@ -163,7 +172,7 @@ body += String.raw`
 These two programs have no RF frequency, dielectric, copper or probe inputs. The previews extract the actual initial PRINT text and first INPUT prompt; menu actions and arithmetic are not executed by the preview generator.
 \newpage
 \pageTitle{Archived reference calculations}{Debugging the existing equations; excluded from actual-stack design claims}
-\callout{\textbf{This archive does not solve the physical stack.} Microstrip widths and line responses assume a hypothetical continuous plane under the polyimide. Leakage capacitance and via matching use separate idealized plate and closed-return surrogates. The ungrounded multilayer structure is not solved. Agreement with source equations establishes reproducibility only.}
+\callout{\textbf{This archive does not solve the physical stack.} Microstrip widths and line responses assume a hypothetical continuous plane under the polyimide. Leakage capacitance and via matching use separate idealized plate and closed-return surrogates. The ungrounded multilayer structure is not solved. Agreement with source equations establishes reproducibility only. The GDSII unit cells do draw that continuous plane, so the reference curves describe them but not the as-supplied stack.}
 The archive uses er=3.3, loss tangent=0.01, copper resistivity=17.2 nOhm m and RMS roughness=0.3 um. The last two values are retained source defaults; none is a measurement on this fabrication. Source equations were translated independently and checked against the source-driven interpreter at 70 values.
 \begin{tabular}{@{}p{.21\linewidth}p{.74\linewidth}@{}}\toprule
 Program & Example hypothetical result and interpretation\\\midrule
@@ -186,7 +195,10 @@ The gallery stores all seven response plots under a separate, initially collapse
 \texttt{handbasic-previews/*.svg / *.png} & Editable vector artwork and viewing images.\\
 \texttt{*-commands.json / *manifest.json} & Source commands, source/profile hashes, calculation entry points and limits.\\
 \texttt{reports/build.ps1} & Regenerate previews, data, gallery and report with pdfLaTeX.\\
-\texttt{reports/handbasic-ltc25000-eme-g730.tex} & Editable report source.\\\bottomrule
+\texttt{reports/handbasic-ltc25000-eme-g730.tex} & Editable report source.\\
+\texttt{reports/report\_math.mjs} & Equations, worked values and expected-data text; its self-checks fail the build if a relation disagrees with \texttt{rf-results.json}.\\
+\texttt{gds/gds\_*.bas, gds/*.GDS} & Eight cbmbasic scripts and the generated GDSII unit cells with ground plane.\\
+\texttt{gds/verify\_gds.mjs, gds/run\_gds.ps1} & Stream, geometry and connectivity checks; regenerate all cells.\\\bottomrule
 \end{tabular}
 Run \texttt{powershell -File reports/build.ps1} from the project folder. Node.js, ImageMagick and pdfLaTeX are required. The build checks that all RF manifests use the same profile and unchanged BASIC sources; mathematical text previews are literal extraction. Mobile app behavior, probe-body fit, fabricated dimensions and physical RF performance are not validated by this build.
 \subhead{Scope of the program inventory}
@@ -217,7 +229,7 @@ const ringCards = ringPages.map(([n,t,note])=>[n,'RESONATOR2: '+t,note]);
 const html = `<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hand BASIC preview atlas</title><style>
 body{margin:0;background:#eef3f7;color:#173047;font:16px/1.55 system-ui,sans-serif}main{max-width:1250px;margin:auto;padding:32px}h1{font-size:38px;line-height:1.15}h2{margin-top:36px}a{color:#006a78}header,.notice{padding:22px;border-radius:12px;background:white;margin-bottom:20px}.notice{border-left:6px solid #a42d2d}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,480px),1fr));gap:20px}article{padding:18px;background:white;border-radius:12px;box-shadow:0 2px 7px #15304712}article h3{margin-top:0}img{max-width:100%;height:auto;display:block}article p{font-size:14px}summary{cursor:pointer;font-size:22px;font-weight:650;padding:18px;background:#fff4ef}code{background:#edf3f7;padding:2px 4px}footer{margin:32px 0;color:#526574}.stack{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px}.stack div{background:#eef4f7;padding:12px;border-radius:8px}</style><main>
 <header><h1>Hand BASIC preview atlas</h1><p>500 MHz to 67 GHz · <a href="../reports/handbasic-ltc25000-eme-g730.pdf">PDF report</a> · <a href="../handbasic-preview-profile.json">Parameter profile</a></p><div class="stack"><div><b>Top copper</b><br>2.2 µm</div><div><b>Insulation</b><br>6 µm LTC-25000</div><div><b>Mold substrate</b><br>700 µm EME-G730</div><div><b>Probes</b><br>MPI TITAN 67 GHz / 150 µm GSG</div></div></header>
-<div class="notice"><b>Actual stack: top-side grounds only, no continuous backplane.</b><p>The source models require a continuous return plane. Native numerical labels and archived response plots are hypothetical grounded-reference results, not predictions for this ungrounded multilayer stack. Verified broadband dielectric data were not available; er=3.3 and tanδ=0.01 are illustrative reference assumptions only. These are source-derived host renders, not mobile-app screenshots or fabrication layouts.</p></div>
+<div class="notice"><b>Actual stack: top-side grounds only, no continuous backplane.</b><p>The source models require a continuous return plane. Native numerical labels and archived response plots are hypothetical grounded-reference results, not predictions for this ungrounded multilayer stack. Verified broadband dielectric data were not available; er=3.3 and tanδ=0.01 are illustrative reference assumptions only. These are source-derived host renders, not mobile-app screenshots or fabrication layouts. The GDSII unit cells in <code>../gds</code> add a continuous ground plane under the polyimide, which is the condition the reference models assume.</p></div>
 <section><h2>Physical stack</h2><article><img src="physical-stack.png" alt="Actual two-dielectric stack with top-side GSG grounds and no continuous backplane"><p>Connected CPW grounds and the two-material field distribution must be modeled explicitly.</p></article></section>
 <h2>RF coupon artwork</h2><div class="grid">${cards(rfCards)}</div><h2>Ring source views</h2><div class="grid">${cards(ringCards)}</div>
 <h2>Mathematical utilities</h2><p>RF and material settings do not apply. These are literal initial source-text previews.</p><div class="grid">${cards([['matmul','MATMUL: matrix library','The actual 25-choice source menu.'],['varprec','VARPREC: integer calculator','The actual initial instructions and first input prompt.']])}</div>

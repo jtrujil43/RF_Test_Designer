@@ -2,10 +2,12 @@
 
 BASIC programs for RF test-coupon planning, ring-resonator geometry, matrix operations, and long-integer arithmetic. The project contains the original **Hand BASIC** programs and **Commodore 64 BASIC V2** translations for the VICE emulator.
 
-- [Read the 18-page preview report](reports/handbasic-ltc25000-eme-g730.pdf).
+- [Read the preview report](reports/handbasic-ltc25000-eme-g730.pdf). It carries the equations, worked reference values and expected test data for each coupon, plus a section on the GDSII cells.
 - [Browse the preview files](handbasic-previews). Download or clone the project and open `handbasic-previews/index.html` for the gallery.
 - [Hand BASIC instructions](HAND_BASIC_README.txt).
 - [C64 / VICE instructions](C64/README.txt).
+- [GDSII unit-cell generators](gds/README.txt): one cbmbasic script per RF structure, each with a ground plane.
+- [RF_Test_Structures report](reports/RF_Test_Structures-ltc25000-eme-g730.pdf): an earlier hand-edited draft, kept as supplied.
 
 ## Current physical stack
 
@@ -15,7 +17,7 @@ BASIC programs for RF test-coupon planning, ring-resonator geometry, matrix oper
 | Top copper | 2.2 µm |
 | Insulation | 6 µm cured FUJIFILM LTC-25000 polyimide |
 | Substrate | 700 µm EME-G730 mold resin |
-| Ground configuration | Top-side GSG grounds only; **no continuous ground plane** |
+| Ground configuration | Top-side GSG grounds only; **no continuous ground plane** (the GDSII cells below add a plane under the polyimide) |
 | Probes | MPI TITAN, rated to 67 GHz, 150 µm adjacent-tip pitch |
 
 ![Supplied stack and conceptual top-side RF return path](handbasic-previews/physical-stack.png)
@@ -59,6 +61,17 @@ RDXTALK uses the following four-port mapping to avoid crossed signal routes:
 | P4 | East | Victim far end |
 
 With P1 driven, `S21` is aggressor through, `S31` is near-end crosstalk, and `S41` is far-end crosstalk. North/south GSG triplets rotate 90 degrees. The adjustable 1,000 µm adjacent landing-centre rule does not certify clearance of the actual probe bodies, mounts, or overtravel. RDXTALK needs four calibrated port planes; the existing TRLSET generator is two-port.
+
+## GDSII unit cells
+
+The [`gds`](gds) folder has eight CBM BASIC V2 scripts, one per RF structure, that write binary GDSII unit cells with a continuous ground plane (layer 1) directly under the 6 µm polyimide. That is the condition the reference models assume, so the report's numbers and expected data apply to these cells. Generated `.GDS` files, SVG/PNG previews and a verifier are included.
+
+```powershell
+powershell -File gds/run_gds.ps1      # regenerate all cells and verify them
+node gds/verify_gds.mjs gds/ZCOUPON.GDS
+```
+
+The scripts need an SDL build of cbmbasic (they call `SYSTEM`) plus `certutil` or `xxd`. See [gds/README.txt](gds/README.txt) for the layer map and options. RFLEAK is drawn as a via-connected layer transition; the isolated-plate leakage model is not drawn.
 
 ## Run in Hand BASIC
 
