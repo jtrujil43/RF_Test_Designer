@@ -85,7 +85,7 @@ Structure & Measurement & Raw data & Extracted result\\\midrule
 RDLLOSS & 2-port, 3 lines & $S_{21}$ of each length & attenuation $\alpha(f)$ from $\Delta\mathrm{IL}/\Delta L$\\
 RDXTALK & 4-port & $S_{21},S_{31},S_{41}$ vs gap & coupling, $Z_e$, $Z_o$, $\varepsilon_e$, $\varepsilon_o$\\
 RFLEAK & 2-port + dc & $S_{21}$, $S_{11}$, $R_{dc}$ & layer-transition loss and reflection\\
-STUBTEST & 2-port & $S_{21}$ notch frequencies & $\varepsilon_{eff}$ and stub end effect\\
+STUBTEST & 3-port; P3 north & $S_{21}$ with external P3 open/short & $\varepsilon_{eff}$ and stub end effect\\
 TRLSET & 2-port standards & thru, lines, reflect & $\gamma$, $\varepsilon_{eff}$, reference planes\\
 VIAMATCH & 1-port & $S_{11}$ of bare and matched & $Z_{in}$, return loss, tolerance\\
 ZCOUPON & 2-port & $S_{11}$, TDR step, delay & $Z_0$ and $\tau$ versus width\\
@@ -216,11 +216,11 @@ Confirm the second patterned metal layer and define its thickness and dielectric
 \textbf{Specific model limit.} The retained numerical routines calculate coupling between isolated plates, not this via-connected path. Their capacitance, isolation and via-fence rules must not be interpreted as the response of the new drawing.
 
 \newpage
-\pageTitle{STUBTEST / open and short shunt stubs}{Two ports: P1 west, P2 east; north/south parked.}
+\pageTitle{STUBTEST / three-port shunt stubs}{Three ports: P1 west, P2 east, P3 north at the shunt-branch end.}
 \callout{\textbf{Source artwork only.} Native numerical labels below belong to the legacy grounded reference and do not establish electrical behavior on the supplied ungrounded stack.}
-\preview{stubtest}{Open-stub source artwork. The numerical width and length are legacy grounded-reference labels.}
+\preview{stubtest}{Three-port source artwork with P1 west, P2 east and north-facing P3 at the shunt branch end.}
 \subhead{Measurement concept}
-A shunt branch is added to a through line. Both the open-ended and short-ended native schematic variants are included in the gallery.
+A shunt branch connects the P1-P2 through line to an accessible north-facing P3 GSG port. For two-port reference sweeps, P3 is externally left open or terminated in a short.
 
 \minihead{Governing relations}
 A shunt stub of impedance $Z_s$ and electrical length $\theta_s=2\pi f\ell_{eff}\sqrt{\varepsilon_s}/c$ loads the through line with
@@ -228,12 +228,12 @@ A shunt stub of impedance $Z_s$ and electrical length $\theta_s=2\pi f\ell_{eff}
 \[ \mathrm{IL}_{open}=10\log_{10}\!\left[1+\left(\frac{Z_0\tan\theta_s}{2Z_s}\right)^{2}\right],\qquad \mathrm{IL}_{short}=10\log_{10}\!\left[1+\left(\frac{Z_0\cot\theta_s}{2Z_s}\right)^{2}\right]. \]
 An open stub notches where $\theta_s=(2k-1)\pi/2$; a short stub notches where $\theta_s=k\pi$:
 \[ \ell_{open}=\frac{c}{4f_c\sqrt{\varepsilon_s}}-\Delta\ell,\qquad \ell_{short}=\frac{c}{2f_c\sqrt{\varepsilon_s}},\qquad f_k=(2k-1)\,f_c\ \ (\text{open}). \]
-The open-end extension is $\Delta\ell=0.412\,h\,\dfrac{(\varepsilon_s+0.3)(u_s+0.264)}{(\varepsilon_s-0.258)(u_s+0.8)}$ with $u_s=W_s/h$. A lossy stub does not null completely. With stub attenuation $\alpha_s$ in Np per unit length, $Y_{open}$ at resonance is $\coth(\alpha_s\ell)/Z_s$, so the notch depth is
+The open-end extension is $\Delta\ell=0.412\,h\,\dfrac{(\varepsilon_s+0.3)(u_s+0.264)}{(\varepsilon_s-0.258)(u_s+0.8)}$ with $u_s=W_s/h$. STUBTEST exposes the branch end as P3 north; open and short are external P3 terminations, not fixed DUT connections. A lossy stub does not null completely. With stub attenuation $\alpha_s$ in Np per unit length, $Y_{open}$ at resonance is $\coth(\alpha_s\ell)/Z_s$, so the notch depth is
 \[ S_{21,min}=\frac{2}{2+\dfrac{Z_0}{Z_s}\coth(\alpha_s\ell)}. \]
 \minihead{Worked reference values}
 A $70\ \Omega$ stub gives $W_s=6.221\,\mu\mathrm{m}$, $\varepsilon_s=2.3119$ and $\Delta\ell=2.226\,\mu\mathrm{m}$. For $f_c=20$ GHz, $\ell=2.46459-0.002226=2.46236$ mm. The stub is much narrower than the 50 $\Omega$ line, so its loss is larger: $\alpha_s=0.700$ dB/mm at 20 GHz from the Reference relations, which limits the nominal notch to $S_{21,min}=-9.0$ dB instead of $-\infty$.
 \minihead{Expected test data}
-$S_{21}$ is near 0 dB at low frequency, then shows a sharp notch at $f_1$ and a second notch at $3f_1$, both inside the 0.5 to 67 GHz band. The three stubs move the notch by the inverse of their length ($\pm10\%$ length gives $\mp10\%$ frequency). The product $f_1\ell_{eff}$ should be the same for all three stubs and equals $c/(4\sqrt{\varepsilon_s})=49.29$ GHz\,mm, so any spread shows an error in the stub end effect rather than in $\varepsilon_{eff}$. A measurement of $f_1$ gives $\varepsilon_s=[c/(4f_1\ell_{eff})]^2$. The measured notch will be around $-9$ dB deep, not the 120 dB cap of the ideal calculation, because stub loss limits it.
+$S_{21}$ is near 0 dB at low frequency, then shows a sharp notch at $f_1$ and a second notch at $3f_1$, both inside the 0.5 to 67 GHz band. The three stubs move the notch by the inverse of their length ($\pm10\%$ length gives $\mp10\%$ frequency). The product $f_1\ell_{eff}$ should be the same for all three stubs and equals $c/(4\sqrt{\varepsilon_s})=49.29$ GHz\,mm, so any spread shows an error in the stub end effect rather than in $\varepsilon_{eff}$. A measurement of $f_1$ gives $\varepsilon_s=[c/(4f_1\ell_{eff})]^2$. The measured notch will be around $-9$ dB deep, not the 120 dB cap of the ideal calculation, because stub loss limits it. The retained source sweep is a two-port P1-to-P2 response with P3 externally open or shorted; it does not produce the full three-port S matrix.
 \par\noindent\begin{tabular}{@{}lrrrrrr@{}}\toprule
 Stub & $\ell$ (mm) & $f_1$ (GHz) & $3f_1$ (GHz) & $f_1\ell_{eff}$ & IL at 10 GHz & IL at 67 GHz\\\midrule
 0.9$\times$ length & 2.216 & 22.22 & 66.66 & 49.29 & $0.39$ & $23.46$\\
@@ -245,10 +245,10 @@ Stub & $\ell$ (mm) & $f_1$ (GHz) & $3f_1$ (GHz) & $f_1\ell_{eff}$ & IL at 10 GHz
 \response{stubtest-response}{Reference through loss of the open stub for 0.9, 1.0 and 1.1 times the nominal length (grounded reference model).}
 
 \subhead{Changes needed for the supplied stack}
-Design the through line, branch, tee junction and their ground rails as CPW on the actual two-dielectric stack. An RF short needs a defined connection to the top grounds. Include fringing at an open end and parasitics at a short.
-\textbf{Specific model limit.} The native 70 ohm stub synthesis and 20 GHz notch example use the grounded microstrip reference. They cannot establish a physical CPW length or notch frequency for this stack.
+Design the through line, branch, tee junction and all three GSG ground returns as CPW on the actual two-dielectric stack. Keep P3 accessible for calibrated three-port measurements; apply open/short conditions externally at its reference plane.
+\textbf{Specific model limit.} The native 70 ohm stub synthesis and 20 GHz notch example use the grounded microstrip reference. The retained response sweep calculates the P1-P2 response with P3 externally open or shorted; it does not calculate the full three-port S matrix or establish physical CPW behavior.
 
-The gallery also contains \texttt{stubtest-short.png}, rendered from the source short-stub branch. Both variants retain two external ports.
+The gallery also contains \texttt{stubtest-short.png}. Both artworks retain the same three accessible ports; open or short is an external P3 test condition.
 
 \newpage
 \pageTitle{TRLSET / multiline calibration standards}{Two ports: P1 west, P2 east; one standard measured at a time.}
@@ -486,7 +486,7 @@ Layer & Name & Use\\\midrule
 Cell & Script & Size (mm) & Vias & kB & Contents\\\midrule
 ZCOUPON & gds\_zcoupon.bas & 6.20 $\times$ 2.54 & 384 & 38.8 & three 5 mm lines at 0.9, 1.0 and 1.1 times the 50 ohm width\\
 RDLLOSS & gds\_rdlloss.bas & 3.59 $\times$ 2.54 & 216 & 23.0 & three lines of 2.000, 2.196 and 2.392 mm\\
-STUBTEST & gds\_stubtest.bas & 1.80 $\times$ 10.22 & 262 & 28.1 & through lines with open stubs at 0.9, 1.0 and 1.1 times 2.462 mm\\
+STUBTEST & gds\_stubtest.bas & 1.80 $\times$ 10.12 & 268 & 29.4 & three-port through lines with north-facing P3 at each stub end\\
 TRLSET & gds\_trlset.bas & 30.20 $\times$ 5.54 & 1056 & 104.3 & thru, four lines of 28.996 to 1.711 mm, and an open reflect\\
 RFLEAK & gds\_rfleak.bas & 5.20 $\times$ 0.54 & 148 & 15.9 & M2 pads, 4 mm M1 line, V1 transitions with ground vias\\
 VIAMATCH & gds\_viamatch.bas & 2.30 $\times$ 2.54 & 120 & 14.4 & bare stud, matched stud with L-C network, back-to-back studs\\
@@ -499,7 +499,7 @@ RESONATOR2 & gds\_resonator2.bas & 15.34 $\times$ 12.69 & 246 & 31.5 & ring reso
 Generate the cells with \texttt{powershell -File gds/run\_gds.ps1}. The scripts call \texttt{SYSTEM}, so they need an SDL build of cbmbasic. The stream is first written as ASCII hex because text-mode file output turns each 0x0A byte into 0x0D 0x0A; the script then decodes it with \texttt{certutil} on Windows or \texttt{xxd} elsewhere. Two deliberate differences from the legacy programs: RFLEAK is drawn as a via-connected layer transition rather than an isolated plate, and the ring uses the synthesized microstrip width ($12.431\ \mu$m) instead of the grounded-CPW value ($12.447\ \mu$m).
 \gdsfig{ZCOUPON}{ZCOUPON.GDS: three 5 mm lines at 0.9, 1.0 and 1.1 times the 50 ohm width.}
 \gdsfig{RDLLOSS}{RDLLOSS.GDS: three lines of 2.000, 2.196 and 2.392 mm.}
-\gdsfig{STUBTEST}{STUBTEST.GDS (rotated 90 degrees): through lines with open stubs at 0.9, 1.0 and 1.1 times 2.462 mm.}
+\gdsfig{STUBTEST}{STUBTEST.GDS (rotated 90 degrees): three-port through lines with north-facing P3 at each stub end.}
 \gdsfig{TRLSET}{TRLSET.GDS: thru, four lines of 28.996 to 1.711 mm, and an open reflect.}
 \gdsfig{RFLEAK}{RFLEAK.GDS: M2 pads, 4 mm M1 line, V1 transitions with ground vias.}
 \gdsfig{VIAMATCH}{VIAMATCH.GDS: bare stud, matched stud with L-C network, back-to-back studs.}

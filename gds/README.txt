@@ -6,7 +6,7 @@ continuous ground plane. Library name RFTEST, database unit 1 nm, user unit
 
   gds_zcoupon.bas    ZCOUPON.GDS     three lines at 0.9 / 1.0 / 1.1 x width
   gds_rdlloss.bas    RDLLOSS.GDS     short, middle and long lines
-  gds_stubtest.bas   STUBTEST.GDS    through lines with open (or short) stubs
+  gds_stubtest.bas   STUBTEST.GDS    three-port through lines, P3 north at stub end
   gds_trlset.bas     TRLSET.GDS      thru, lines and reflect standards
   gds_rfleak.bas     RFLEAK.GDS      M2 pads, M1 line, V1 layer transitions
   gds_viamatch.bas   VIAMATCH.GDS    bare stud, matched stud, back-to-back
@@ -38,6 +38,10 @@ RUN
   powershell -File gds/run_gds.ps1 -NoPreviews     skip SVG/PNG previews
   powershell -File gds/run_gds.ps1 -Cbmbasic path\to\cbmbasic.exe
 
+  run_gds.ps1 looks for ..\cbmbasic\cbmbasic-sdl-builds\Windows-11-x64\
+  cbmbasic.exe first, then for cbmbasic on PATH. Keep SDL2.dll next to the
+  executable.
+
   Running one script by hand: from this folder, cbmbasic gds_zcoupon.bas
   Choose 1 for the built-in example or 2 to enter custom parameters.
 
@@ -55,3 +59,7 @@ VERIFY
 
 RFLEAK is a via-connected layer-transition coupon. The legacy isolated-plate
 leakage model is not drawn.
+
+STUBTEST has P1 west, P2 east and a north-facing P3 GSG landing at each
+shunt-branch end. Open/short conditions for two-port reference sweeps are
+external at P3; all three signal terminals remain accessible in the layout.

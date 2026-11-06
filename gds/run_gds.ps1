@@ -9,7 +9,11 @@ $ErrorActionPreference = 'Stop'
 $env:PATH += ";$env:SystemRoot\System32;$env:SystemRoot"
 $magick = Get-ChildItem 'C:\Program Files\ImageMagick*\magick.exe' -ErrorAction SilentlyContinue | Select-Object -First 1
 if ($magick) { $env:PATH += ";$($magick.DirectoryName)" }
-if (-not (Test-Path -LiteralPath $Cbmbasic)) { throw "cbmbasic not found: $Cbmbasic (pass -Cbmbasic <path to an SDL build>)" }
+if (-not (Test-Path -LiteralPath $Cbmbasic)) {
+    $onPath = Get-Command cbmbasic -CommandType Application -ErrorAction SilentlyContinue | Select-Object -First 1
+    if (-not $onPath) { throw "cbmbasic not found: $Cbmbasic or on PATH (pass -Cbmbasic <path to an SDL build>)" }
+    $Cbmbasic = $onPath.Source
+}
 $Cbmbasic = (Resolve-Path -LiteralPath $Cbmbasic).Path
 
 Push-Location -LiteralPath $PSScriptRoot

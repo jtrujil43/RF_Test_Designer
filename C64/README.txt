@@ -34,7 +34,7 @@ PROGRAMS
   RDXTALK      Coupled-line crosstalk coupons
   RESONATOR2   Circular or cosine-lobed ring and GSG launch designer
   RFLEAK       Broadside leakage and via-fence coupons
-  STUBTEST     Open/short shunt-stub coupons
+  STUBTEST     Three-port shunt stub; P3 north at branch end
   TRLSET       Multiline TRL lengths and sampled coverage
   VARPREC      Exact addition/multiplication of up to 88-digit integers
   VIAMATCH     Stud/via impedance matching
@@ -53,7 +53,9 @@ crossover. S21 remains aggressor through, S31 near-end crosstalk and S41
 far-end crosstalk. North/south pad triplets are rotated 90 degrees.
 
 The ordinary two-port coupons and RESONATOR2 use P1 west and P2 east, with
-north/south probes parked. VIAMATCH retains one modeled west input and
+north/south probes parked. STUBTEST instead uses P1 west, P2 east and P3
+north at the shunt-branch end; open/short conditions are external at P3.
+VIAMATCH retains one modeled west input and
 an internal load; its other three probe heads are parked. DOE and TRL
 rows are separate coupons/standards measured one at a time with the same
 probe pair. The unused station heads are not extra connected DUT ports.

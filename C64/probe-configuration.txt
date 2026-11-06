@@ -19,9 +19,14 @@ bridge layer is required. S21 is aggressor through, S31 is near-end
 crosstalk, S41 is far-end crosstalk, all referenced to input P1.
 Unused connected DUT/VNA ports must have their normal reference loads.
 
-RDLLOSS, RFLEAK, STUBTEST, TRLSET, ZCOUPON and RESONATOR2 (two ports)
+RDLLOSS, RFLEAK, TRLSET, ZCOUPON and RESONATOR2 (two ports)
   P1 WEST, P2 EAST; north/south probe heads parked/retracted.
   Multiple DOE/TRL rows are separate DUTs, measured one at a time.
+
+STUBTEST (three ports)
+  P1 WEST, P2 EAST and P3 NORTH at the shunt-branch end.
+  Leave P3 open or externally short it only for the corresponding
+  two-port reference response; calibrate all three planes for 3-port data.
 
 VIAMATCH (one external modeled input)
   P1 WEST; east/north/south heads parked. RL/RX is the internal load.

@@ -85,7 +85,7 @@ ${tab('p{.15\\linewidth}p{.20\\linewidth}p{.25\\linewidth}p{.33\\linewidth}', ['
     ['RDLLOSS', '2-port, 3 lines', '$S_{21}$ of each length', 'attenuation $\\alpha(f)$ from $\\Delta\\mathrm{IL}/\\Delta L$'],
     ['RDXTALK', '4-port', '$S_{21},S_{31},S_{41}$ vs gap', 'coupling, $Z_e$, $Z_o$, $\\varepsilon_e$, $\\varepsilon_o$'],
     ['RFLEAK', '2-port + dc', '$S_{21}$, $S_{11}$, $R_{dc}$', 'layer-transition loss and reflection'],
-    ['STUBTEST', '2-port', '$S_{21}$ notch frequencies', '$\\varepsilon_{eff}$ and stub end effect'],
+    ['STUBTEST', '3-port; P3 north', '$S_{21}$ with external P3 open/short', '$\\varepsilon_{eff}$ and stub end effect'],
     ['TRLSET', '2-port standards', 'thru, lines, reflect', '$\\gamma$, $\\varepsilon_{eff}$, reference planes'],
     ['VIAMATCH', '1-port', '$S_{11}$ of bare and matched', '$Z_{in}$, return loss, tolerance'],
     ['ZCOUPON', '2-port', '$S_{11}$, TDR step, delay', '$Z_0$ and $\\tau$ versus width'],
@@ -178,12 +178,12 @@ A shunt stub of impedance $Z_s$ and electrical length $\theta_s=2\pi f\ell_{eff}
 \[ \mathrm{IL}_{open}=10\log_{10}\!\left[1+\left(\frac{Z_0\tan\theta_s}{2Z_s}\right)^{2}\right],\qquad \mathrm{IL}_{short}=10\log_{10}\!\left[1+\left(\frac{Z_0\cot\theta_s}{2Z_s}\right)^{2}\right]. \]
 An open stub notches where $\theta_s=(2k-1)\pi/2$; a short stub notches where $\theta_s=k\pi$:
 \[ \ell_{open}=\frac{c}{4f_c\sqrt{\varepsilon_s}}-\Delta\ell,\qquad \ell_{short}=\frac{c}{2f_c\sqrt{\varepsilon_s}},\qquad f_k=(2k-1)\,f_c\ \ (\text{open}). \]
-The open-end extension is $\Delta\ell=0.412\,h\,\dfrac{(\varepsilon_s+0.3)(u_s+0.264)}{(\varepsilon_s-0.258)(u_s+0.8)}$ with $u_s=W_s/h$. A lossy stub does not null completely. With stub attenuation $\alpha_s$ in Np per unit length, $Y_{open}$ at resonance is $\coth(\alpha_s\ell)/Z_s$, so the notch depth is
+The open-end extension is $\Delta\ell=0.412\,h\,\dfrac{(\varepsilon_s+0.3)(u_s+0.264)}{(\varepsilon_s-0.258)(u_s+0.8)}$ with $u_s=W_s/h$. STUBTEST exposes the branch end as P3 north; open and short are external P3 terminations, not fixed DUT connections. A lossy stub does not null completely. With stub attenuation $\alpha_s$ in Np per unit length, $Y_{open}$ at resonance is $\coth(\alpha_s\ell)/Z_s$, so the notch depth is
 \[ S_{21,min}=\frac{2}{2+\dfrac{Z_0}{Z_s}\coth(\alpha_s\ell)}. \]
 \minihead{Worked reference values}
 A $${sg.stubOhm}\ \Omega$ stub gives $W_s=${N(sg.stubWidthUm, 3)}\,\mu\mathrm{m}$, $\varepsilon_s=${N(Es, 4)}$ and $\Delta\ell=${N(sg.endExtensionUm, 3)}\,\mu\mathrm{m}$. For $f_c=${sg.designFrequencyGHz}$ GHz, $\ell=${N(C / (4 * sg.designFrequencyGHz * Math.sqrt(Es)), 5)}-${N(sg.endExtensionUm / 1000, 6)}=${N(sg.nominalPhysicalLengthMm, 5)}$ mm. The stub is much narrower than the 50 $\Omega$ line, so its loss is larger: $\alpha_s=${N(als * NP, 3)}$ dB/mm at ${sg.designFrequencyGHz} GHz from the Reference relations, which limits the nominal notch to $S_{21,min}=${N(depth, 1)}$ dB instead of $-\infty$.
 \minihead{Expected test data}
-$S_{21}$ is near 0 dB at low frequency, then shows a sharp notch at $f_1$ and a second notch at $3f_1$, both inside the 0.5 to ${FMAX} GHz band. The three stubs move the notch by the inverse of their length ($\pm10\%$ length gives $\mp10\%$ frequency). The product $f_1\ell_{eff}$ should be the same for all three stubs and equals $c/(4\sqrt{\varepsilon_s})=${N(C / (4 * Math.sqrt(Es)), 2)}$ GHz\,mm, so any spread shows an error in the stub end effect rather than in $\varepsilon_{eff}$. A measurement of $f_1$ gives $\varepsilon_s=[c/(4f_1\ell_{eff})]^2$. The measured notch will be around $${N(depth, 0)}$ dB deep, not the 120 dB cap of the ideal calculation, because stub loss limits it.
+$S_{21}$ is near 0 dB at low frequency, then shows a sharp notch at $f_1$ and a second notch at $3f_1$, both inside the 0.5 to ${FMAX} GHz band. The three stubs move the notch by the inverse of their length ($\pm10\%$ length gives $\mp10\%$ frequency). The product $f_1\ell_{eff}$ should be the same for all three stubs and equals $c/(4\sqrt{\varepsilon_s})=${N(C / (4 * Math.sqrt(Es)), 2)}$ GHz\,mm, so any spread shows an error in the stub end effect rather than in $\varepsilon_{eff}$. A measurement of $f_1$ gives $\varepsilon_s=[c/(4f_1\ell_{eff})]^2$. The measured notch will be around $${N(depth, 0)}$ dB deep, not the 120 dB cap of the ideal calculation, because stub loss limits it. The retained source sweep is a two-port P1-to-P2 response with P3 externally open or shorted; it does not produce the full three-port S matrix.
 ${tab('lrrrrrr', ['Stub', '$\\ell$ (mm)', '$f_1$ (GHz)', '$3f_1$ (GHz)', '$f_1\\ell_{eff}$', 'IL at 10 GHz', 'IL at ' + FMAX + ' GHz'], sbrows)}
 {\footnotesize IL in dB from the lossless stub model; $f_1\ell_{eff}$ in GHz mm.}
 ${response('stubtest-response', 'Reference through loss of the open stub for 0.9, 1.0 and 1.1 times the nominal length (grounded reference model).')}`;
@@ -309,7 +309,7 @@ export function gdsSection(root, assets) {
   const cells = [
     ['ZCOUPON', 'gds_zcoupon.bas', 'three 5 mm lines at 0.9, 1.0 and 1.1 times the 50 ohm width'],
     ['RDLLOSS', 'gds_rdlloss.bas', 'three lines of 2.000, 2.196 and 2.392 mm'],
-    ['STUBTEST', 'gds_stubtest.bas', 'through lines with open stubs at 0.9, 1.0 and 1.1 times 2.462 mm'],
+    ['STUBTEST', 'gds_stubtest.bas', 'three-port through lines with north-facing P3 at each stub end'],
     ['TRLSET', 'gds_trlset.bas', 'thru, four lines of 28.996 to 1.711 mm, and an open reflect'],
     ['RFLEAK', 'gds_rfleak.bas', 'M2 pads, 4 mm M1 line, V1 transitions with ground vias'],
     ['VIAMATCH', 'gds_viamatch.bas', 'bare stud, matched stud with L-C network, back-to-back studs'],

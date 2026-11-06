@@ -103,7 +103,7 @@
       "rdlloss.bas": "31d41295356b04591f7a45b22704c13c4076831acecc793dc876dd07366081a4",
       "rdxtalk.bas": "b0607985bbca049b7fa17e921d72aa84db323b0e0e1fca72a2c44d1750fd3982",
       "rfleak.bas": "44bb93f68478631e0d8e57c67df7cb61c6ea6cbfc0e4980bbeca4e52a99af140",
-      "stubtest.bas": "118710952394e00dd9be56a184337dc3aef702aedaea4bcb60f6ea795456f3f7",
+      "stubtest.bas": "52be3a9a857128017e3148aabbba73d9c3c890c68cfae1e438852d3069a6328e",
       "trlset.bas": "ccda6fa2dafb1f51a6f6635ff22eb9b1fd2d25d259f5132a7961d5f3ff8e6529",
       "viamatch.bas": "8551d48bac21da13dda6220ec4dee5a71332e8ac6262d11aa5cc06b5bfe38a9d",
       "zcoupon.bas": "041cfca56dcddc29245c489b602b33755db4cf7c796bdaa827bac3ab34bbe336"
@@ -76855,8 +76855,8 @@
       "responseFigure": "handbasic-previews/rfleak-response.png"
     },
     "stubtest": {
-      "title": "Open shunt-stub notch",
-      "ports": "P1 west / P2 east; north/south parked",
+      "title": "Three-port shunt-stub notch",
+      "ports": "P1 west / P2 east / P3 north at the branch end",
       "geometry": {
         "stubOhm": 70,
         "designFrequencyGHz": 20,
@@ -101091,6 +101091,7 @@
       "limits": [
         "Not a prediction for the physical ungrounded 6 um LTC-25000 / 700 um EME-G730 stack. The hypothetical continuous plane below the polyimide is absent in the real device.",
         "Ideal lossless shunt branch with an open-end correction. Tee, launch, radiation and conductor/dielectric loss are omitted.",
+        "The response is P1-to-P2 with P3 externally open or shorted; a complete three-port S matrix is not calculated.",
         "Analytic notch locations are included in the plotting grid; a sparse uniform sweep could miss them."
       ],
       "calculationContext": "Hypothetical grounded-polyimide reference only",
@@ -101109,7 +101110,7 @@
           2310
         ]
       },
-      "sourceSha256": "118710952394e00dd9be56a184337dc3aef702aedaea4bcb60f6ea795456f3f7",
+      "sourceSha256": "52be3a9a857128017e3148aabbba73d9c3c890c68cfae1e438852d3069a6328e",
       "responseFigure": "handbasic-previews/stubtest-response.png"
     },
     "trlset": {
@@ -101248,7 +101249,7 @@
             "covered": true
           },
           {
-            "fGHz": 0.6545770405383385,
+            "fGHz": 0.6545770405383387,
             "firstLineId": 0,
             "secondLineId": 2,
             "phaseDeg": 34.63036538047785,
@@ -101269,7 +101270,7 @@
             "covered": true
           },
           {
-            "fGHz": 0.7044778459932141,
+            "fGHz": 0.704477845993214,
             "firstLineId": 0,
             "secondLineId": 2,
             "phaseDeg": 37.2703649812296,
@@ -101451,7 +101452,7 @@
             "covered": true
           },
           {
-            "fGHz": 1.3316526694322415,
+            "fGHz": 1.3316526694322417,
             "firstLineId": 0,
             "secondLineId": 2,
             "phaseDeg": 70.45101744540369,
@@ -101535,10 +101536,10 @@
             "covered": true
           },
           {
-            "fGHz": 1.7865585426811508,
+            "fGHz": 1.786558542681151,
             "firstLineId": 2,
             "secondLineId": 5,
-            "phaseDeg": 92.11793501238272,
+            "phaseDeg": 92.11793501238274,
             "covered": true
           },
           {
@@ -101577,7 +101578,7 @@
             "covered": true
           },
           {
-            "fGHz": 2.0693330585528087,
+            "fGHz": 2.069333058552809,
             "firstLineId": 2,
             "secondLineId": 4,
             "phaseDeg": 100.02050589311771,
@@ -101654,10 +101655,10 @@
             "covered": true
           },
           {
-            "fGHz": 2.7090758187112924,
+            "fGHz": 2.709075818711292,
             "firstLineId": 2,
             "secondLineId": 3,
-            "phaseDeg": 101.19838870193921,
+            "phaseDeg": 101.1983887019392,
             "covered": true
           },
           {
@@ -101675,14 +101676,14 @@
             "covered": true
           },
           {
-            "fGHz": 2.9155985914636644,
+            "fGHz": 2.915598591463665,
             "firstLineId": 2,
             "secondLineId": 3,
-            "phaseDeg": 108.91311255294563,
+            "phaseDeg": 108.91311255294566,
             "covered": true
           },
           {
-            "fGHz": 2.987880718885798,
+            "fGHz": 2.9878807188857976,
             "firstLineId": 2,
             "secondLineId": 3,
             "phaseDeg": 111.61323440872589,
@@ -101906,7 +101907,7 @@
             "covered": true
           },
           {
-            "fGHz": 6.541841589338053,
+            "fGHz": 6.541841589338054,
             "firstLineId": 3,
             "secondLineId": 5,
             "phaseDeg": 92.93567869172587,
@@ -102011,10 +102012,10 @@
             "covered": true
           },
           {
-            "fGHz": 9.44567249336754,
+            "fGHz": 9.445672493367539,
             "firstLineId": 2,
             "secondLineId": 4,
-            "phaseDeg": 96.5533505505623,
+            "phaseDeg": 96.55335055056224,
             "covered": true
           },
           {
@@ -102081,7 +102082,7 @@
             "covered": true
           },
           {
-            "fGHz": 12.066689101571535,
+            "fGHz": 12.066689101571537,
             "firstLineId": 2,
             "secondLineId": 3,
             "phaseDeg": 90.75500863138677,
@@ -102277,7 +102278,7 @@
             "covered": true
           },
           {
-            "fGHz": 23.954261983359377,
+            "fGHz": 23.95426198335938,
             "firstLineId": 3,
             "secondLineId": 4,
             "phaseDeg": 83.00198924002399,
@@ -102305,10 +102306,10 @@
             "covered": true
           },
           {
-            "fGHz": 26.419518058843256,
+            "fGHz": 26.419518058843252,
             "firstLineId": 2,
             "secondLineId": 3,
-            "phaseDeg": 86.90949857156818,
+            "phaseDeg": 86.90949857156795,
             "covered": true
           },
           {
@@ -102319,10 +102320,10 @@
             "covered": true
           },
           {
-            "fGHz": 27.745716152693138,
+            "fGHz": 27.74571615269314,
             "firstLineId": 4,
             "secondLineId": 5,
-            "phaseDeg": 89.53564729754886,
+            "phaseDeg": 89.53564729754889,
             "covered": true
           },
           {
@@ -102389,10 +102390,10 @@
             "covered": true
           },
           {
-            "fGHz": 35.44468971903114,
+            "fGHz": 35.44468971903113,
             "firstLineId": 2,
             "secondLineId": 4,
-            "phaseDeg": 93.20695925160567,
+            "phaseDeg": 93.20695925160544,
             "covered": true
           },
           {
@@ -102403,7 +102404,7 @@
             "covered": true
           },
           {
-            "fGHz": 37.223930348545416,
+            "fGHz": 37.22393034854542,
             "firstLineId": 2,
             "secondLineId": 5,
             "phaseDeg": 119.32786686450254,
@@ -102445,7 +102446,7 @@
             "covered": true
           },
           {
-            "fGHz": 43.11569299258034,
+            "fGHz": 43.115692992580335,
             "firstLineId": 2,
             "secondLineId": 4,
             "phaseDeg": 103.98227981055697,
@@ -102480,7 +102481,7 @@
             "covered": true
           },
           {
-            "fGHz": 48.73186032951222,
+            "fGHz": 48.73186032951223,
             "firstLineId": 0,
             "secondLineId": 5,
             "phaseDeg": 65.46070790531492,
@@ -102501,14 +102502,14 @@
             "covered": true
           },
           {
-            "fGHz": 52.446868542689394,
+            "fGHz": 52.4468685426894,
             "firstLineId": 0,
             "secondLineId": 3,
-            "phaseDeg": 95.52948758362163,
+            "phaseDeg": 95.52948758362186,
             "covered": true
           },
           {
-            "fGHz": 53.74710625236377,
+            "fGHz": 53.74710625236378,
             "firstLineId": 2,
             "secondLineId": 4,
             "phaseDeg": 77.84800490847829,
@@ -102536,10 +102537,10 @@
             "covered": true
           },
           {
-            "fGHz": 59.27849688006764,
+            "fGHz": 59.27849688006765,
             "firstLineId": 0,
             "secondLineId": 4,
-            "phaseDeg": 90.9200138094746,
+            "phaseDeg": 90.92001380947465,
             "covered": true
           },
           {

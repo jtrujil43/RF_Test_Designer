@@ -176,7 +176,7 @@ programs.rfleak = {
   limits: ['Parallel-plate capacitance omits fringing and radiation; the source warns when plate dimensions are less than five times the gap.', 'The lower-layer pickup uses an access transition to the east top-side probe; the transition is outside this model.', 'Via-fence pitch follows lambda/20 only and predicts no shielding dB. Copper thickness is absent from the plate model.'],
 };
 
-// STUBTEST: default 70-ohm open stub designed at 20 GHz; three lengths.
+// STUBTEST: 70-ohm stub to north-facing P3; reference sweep terminates P3 externally.
 const stub = synthesize(70), su = stub.widthUm / H;
 const endExtensionUm = .412 * H * (stub.effectiveEr + .3) * (su + .264) / ((stub.effectiveEr - .258) * (su + .8));
 const stubLengthMm = VC / (4 * 20 * Math.sqrt(stub.effectiveEr)) - endExtensionUm / 1000;
@@ -188,11 +188,11 @@ const stubVariants = [.9, 1, 1.1].map(lengthScale => {
   return { label: lengthScale + 'x length', lengthScale, physicalLengthMm, electricalLengthMm, notchGHz, samples: sampled(response), curve: grid(notches).map(response) };
 });
 programs.stubtest = {
-  title: 'Open shunt-stub notch', ports: 'P1 west / P2 east; north/south parked',
+  title: 'Three-port shunt-stub notch', ports: 'P1 west / P2 east / P3 north at the branch end',
   geometry: { stubOhm: 70, designFrequencyGHz: 20, openStub: true, stubWidthUm: stub.widthUm, effectiveEr: stub.effectiveEr, endExtensionUm, nominalPhysicalLengthMm: stubLengthMm },
   summary: { notchFrequenciesGHz: stubVariants.map(v => v.notchGHz), nominalAtFmax: stubVariants[1].samples.at(-1) },
   variants: stubVariants,
-  limits: ['Ideal lossless shunt branch with an open-end correction. Tee, launch, radiation and conductor/dielectric loss are omitted.', 'Analytic notch locations are included in the plotting grid; a sparse uniform sweep could miss them.'],
+  limits: ['Ideal lossless shunt branch with an open-end correction. Tee, launch, radiation and conductor/dielectric loss are omitted.', 'The response is P1-to-P2 with P3 externally open or shorted; a complete three-port S matrix is not calculated.', 'Analytic notch locations are included in the plotting grid; a sparse uniform sweep could miss them.'],
 };
 
 // TRLSET: retain five added lines, 1mm thru and 40mm maximum coupon.
@@ -332,7 +332,7 @@ const lossCeiling = Math.ceil(lossMax.totalDbPerMm * 100) / 100;
 plot('rdlloss', 'RDLLoss: differential-line attenuation model', 'Attenuation (dB/mm)', ['conductorDbPerMm', 'dielectricDbPerMm', 'totalDbPerMm'].map((key, i) => ({ label: ['Conductor', 'Dielectric', 'Total'][i], points: points(programs.rdlloss.curve, key) })), [0, lossCeiling], 'Below three skin depths, the source flags the conductor approximation; loss tangent is assumed.');
 plot('rdxtalk', 'RDXTALK: 45 um lines, 20 um gap, 5 mm coupled length', 'S-parameter magnitude (dB)', ['nearEndS31Db', 'farEndS41Db', 'throughS21Db'].map((key, i) => ({ label: ['S31 near end', 'S41 far end', 'S21 through'][i], points: points(xtalkVariants[1].curve, key) })), [-80, 0], 'Coupled DUT modes use T=0; plotted values below -80 dB are clipped. Full numeric data retain -120 dB floor.');
 plot('rfleak', 'RFLEAK: broadside capacitive overlap coupling', 'S21 magnitude (dB)', leakVariants.map(v => ({ label: v.label, points: points(v.curve, 's21Db') })), [-80, 0], 'Parallel-plate estimate only; no shielding performance is inferred from the via-fence pitch.');
-plot('stubtest', 'STUBTEST: open shunt-stub notch and length variation', 'Through loss (dB)', stubVariants.map(v => ({ label: v.label, points: points(v.curve, 'throughLossDb') })), [0, 60], 'Analytic notch locations included. Display capped at 60 dB; ideal source response floor corresponds to 120 dB.');
+plot('stubtest', 'STUBTEST: P1-P2 response with external P3 termination', 'Through loss (dB)', stubVariants.map(v => ({ label: v.label, points: points(v.curve, 'throughLossDb') })), [0, 60], 'Reference-model two-port response with P3 externally open or shorted; the full three-port S matrix is not calculated.');
 plot('trlset', 'TRLSET: best phase among the fitting standard pairs', 'Pair phase modulo 180 (degrees)', [{ label: 'Best usable pair', points: points(programs.trlset.curve, 'phaseDeg') }], [0, 180], 'Only 1 mm thru + lines of total DUT length <=40 mm; gaps indicate no usable pair at sampled frequencies.');
 plot('viamatch', 'VIAMATCH: one-port bare and ideally matched input', 'Return loss (dB)', ['bareReturnLossDb', 'matchedReturnLossDb'].map((key, i) => ({ label: ['Bare input', 'Matched input'][i], points: points(programs.viamatch.curve, key) })), [0, 60], 'Ideal lumped match at 20 GHz; displayed return loss capped at 60 dB. This is a one-port surrogate model.');
 plot('zcoupon', 'ZCOUPON: 5 mm lines with +/-10% width variation', 'Return loss (dB)', impedanceVariants.map(v => ({ label: v.label, points: points(v.curve, 'returnLossDb') })), [0, 80], 'Lossless mismatch only. Return loss capped at 80 dB; nominal ideal response has a 120 dB numeric floor.');

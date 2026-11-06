@@ -25,7 +25,11 @@ const pairs = (groups, a, b) => groups.map((g) => [`${g}-${a}`, `${g}-${b}`]);
 const SPEC = {
   ZCOUPON: { joins: pairs(["Z1", "Z2", "Z3"], "P1", "P2"), opens: [] },
   RDLLOSS: { joins: pairs(["SH", "MD", "LG"], "P1", "P2"), opens: [] },
-  STUBTEST: { joins: pairs(["A", "B", "C"], "P1", "P2"), opens: [] },
+  STUBTEST: {
+    joins: [...pairs(["A", "B", "C"], "P1", "P2"), ...pairs(["A", "B", "C"], "P1", "P3"),
+      ...pairs(["A", "B", "C"], "P2", "P3")],
+    opens: [],
+  },
   TRLSET: {
     joins: pairs(["THRU", "L2", "L3", "L4", "L5"], "P1", "P2"),
     opens: pairs(["REF"], "P1", "P2"),
@@ -40,7 +44,7 @@ const SPEC = {
   RESONATOR2: { joins: [], opens: pairs(["R"], "P1", "P2"), ringPoints: 700 },
 };
 const LABELS = {
-  ZCOUPON: 6, RDLLOSS: 6, STUBTEST: 6, TRLSET: 12, RFLEAK: 2, VIAMATCH: 4, RDXTALK: 12, RESONATOR2: 2,
+  ZCOUPON: 6, RDLLOSS: 6, STUBTEST: 9, TRLSET: 12, RFLEAK: 2, VIAMATCH: 4, RDXTALK: 12, RESONATOR2: 2,
 };
 
 function real8(b, o) {

@@ -159,13 +159,11 @@ the diagram while the embedded drawing routine is loading.
 
 CARDINAL PROBER STATION - SIX NON-CROSSTALK COUPONS
 
-The station has one probe position on each compass side. These programs
-retain their existing electrical port counts. RDLLOSS, RFLEAK, STUBTEST,
-TRLSET and ZCOUPON use P1 from the west and P2 from the east. North and
-south probes are parked and do not represent connected DUT ports. The
-west/east G-S-G contact triplets run along local Y (north-south); their
-ground contacts remain at local Y=+/-PP and their signal contact at Y=0.
-The existing pad/feed dimensions and numerical RF equations are retained.
+The station has one probe position on each compass side. RDLLOSS, RFLEAK,
+TRLSET and ZCOUPON use P1 from the west and P2 from the east. STUBTEST is
+three-port: P1 west, P2 east and P3 north at the shunt-branch end. Its
+north-facing G-S-G triplet runs along local X. The existing pad/feed
+dimensions and numerical RF equations are retained.
 
 RDLLOSS and ZCOUPON bitmap rows are separate DOE coupons, and TRLSET rows
 are separate calibration standards. They are measured one row at a time
@@ -173,7 +171,8 @@ using the same opposing west/east pair after positioning the wafer. The
 row arrays do not imply several side-by-side probe heads or simultaneous
 connections to every row. Legends and probe reports now say this directly.
 
-STUBTEST shows explicit west and east G-S-G landing-pad triplets. RFLEAK
+STUBTEST shows three G-S-G landing-pad triplets; open/short conditions are
+applied externally at P3. RFLEAK
 shows both G-S-G landings on the top side: the layer-1 drive enters from
 the west, while a transition outside the plate overlap brings the layer-2
 pickup back to the top-side east landing. The layer drawing is exploded

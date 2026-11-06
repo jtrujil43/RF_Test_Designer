@@ -32,10 +32,10 @@ PASS rdxtalk: standard-text legend -> bitmap -> standard-text completion
 PASS rfleak: VIC-II multicolor bitmap, pixel counts 27737/1526/1928/809
 PASS rfleak: connected ground paths and intended termination/layer topology
 PASS rfleak: standard-text legend -> bitmap -> standard-text completion
-PASS stubtest: VIC-II multicolor bitmap, pixel counts 26082/2027/3853/38
-PASS stubtest: connected ground paths and intended termination/layer topology
+PASS stubtest: VIC-II multicolor bitmap, pixel counts 26042/1824/4134/0
+PASS stubtest: three-port P3 GSG access and connected ground topology
 PASS stubtest: standard-text legend -> bitmap -> standard-text completion
-PASS stubtest-short: VIC-II multicolor bitmap, pixel counts 25973/2010/3997/20
-PASS stubtest-short: connected ground paths and intended termination/layer topology
+PASS stubtest-short: VIC-II multicolor bitmap, pixel counts 26042/1824/4134/0
+PASS stubtest-short: three-port P3 GSG access and connected ground topology
 PASS stubtest-short: standard-text legend -> bitmap -> standard-text completion
 PASS selected bitmap cases

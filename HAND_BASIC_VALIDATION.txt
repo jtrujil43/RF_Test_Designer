@@ -1,5 +1,5 @@
 HAND BASIC SOURCE AND GROUND-PATH VERIFICATION
-Run status: all requested checks passed
+Run status: FAILED: read ECONNRESET
 
 PASS rdlloss: native Hand BASIC graphics, 72-column source, branch targets and cardinal profile
 PASS rdxtalk: native Hand BASIC graphics, 72-column source, branch targets and cardinal profile
@@ -14,30 +14,11 @@ PASS rdlloss: both ground rails join west/east G pads on every row
 PASS zcoupon: both ground rails join west/east G pads on every row
 PASS trlset: both ground rails join west/east G pads on every row
 PASS RDXTALK: grounds follow both fanouts without shorting either signal
-PASS STUBTEST: branch grounds connected; only short variant touches signal
+PASS STUBTEST: P1/P2/P3 ground returns connect without signal shorts
 PASS VIAMATCH: one-port grounds reach the internal load return
 PASS RFLEAK: L1-left/L2-right path, central transition and three east GSG vias
-PASS rdlloss: numerical/text-only C64 driver accepts 150um/67GHz profile
-PASS rdlloss: numerical/text-only C64 driver flags 100um/68GHz mismatch
-PASS rdxtalk: numerical/text-only C64 driver accepts 150um/67GHz profile
-PASS rdxtalk: numerical/text-only C64 driver flags 100um/68GHz mismatch
-PASS rfleak: numerical/text-only C64 driver accepts 150um/67GHz profile
-PASS rfleak: numerical/text-only C64 driver flags 100um/68GHz mismatch
-PASS stubtest: numerical/text-only C64 driver accepts 150um/67GHz profile
-PASS stubtest: numerical/text-only C64 driver flags 100um/68GHz mismatch
-PASS trlset: numerical/text-only C64 driver accepts 150um/67GHz profile
-PASS trlset: numerical/text-only C64 driver flags 100um/68GHz mismatch
-PASS viamatch: numerical/text-only C64 driver accepts 150um/67GHz profile
-PASS viamatch: numerical/text-only C64 driver flags 100um/68GHz mismatch
-PASS zcoupon: numerical/text-only C64 driver accepts 150um/67GHz profile
-PASS zcoupon: numerical/text-only C64 driver flags 100um/68GHz mismatch
-PASS RDXTALK numerical-only driver agrees with host geometry: {"DW":45,"SG":20,"L":5,"PP":150,"PW":80,"PL":100,"FL":500,"PG":1000}
-PASS RDXTALK numerical-only driver agrees with host geometry: {"DW":45,"SG":20,"L":5,"PP":150,"PW":80,"PL":100,"FL":500,"PG":2000}
-PASS RDXTALK numerical-only driver agrees with host geometry: {"DW":45,"SG":20,"L":5,"PP":150,"PW":80,"PL":100,"FL":2000,"PG":1000}
-PASS RDXTALK numerical-only driver agrees with host geometry: {"DW":45,"SG":20,"L":0.001,"PP":5000,"PW":4900,"PL":100,"FL":1,"PG":1000}
-PASS RDXTALK numerical-only driver agrees with host geometry: {"DW":20000,"SG":10000,"L":0.001,"PP":150,"PW":80,"PL":100,"FL":1,"PG":1000}
 
-Numerical/text-only emulator cases passed: 19.
+Numerical/text-only emulator cases passed: 0.
 Native Hand BASIC graphics were checked statically; this script does not run the Hand BASIC app.
 Only temporary numerical/text-only drivers executed in VICE against the C64 BASIC V2 ROM.
 No Hand BASIC drawing commands were replaced with C64 graphics code.

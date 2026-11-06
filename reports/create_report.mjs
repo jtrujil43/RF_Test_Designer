@@ -61,11 +61,11 @@ const specs = [
     requirement:'Confirm the second patterned metal layer and define its thickness and dielectric separation. Size the signal and ground vias, rails and slots using a multilayer EM model. This connected structure is not an isolated broadside leakage capacitor.',
     limit:'The retained numerical routines calculate coupling between isolated plates, not this via-connected path. Their capacitance, isolation and via-fence rules must not be interpreted as the response of the new drawing.',
     caption:'Top view: connected G-S-G routing and via locations. Signal side view: upper-left L1 drops to lower-right L2, then returns to L1 at the east pads. Not to scale.' },
-  { name:'stubtest', title:'STUBTEST / open and short shunt stubs', plain:'STUBTEST: open and short stubs', ports:'Two ports: P1 west, P2 east; north/south parked.',
-    purpose:'A shunt branch is added to a through line. Both the open-ended and short-ended native schematic variants are included in the gallery.',
-    requirement:'Design the through line, branch, tee junction and their ground rails as CPW on the actual two-dielectric stack. An RF short needs a defined connection to the top grounds. Include fringing at an open end and parasitics at a short.',
-    limit:'The native 70 ohm stub synthesis and 20 GHz notch example use the grounded microstrip reference. They cannot establish a physical CPW length or notch frequency for this stack.',
-    caption:'Open-stub source artwork. The numerical width and length are legacy grounded-reference labels.' },
+  { name:'stubtest', title:'STUBTEST / three-port shunt stubs', plain:'STUBTEST: three-port shunt stubs', ports:'Three ports: P1 west, P2 east, P3 north at the shunt-branch end.',
+    purpose:'A shunt branch connects the P1-P2 through line to an accessible north-facing P3 GSG port. For two-port reference sweeps, P3 is externally left open or terminated in a short.',
+    requirement:'Design the through line, branch, tee junction and all three GSG ground returns as CPW on the actual two-dielectric stack. Keep P3 accessible for calibrated three-port measurements; apply open/short conditions externally at its reference plane.',
+    limit:'The native 70 ohm stub synthesis and 20 GHz notch example use the grounded microstrip reference. The retained response sweep calculates the P1-P2 response with P3 externally open or shorted; it does not calculate the full three-port S matrix or establish physical CPW behavior.',
+    caption:'Three-port source artwork with P1 west, P2 east and north-facing P3 at the shunt branch end.' },
   { name:'trlset', title:'TRLSET / multiline calibration standards', plain:'TRLSET: multiline TRL standards', ports:'Two ports: P1 west, P2 east; one standard measured at a time.',
     purpose:'The standards retain a common cross section and launches, with a thru and several extra line lengths. The same reflect reference is used across measurements.',
     requirement:'Use the same connected CPW grounds, slots and stack as the DUTs. Choose line lengths from the actual dispersive propagation constant, then check pairwise phase and calibration conditioning across 0.5 to 67 GHz.',
@@ -147,7 +147,7 @@ for (const s of specs) {
   body += '\\subhead{Changes needed for the supplied stack}\n' + tex(s.requirement) + '\n';
   body += '\\textbf{Specific model limit.} ' + tex(s.limit) + '\n';
   if (s.name === 'rdxtalk') body += '\n\\smallskip\\textbf{Port meaning:} S21 is W-to-N aggressor through, S31 is W-to-S near-end coupling, and S41 is W-to-E far-end coupling. Full four-port calibration is required.\n';
-  if (s.name === 'stubtest') body += '\nThe gallery also contains \\texttt{stubtest-short.png}, rendered from the source short-stub branch. Both variants retain two external ports.\n';
+  if (s.name === 'stubtest') body += '\nThe gallery also contains \\texttt{stubtest-short.png}. Both artworks retain the same three accessible ports; open or short is an external P3 test condition.\n';
 }
 const ringPages = [
   ['resonator2-dimensions','Ring dimensions and source assumptions','The source reports a hypothetical 50 ohm trace of 12.4466 um and a ring radius of 6.0635 mm for an illustrative 5 GHz fundamental. Neither dimension is a synthesized CPW design for the actual mold stack.'],
@@ -224,7 +224,7 @@ writeFileSync(path.join(reports, 'handbasic-ltc25000-eme-g730.tex'), body);
 
 const cards = (items, reference = false) => items.map(([name,title,caption]) => `<article><h3>${xml(title)}</h3><a href="${name}.svg"><img src="${name}.png" alt="${xml(title)}" loading="lazy"></a><p>${xml(caption)}</p><div><a href="${name}.png">PNG</a> · <a href="${name}.svg">SVG</a>${reference ? '' : ' · <a href="' + name + '-commands.json">Source commands</a>'}</div></article>`).join('\n');
 const rfCards = specs.map(s=>[s.name,s.plain,s.caption]);
-rfCards.splice(4,0,['stubtest-short','STUBTEST: short-stub variant','Native short-stub branch; numerical labels remain hypothetical grounded-reference values.']);
+rfCards.splice(4,0,['stubtest-short','STUBTEST: P3 externally shorted','P3 is externally shorted for the reference response; the DUT remains three-port and its numerical labels are hypothetical grounded-reference values.']);
 const ringCards = ringPages.map(([n,t,note])=>[n,'RESONATOR2: '+t,note]);
 const html = `<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hand BASIC preview atlas</title><style>
 body{margin:0;background:#eef3f7;color:#173047;font:16px/1.55 system-ui,sans-serif}main{max-width:1250px;margin:auto;padding:32px}h1{font-size:38px;line-height:1.15}h2{margin-top:36px}a{color:#006a78}header,.notice{padding:22px;border-radius:12px;background:white;margin-bottom:20px}.notice{border-left:6px solid #a42d2d}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,480px),1fr));gap:20px}article{padding:18px;background:white;border-radius:12px;box-shadow:0 2px 7px #15304712}article h3{margin-top:0}img{max-width:100%;height:auto;display:block}article p{font-size:14px}summary{cursor:pointer;font-size:22px;font-weight:650;padding:18px;background:#fff4ef}code{background:#edf3f7;padding:2px 4px}footer{margin:32px 0;color:#526574}.stack{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px}.stack div{background:#eef4f7;padding:12px;border-radius:8px}</style><main>

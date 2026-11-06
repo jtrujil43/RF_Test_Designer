@@ -25,7 +25,7 @@
   {
     "type": "GPRINT",
     "values": [
-      "P1 WEST / P2 EAST - N/S PARKED",
+      "P1 WEST / P2 EAST / P3 NORTH",
       16,
       46,
       24
@@ -36,9 +36,9 @@
   {
     "type": "GPRINT",
     "values": [
-      "ONE COUPON AT A TIME / NOT TO SCALE",
+      "OPEN/SHORT LOAD IS EXTERNAL AT P3",
       16,
-      70,
+      210,
       24
     ],
     "font": 12,
@@ -121,12 +121,24 @@
     "values": [
       58,
       99,
-      422,
+      218,
       111,
       22
     ],
     "font": 12,
     "sourceLine": 10062
+  },
+  {
+    "type": "RECT",
+    "values": [
+      262,
+      99,
+      422,
+      111,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 10063
   },
   {
     "type": "RECT",
@@ -156,9 +168,9 @@
     "type": "RECT",
     "values": [
       218,
-      159,
+      75,
       224,
-      220,
+      120,
       22
     ],
     "font": 12,
@@ -168,13 +180,49 @@
     "type": "RECT",
     "values": [
       256,
-      159,
+      75,
       262,
-      220,
+      120,
       22
     ],
     "font": 12,
     "sourceLine": 10070
+  },
+  {
+    "type": "RECT",
+    "values": [
+      218,
+      45,
+      224,
+      75,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 10072
+  },
+  {
+    "type": "RECT",
+    "values": [
+      256,
+      45,
+      262,
+      75,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 10074
+  },
+  {
+    "type": "RECT",
+    "values": [
+      218,
+      45,
+      262,
+      51,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 10076
   },
   {
     "type": "RECT",
@@ -192,9 +240,9 @@
     "type": "RECT",
     "values": [
       235,
-      140,
+      75,
       245,
-      216,
+      130,
       21
     ],
     "font": 12,
@@ -203,14 +251,62 @@
   {
     "type": "RECT",
     "values": [
+      235,
+      55,
+      245,
+      75,
+      21
+    ],
+    "font": 12,
+    "sourceLine": 690
+  },
+  {
+    "type": "RECT",
+    "values": [
+      190,
+      55,
       218,
-      212,
-      262,
-      220,
+      67,
       22
     ],
     "font": 12,
     "sourceLine": 700
+  },
+  {
+    "type": "RECT",
+    "values": [
+      262,
+      55,
+      290,
+      67,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 705
+  },
+  {
+    "type": "RECT",
+    "values": [
+      218,
+      67,
+      224,
+      75,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 706
+  },
+  {
+    "type": "RECT",
+    "values": [
+      256,
+      67,
+      262,
+      75,
+      22
+    ],
+    "font": 12,
+    "sourceLine": 707
   },
   {
     "type": "GPRINT",

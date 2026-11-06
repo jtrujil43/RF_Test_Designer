@@ -95,6 +95,10 @@ try {
     } else if (name === 'viamatch') {
       includesPattern(name, source, /(?:ONE.PORT|ONE EXTERNAL|INTERNAL)/, 'one-port/internal-load description');
       includesPattern(name, source, /EAST.*NORTH.*SOUTH.*PARK/, 'three parked probe heads');
+    } else if (name === 'stubtest') {
+      includesPattern(name, source, /P1 WEST.*P2 EAST.*P3 NORTH/, 'three-port west/east/north assignment');
+      includesPattern(name, source, /P3.*(?:OPEN|SHORT).*EXTERNAL|EXTERNAL.*P3/, 'external P3 termination');
+      includesPattern(name, source, /NORTH P3 GSG TIPS STACK ALONG X/, 'north-facing P3 GSG landing');
     } else {
       includesPattern(name, source, /WEST/, 'west probe');
       includesPattern(name, source, /EAST/, 'east probe');
@@ -142,6 +146,7 @@ try {
     const grounds = rectangles.filter(c => c.values[4] === 22).map(c => c.values);
     const signals = rectangles.filter(c => c.values[4] === 21).map(c => c.values);
     const touches = (a, b) => a[0] <= b[2] && a[2] >= b[0] && a[1] <= b[3] && a[3] >= b[1];
+    const signalAt = (x, y) => signals.some(r => x >= r[0] && x <= r[2] && y >= r[1] && y <= r[3]);
     const connected = (from, to) => {
       const start = grounds.findIndex(r => touches(r, [...from, ...from]));
       assert(start >= 0, `${name}: missing ground contact ${from}`);
@@ -156,8 +161,8 @@ try {
       return false;
     };
     const shorted = grounds.some(g => signals.some(s => touches(g, s)));
-    assert.equal(shorted, name === 'stubtest' && overrides.SY === 2, name + ': unintended signal/ground contact');
-    return { runtime, connected };
+    assert.equal(shorted, false, name + ': unintended signal/ground contact');
+    return { runtime, connected, signalAt };
   }
   for (const [name, entry] of [['rdlloss', 610], ['zcoupon', 610], ['trlset', 620]]) {
     const { runtime, connected } = drawing(name, entry);
@@ -177,13 +182,15 @@ try {
   ]) assert(crosstalk(a, b), 'RDXTALK: disconnected cardinal ground');
   pass('RDXTALK: grounds follow both fanouts without shorting either signal');
   for (const sy of [1, 2]) {
-    const { connected } = drawing('stubtest', 560, { SY: sy });
-    assert(connected([40, 105], [440, 105]), 'STUBTEST: upper ground broken');
-    assert(connected([40, 165], [221, 216]), 'STUBTEST: left branch ground broken');
-    assert(connected([440, 165], [259, 216]), 'STUBTEST: right branch ground broken');
-    assert.equal(connected([221, 216], [259, 216]), sy === 2, 'STUBTEST: open/short termination');
+    const { connected, signalAt } = drawing('stubtest', 560, { SY: sy });
+    assert(connected([40, 105], [440, 105]), 'STUBTEST: through ground broken');
+    assert(connected([200, 60], [40, 105]), 'STUBTEST: P3 west-side ground broken');
+    assert(connected([280, 60], [440, 105]), 'STUBTEST: P3 east-side ground broken');
+    for (const [x, y] of [[240, 60], [240, 100], [100, 135], [400, 135]]) {
+      assert(signalAt(x, y), 'STUBTEST: P3-to-thru signal path missing at ' + [x, y]);
+    }
   }
-  pass('STUBTEST: branch grounds connected; only short variant touches signal');
+  pass('STUBTEST: P1/P2/P3 ground returns connect without signal shorts');
   const via = drawing('viamatch', 760).connected;
   assert(via([40, 105], [347, 180]) && via([40, 165], [347, 180]), 'VIAMATCH: floating return/load ground');
   pass('VIAMATCH: one-port grounds reach the internal load return');

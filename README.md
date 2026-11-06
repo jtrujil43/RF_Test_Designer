@@ -35,7 +35,7 @@ The root folder contains ten Hand BASIC programs. Their C64 counterparts are in 
 | [rdlloss.bas](rdlloss.bas) | Differential conductor/dielectric-loss coupons | West / east |
 | [rdxtalk.bas](rdxtalk.bas) | Coupled-line near- and far-end crosstalk | Four cardinal sides |
 | [rfleak.bas](rfleak.bas) | Broadside overlap leakage and via-fence planning | West / east |
-| [stubtest.bas](stubtest.bas) | Open/short shunt-stub coupons | West / east |
+| [stubtest.bas](stubtest.bas) | Three-port shunt stub; P3 at branch end | West / east / north |
 | [trlset.bas](trlset.bas) | Multiline TRL lengths and phase coverage | West / east |
 | [viamatch.bas](viamatch.bas) | Stud/via surrogate and input matching | West only; internal load |
 | [zcoupon.bas](zcoupon.bas) | Impedance and conductor-width variation | West / east |
@@ -47,7 +47,7 @@ The root folder contains ten Hand BASIC programs. Their C64 counterparts are in 
 
 ## Probe arrangement
 
-The designs retain their original port counts. Two-port coupons use west/east probes with north/south parked. VIAMATCH has one west input and an internal load.
+STUBTEST is a three-port exception to the usual west/east two-port coupons: P1 is west, P2 east and P3 north at the shunt-branch end. VIAMATCH has one west input and an internal load.
 
 The revised Hand BASIC and C64 drawings connect ground rails along the signal paths, including bends, stub branches and the ring's outer return paths. RFLEAK now shows an upper-left L1 trace connected by a via to a lower-right L2 trace, with separate G-S-G vias returning to the east top-side pads. Its top view and signal side view show connectivity, not fabrication dimensions. The unchanged RFLEAK calculations describe isolated plates and **do not model this via-connected coupon**.
 

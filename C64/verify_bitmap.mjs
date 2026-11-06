@@ -59,6 +59,11 @@ function checkGroundPaths(name, frame) {
     const offset = (y >> 3) * 320 + (x >> 2) * 8 + (y & 7);
     return (frame.bitmap[offset] >> ((3 - (x & 3)) * 2)) & 3;
   };
+  if (name.startsWith('stubtest')) {
+    for (const [x, y] of [[80, 30], [80, 55], [80, 68], [30, 68], [130, 68]]) {
+      assert.equal(pixel(x, y), 1, name + ': missing P3-to-thru signal at ' + [x, y]);
+    }
+  }
   const groundPath = (x, y) => pixel(x, y) === 2 || (name === 'rfleak' && pixel(x, y) === 3);
   const labels = new Int32Array(160 * 200), bounds = [];
   for (let y = 0; y < 200; y++) for (let x = 0; x < 160; x++) {
@@ -90,10 +95,10 @@ function checkGroundPaths(name, frame) {
       [[122, 20], [146, 94]], [[62, 180], [146, 142]],
     ]) assert(connected(a, b), name + ': broken cardinal return');
   } else if (name.startsWith('stubtest')) {
-    assert(connected([14, 39], [145, 39]), name + ': broken upper rail');
-    assert(connected([14, 96], [66, 145]), name + ': broken left branch rail');
-    assert(connected([145, 96], [94, 145]), name + ': broken right branch rail');
-    assert.equal(connected([66, 145], [94, 145]), name === 'stubtest-short', name + ': wrong termination');
+    assert(connected([50, 30], [14, 39]), name + ': broken P3 west ground');
+    assert(connected([110, 30], [145, 39]), name + ': broken P3 east ground');
+    assert(connected([66, 50], [30, 39]), name + ': broken left branch ground');
+    assert(connected([94, 50], [130, 39]), name + ': broken right branch ground');
   } else if (name.startsWith('viamatch')) {
     assert(connected([10, 68], [10, 112]), name + ': disconnected input grounds');
     assert(connected([10, 112], [140, 179]), name + ': disconnected load return');
@@ -113,7 +118,10 @@ function checkGroundPaths(name, frame) {
     assert.equal(bounds.filter(b => b[2] - b[0] > 30 && b[3] - b[1] > 30).length, 2,
       name + ': both outer half-ring returns must reach the launch banks');
   } else return;
-  record(`PASS ${name}: connected ground paths and intended termination/layer topology`);
+  const topology = name.startsWith('stubtest')
+    ? 'three-port P3 GSG access and connected ground topology'
+    : 'connected ground paths and intended termination/layer topology';
+  record(`PASS ${name}: ${topology}`);
 }
 
 try {

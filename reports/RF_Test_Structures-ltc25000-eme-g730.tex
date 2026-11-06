@@ -84,16 +84,16 @@ Confirm that a second patterned metal layer exists beneath the 6 \ensuremath{\mu
 \textbf{Specific model limit.} The supplied stack does not confirm this second electrode. The parallel-plate capacitance needs the actual RF permittivity of LTC-25000. The via-fence pitch rule predicts no shielding improvement in dB; posts without a defined RF return do not establish a shield.
 
 \newpage
-\pageTitle{STUBTEST / open and short shunt stubs}{Two ports: P1 west, P2 east; north/south parked.}
+\pageTitle{STUBTEST / three-port shunt stub}{Three ports: P1 west, P2 east, P3 north at the shunt-branch end.}
 \callout{\textbf{Source artwork only.} Native numerical labels below belong to the legacy grounded reference and do not establish electrical behavior on the supplied ungrounded stack.}
 \preview{stubtest}{Open-stub source artwork. The numerical width and length are legacy grounded-reference labels.}
 \subhead{Measurement concept}
-A shunt branch is added to a through line. Both the open-ended and short-ended native schematic variants are included in the gallery.
+A shunt branch connects the P1-P2 through line to an accessible north-facing P3 GSG port. Open and short are external P3 terminations, not fixed DUT connections.
 \subhead{Changes needed for the supplied stack}
-Design the through line, branch, tee junction and their ground rails as CPW on the actual two-dielectric stack. An RF short needs a defined connection to the top grounds. Include fringing at an open end and parasitics at a short.
-\textbf{Specific model limit.} The native 70 ohm stub synthesis and 20 GHz notch example use the grounded microstrip reference. They cannot establish a physical CPW length or notch frequency for this stack.
+Design the through line, branch, tee junction and all three GSG ground returns as CPW on the actual two-dielectric stack. Keep P3 accessible for calibrated three-port measurements; apply open/short conditions externally at its reference plane.
+\textbf{Specific model limit.} The native 70 ohm stub synthesis and 20 GHz notch example use the grounded microstrip reference. The retained response sweep calculates P1-P2 with P3 externally open or shorted; it does not calculate the full three-port S matrix or establish physical CPW behavior.
 
-The gallery also contains \texttt{stubtest-short.png}, rendered from the source short-stub branch. Both variants retain two external ports.
+The gallery also contains \texttt{stubtest-short.png}. Both artworks retain the same three accessible ports; open or short is an external P3 test condition.
 
 \newpage
 \pageTitle{TRLSET / multiline calibration standards}{Two ports: P1 west, P2 east; one standard measured at a time.}
@@ -175,7 +175,7 @@ Program & Example hypothetical result and interpretation\\\midrule
 RDLLOSS & 67 GHz loss: 1.2765 dB/mm. Used only to reproduce the source loss-length calculation.\\
 RDXTALK & Base-gap S31=-17.608 dB, S41=-15.472 dB at 67 GHz; coupled microstrip reference only.\\
 RFLEAK & 0.038958 pF from the parallel-plate formula with assumed er and 6 \ensuremath{\mu\mathrm{m}} gap.\\
-STUBTEST & Open-stub reference length 2.46236 mm for the source 20 GHz example.\\
+STUBTEST & Three-port source structure; 2.46236 mm reference stub length. The retained response is P1-P2 with external P3 termination.\\
 TRLSET & One long line exceeds 40 mm; remaining eligible pairs cover the 201 sampled reference points. This does not establish physical CPW calibration coverage.\\
 VIAMATCH & Ideal matching values 0.18212 nH and 0.15927 pF at 20 GHz depend on the surrogate return and load.\\
 ZCOUPON & Nominal reference width 12.43114 \ensuremath{\mu\mathrm{m}} is 50 ohms by the microstrip synthesis. It is not a CPW width.\\\bottomrule

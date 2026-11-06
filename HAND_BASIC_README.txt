@@ -24,7 +24,7 @@ Updated programs:
   rdlloss.bas    Conductor/dielectric loss coupons
   rdxtalk.bas    Four-port coupled-line crosstalk coupons
   rfleak.bas     Broadside leakage and via-fence coupons
-  stubtest.bas   Open/short shunt-stub coupons
+  stubtest.bas   Three-port shunt stub; P3 north at branch end
   trlset.bas     Multiline TRL lengths and coverage
   viamatch.bas   One-port stud/via input matching
   zcoupon.bas    Impedance and width-variation coupons
@@ -44,8 +44,10 @@ S21 remains aggressor through, S31 near-end and S41 far-end crosstalk.
 The program reports twelve contact coordinates, requested versus actual
 fanout length, and an adjustable minimum adjacent-group centre distance.
 
-The two-port programs use P1 WEST and P2 EAST, with north/south heads
-parked. Multiple DOE/TRL rows are separate coupons measured one at a time.
+The ordinary two-port programs use P1 WEST and P2 EAST, with north/south
+heads parked. STUBTEST is a three-port exception: P1 WEST, P2 EAST and
+P3 NORTH at the shunt-branch end; P3 open/short conditions are external.
+Multiple DOE/TRL rows are separate coupons measured one at a time.
 VIAMATCH retains a single external WEST input and an internal RL/RX load;
 east/north/south heads are parked. Port numbers are logical DUT labels,
 so use the corresponding VNA cable and calibration mapping.
